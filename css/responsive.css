@@ -1,0 +1,742 @@
+/* ============================================================= */
+/* RESPONSIVIDADE — FOX RUBY DIGITAL LAB (CORRIGIDO MOBILE)     */
+/* ============================================================= */
+
+/* ===== 1200px ===== */
+@media (max-width: 1200px) {
+    .container {
+        padding: 0 32px;
+    }
+    .orbital-system {
+        width: 320px;
+        height: 320px;
+    }
+    .orbital-core {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+/* ===== 992px ===== */
+@media (max-width: 992px) {
+    .container {
+        padding: 0 24px;
+    }
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .hero-content {
+        max-width: 100%;
+        order: 1;
+    }
+
+    .hero-visual {
+        order: 2;
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+    }
+
+    .orbital-system {
+        width: 280px;
+        height: 280px;
+    }
+
+    .orbital-core {
+        width: 90px;
+        height: 90px;
+    }
+
+    .core-text {
+        font-size: 1rem;
+    }
+
+    .orbit-ring:nth-child(1) { width: 180px; height: 180px; }
+    .orbit-ring:nth-child(2) { width: 240px; height: 240px; }
+    .orbit-ring:nth-child(3) { width: 300px; height: 300px; }
+
+    .orbit-item {
+        font-size: 0.6rem;
+        padding: 4px 10px;
+    }
+
+    .hero-stats {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 100%;
+        margin-top: 30px;
+        padding-top: 24px;
+        border-top: 1px solid rgba(255, 255, 255, 0.04);
+    }
+
+    .hero-buttons {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .hero-buttons .btn {
+        flex: 0 1 auto;
+        min-width: 180px;
+    }
+
+    .sobre-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .sobre-text p {
+        max-width: 100%;
+    }
+
+    .projeto-destaque {
+        grid-template-columns: 1fr;
+    }
+
+    .destaque-info {
+        padding: 30px 24px;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .processo-steps {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .step {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .step-line {
+        width: 2px;
+        height: 20px;
+        background: linear-gradient(to right, var(--primary), transparent);
+        transform: rotate(90deg);
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .footer-links {
+        justify-content: center;
+    }
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* ============================================================= */
+/* ===== MOBILE — 768px ===== */
+@media (max-width: 768px) {
+    /* ---- HEADER ---- */
+    .header-container {
+        flex-wrap: wrap;
+    }
+
+    .nav-menu {
+        display: none;
+        width: 100%;
+        order: 3;
+        margin-top: 12px;
+        background: rgba(5, 5, 5, 0.9);
+        backdrop-filter: blur(12px);
+        border-radius: 12px;
+        padding: 16px;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .nav-menu.active {
+        display: block;
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+        gap: 12px;
+        align-items: center;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .header-social {
+        display: none;
+    }
+
+    /* ---- HERO — NOVA ESTRUTURA ---- */
+    .hero {
+        display: flex;
+        flex-direction: column;
+        padding: 80px 0 20px;
+        min-height: auto;
+    }
+
+    .hero-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        order: 1; /* será o primeiro bloco */
+    }
+
+    .hero-content {
+        order: 1;
+        width: 100%;
+        padding: 0 8px;
+    }
+
+    .hero-title {
+        font-size: 1.8rem;
+        line-height: 1.15;
+    }
+
+    .hero-desc {
+        font-size: 0.95rem;
+        max-width: 100%;
+        margin: 0 auto 20px;
+    }
+
+    .hero-badge {
+        font-size: 0.6rem;
+        padding: 4px 14px;
+        margin-bottom: 16px;
+    }
+
+    /* ---- BOTÕES ---- */
+    .hero-buttons {
+        flex-direction: column;
+        gap: 12px;
+        align-items: stretch;
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto 24px; /* espaço abaixo dos botões */
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+        justify-content: center;
+        padding: 14px 20px;
+        font-size: 0.85rem;
+        border-radius: 8px;
+    }
+
+    /* ---- ORBITAL (depois dos botões) ---- */
+    .hero-visual {
+        order: 2;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin: 12px 0 20px; /* espaço acima e abaixo */
+        min-height: 160px;
+    }
+
+    .orbital-system {
+        width: 200px;
+        height: 200px;
+        overflow: hidden; /* EVITA QUE ELEMENTOS ABSOLUTOS TRANSBORDEM E COBRAM BOTÕES */
+        position: relative;
+    }
+
+    .orbital-core {
+        width: 65px;
+        height: 65px;
+    }
+
+    .core-text {
+        font-size: 0.75rem;
+    }
+
+    .orbit-ring:nth-child(1) { width: 130px; height: 130px; }
+    .orbit-ring:nth-child(2) { width: 170px; height: 170px; }
+    .orbit-ring:nth-child(3) { width: 210px; height: 210px; }
+
+    .orbit-item {
+        font-size: 0.5rem;
+        padding: 3px 8px;
+        border-radius: 50px;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    /* ---- ESTATÍSTICAS (depois do orbital) ---- */
+    .hero-stats {
+        order: 3;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        width: 100%;
+        max-width: 400px;
+        margin: 20px auto 0;
+        padding-top: 24px;
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+        text-align: center;
+        position: relative;
+        z-index: 1;
+    }
+
+    .stat-item {
+        padding: 8px 4px;
+    }
+
+    .stat-number {
+        font-size: 1.6rem;
+        display: block;
+    }
+
+    .stat-number::after {
+        font-size: 1.1rem;
+    }
+
+    .stat-label {
+        font-size: 0.65rem;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        color: var(--text-secondary);
+        margin-top: 2px;
+        display: block;
+    }
+
+    .hero-tech-label {
+        display: none;
+    }
+
+    /* ---- DEMAIS SEÇÕES ---- */
+    .tech-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .tech-card {
+        padding: 16px 10px;
+    }
+
+    .tech-card i {
+        font-size: 1.8rem;
+    }
+
+    .projetos-toolbar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+
+    .filtros {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .filtro-btn {
+        font-size: 0.65rem;
+        padding: 4px 12px;
+    }
+
+    .busca {
+        width: 100%;
+    }
+
+    .busca input {
+        width: 100%;
+    }
+
+    .projetos-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .projeto-card-image {
+        height: 180px;
+    }
+
+    .projeto-destaque {
+        grid-template-columns: 1fr;
+        border-radius: 12px;
+    }
+
+    .destaque-image {
+        min-height: 180px;
+    }
+
+    .destaque-info {
+        padding: 24px 20px;
+    }
+
+    .destaque-info h3 {
+        font-size: 1.4rem;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+
+    .stats-card {
+        padding: 16px 12px;
+    }
+
+    .stats-number {
+        font-size: 2.2rem;
+    }
+    .stats-number::after {
+        font-size: 1.4rem;
+    }
+
+    .processo-steps {
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .step {
+        width: 100%;
+        max-width: 100%;
+        padding: 16px;
+    }
+
+    .step-line {
+        width: 2px;
+        height: 16px;
+        transform: rotate(90deg);
+        margin: 0 auto;
+    }
+
+    .step-number {
+        font-size: 1.6rem;
+    }
+
+    .contato-buttons .btn {
+        flex: 1 1 100%;
+        justify-content: center;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .footer-links {
+        justify-content: center;
+        gap: 16px;
+        flex-wrap: wrap;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        font-size: 0.65rem;
+    }
+
+    .modal {
+        padding: 20px;
+        margin: 16px;
+        max-height: 85vh;
+    }
+
+    .modal-content h2 {
+        font-size: 1.4rem;
+    }
+
+    .sobre-text h2 {
+        font-size: 1.6rem;
+    }
+
+    .sobre-code .code-body {
+        font-size: 0.75rem;
+        padding: 16px;
+    }
+
+    /* ---- PRELOADER ---- */
+    .hud {
+        font-size: 0.5rem;
+    }
+    .hud-tl { top: 12px; left: 12px; }
+    .hud-tr { top: 12px; right: 12px; }
+    .hud-bl { bottom: 12px; left: 12px; }
+    .hud-br { bottom: 12px; right: 12px; }
+
+    .preloader-logo {
+        gap: 12px;
+    }
+    .fox-symbol {
+        width: 40px;
+        height: 40px;
+    }
+    .preloader-brand .logo-fox,
+    .preloader-brand .logo-ruby {
+        font-size: 1.6rem;
+    }
+    .preloader-sub {
+        font-size: 0.55rem;
+    }
+    .preloader-percent {
+        font-size: 2rem;
+    }
+    .preloader-terminal {
+        font-size: 0.55rem;
+        min-height: 50px;
+        max-height: 70px;
+        padding: 8px 12px;
+    }
+    .preloader-ready span {
+        font-size: 1.6rem;
+    }
+    .preloader-ready .ready-sub {
+        font-size: 0.7rem;
+    }
+}
+
+/* ===== 576px ===== */
+@media (max-width: 576px) {
+    .container {
+        padding: 0 12px;
+    }
+
+    .section {
+        padding: 40px 0;
+    }
+
+    .hero {
+        padding: 70px 0 16px;
+    }
+
+    .hero-title {
+        font-size: 1.5rem;
+    }
+
+    .hero-desc {
+        font-size: 0.85rem;
+    }
+
+    .hero-buttons {
+        max-width: 280px;
+        margin-bottom: 20px;
+    }
+
+    .hero-buttons .btn {
+        font-size: 0.8rem;
+        padding: 12px 16px;
+    }
+
+    .hero-visual {
+        min-height: 130px;
+        margin: 8px 0 16px;
+    }
+
+    .orbital-system {
+        width: 160px;
+        height: 160px;
+        overflow: hidden;
+    }
+
+    .orbital-core {
+        width: 52px;
+        height: 52px;
+    }
+
+    .core-text {
+        font-size: 0.6rem;
+    }
+
+    .orbit-ring:nth-child(1) { width: 100px; height: 100px; }
+    .orbit-ring:nth-child(2) { width: 130px; height: 130px; }
+    .orbit-ring:nth-child(3) { width: 160px; height: 160px; }
+
+    .orbit-item {
+        font-size: 0.4rem;
+        padding: 2px 6px;
+    }
+
+    .hero-stats {
+        gap: 12px;
+        margin-top: 16px;
+        padding-top: 16px;
+        max-width: 320px;
+    }
+
+    .stat-number {
+        font-size: 1.3rem;
+    }
+    .stat-number::after {
+        font-size: 0.9rem;
+    }
+    .stat-label {
+        font-size: 0.55rem;
+        letter-spacing: 1px;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+    .section-sub {
+        font-size: 0.9rem;
+        margin-bottom: 28px;
+    }
+
+    .tech-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+    }
+
+    .tech-card {
+        padding: 12px 8px;
+    }
+    .tech-card i {
+        font-size: 1.5rem;
+        margin-bottom: 6px;
+    }
+    .tech-card h4 {
+        font-size: 0.8rem;
+    }
+    .tech-card p {
+        font-size: 0.6rem;
+    }
+
+    .filtro-btn {
+        font-size: 0.6rem;
+        padding: 3px 10px;
+    }
+
+    .projeto-card-image {
+        height: 150px;
+    }
+
+    .projeto-card-body {
+        padding: 16px;
+    }
+    .projeto-card-body h4 {
+        font-size: 1rem;
+    }
+    .projeto-card-body p {
+        font-size: 0.8rem;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+    }
+
+    .stats-card {
+        padding: 12px 8px;
+    }
+    .stats-number {
+        font-size: 1.8rem;
+    }
+    .stats-number::after {
+        font-size: 1.2rem;
+    }
+    .stats-label {
+        font-size: 0.6rem;
+    }
+
+    .step {
+        padding: 12px 8px;
+    }
+    .step-number {
+        font-size: 1.4rem;
+    }
+    .step h3 {
+        font-size: 0.9rem;
+    }
+    .step p {
+        font-size: 0.7rem;
+    }
+
+    .modal {
+        padding: 16px;
+    }
+    .modal-content h2 {
+        font-size: 1.2rem;
+    }
+    .modal-content .modal-desc {
+        font-size: 0.85rem;
+    }
+
+    .preloader-brand .logo-fox,
+    .preloader-brand .logo-ruby {
+        font-size: 1.4rem;
+    }
+    .preloader-percent {
+        font-size: 1.6rem;
+    }
+    .preloader-terminal {
+        font-size: 0.5rem;
+        min-height: 40px;
+        max-height: 60px;
+    }
+    .hud {
+        font-size: 0.4rem;
+    }
+    .hud-tl { top: 8px; left: 8px; }
+    .hud-tr { top: 8px; right: 8px; }
+    .hud-bl { bottom: 8px; left: 8px; }
+    .hud-br { bottom: 8px; right: 8px; }
+}
+
+/* ===== 400px ===== */
+@media (max-width: 400px) {
+    .hero-title {
+        font-size: 1.3rem;
+    }
+
+    .hero-visual {
+        min-height: 110px;
+    }
+
+    .orbital-system {
+        width: 130px;
+        height: 130px;
+        overflow: hidden;
+    }
+
+    .orbital-core {
+        width: 44px;
+        height: 44px;
+    }
+
+    .core-text {
+        font-size: 0.5rem;
+    }
+
+    .orbit-ring:nth-child(1) { width: 85px; height: 85px; }
+    .orbit-ring:nth-child(2) { width: 110px; height: 110px; }
+    .orbit-ring:nth-child(3) { width: 130px; height: 130px; }
+
+    .orbit-item {
+        font-size: 0.35rem;
+        padding: 2px 5px;
+    }
+
+    .stat-number {
+        font-size: 1.1rem;
+    }
+    .stat-number::after {
+        font-size: 0.8rem;
+    }
+    .stat-label {
+        font-size: 0.5rem;
+    }
+
+    .hero-buttons .btn {
+        font-size: 0.75rem;
+        padding: 10px 14px;
+    }
+
+    .preloader-brand .logo-fox,
+    .preloader-brand .logo-ruby {
+        font-size: 1.2rem;
+    }
+    .preloader-percent {
+        font-size: 1.4rem;
+    }
+}
