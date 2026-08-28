@@ -1,15 +1,15 @@
 /* ===== VARIÁVEIS ===== */
 :root {
-    --bg-primary: #0b0d15;
-    --bg-secondary: #111827;
+    --bg-primary: #050505;
+    --bg-secondary: #0A0A0A;
     --bg-card: rgba(255, 255, 255, 0.03);
-    --primary: #60a5fa;
-    --primary-dark: #3b82f6;
-    --primary-glow: rgba(96, 165, 250, 0.15);
-    --accent: #fbbf24;
-    --accent-glow: rgba(251, 191, 36, 0.1);
-    --text-primary: #f1f5f9;
-    --text-secondary: #94a3b8;
+    --primary: #B30000;
+    --primary-dark: #7A0000;
+    --primary-glow: rgba(179, 0, 0, 0.15);
+    --accent: #FF3333;
+    --accent-glow: rgba(255, 51, 51, 0.1);
+    --text-primary: #FFFFFF;
+    --text-secondary: #A0A0A0;
     --border-color: rgba(255, 255, 255, 0.05);
     --glass-bg: rgba(255, 255, 255, 0.02);
     --glass-border: rgba(255, 255, 255, 0.06);
@@ -98,7 +98,7 @@ img {
     width: 100%;
     z-index: 1000;
     padding: 14px 0;
-    background: rgba(10, 14, 26, 0.6);
+    background: rgba(5, 5, 5, 0.6);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.04);
@@ -106,7 +106,7 @@ img {
 }
 
 .header.scrolled {
-    background: rgba(10, 14, 26, 0.9);
+    background: rgba(5, 5, 5, 0.9);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
 }
 
@@ -263,11 +263,11 @@ img {
     letter-spacing: 2px;
     text-transform: uppercase;
     color: var(--primary);
-    border: 1px solid rgba(0, 212, 255, 0.15);
+    border: 1px solid rgba(179, 0, 0, 0.15);
     padding: 6px 16px;
     border-radius: 100px;
     margin-bottom: 24px;
-    background: rgba(0, 212, 255, 0.04);
+    background: rgba(179, 0, 0, 0.04);
 }
 
 .badge-dot {
@@ -332,13 +332,13 @@ img {
 
 .btn-primary {
     background: var(--primary);
-    color: #0a0e1a;
+    color: #fff;
     box-shadow: 0 0 20px var(--primary-glow);
 }
 
 .btn-primary:hover {
-    background: #00e5ff;
-    box-shadow: 0 0 40px rgba(0, 212, 255, 0.3);
+    background: var(--accent);
+    box-shadow: 0 0 40px rgba(255, 51, 51, 0.3);
     transform: translateY(-2px);
 }
 
@@ -383,13 +383,13 @@ img {
     width: 120px;
     height: 120px;
     border-radius: 50%;
-    background: radial-gradient(circle at center, #0f2640, #0a0e1a);
+    background: radial-gradient(circle at center, #1a0000, #0a0a0a);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 1px solid rgba(0, 212, 255, 0.2);
-    box-shadow: 0 0 60px rgba(0, 212, 255, 0.1), inset 0 0 40px rgba(0, 212, 255, 0.03);
+    border: 1px solid rgba(179, 0, 0, 0.2);
+    box-shadow: 0 0 60px rgba(179, 0, 0, 0.1), inset 0 0 40px rgba(179, 0, 0, 0.03);
     z-index: 2;
     text-align: center;
 }
@@ -408,7 +408,7 @@ img {
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    background: radial-gradient(circle at center, rgba(0, 212, 255, 0.15), transparent 70%);
+    background: radial-gradient(circle at center, rgba(179, 0, 0, 0.15), transparent 70%);
     animation: core-pulse 4s ease-in-out infinite;
 }
 
@@ -420,7 +420,7 @@ img {
 .orbit-ring {
     position: absolute;
     border-radius: 50%;
-    border: 1px solid rgba(0, 212, 255, 0.05);
+    border: 1px solid rgba(179, 0, 0, 0.05);
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -440,9 +440,9 @@ img {
     font-weight: 500;
     font-family: var(--font-title);
     color: var(--text-secondary);
-    background: rgba(0, 212, 255, 0.04);
+    background: rgba(179, 0, 0, 0.04);
     backdrop-filter: blur(4px);
-    border: 1px solid rgba(0, 212, 255, 0.08);
+    border: 1px solid rgba(179, 0, 0, 0.08);
     padding: 6px 14px;
     border-radius: 100px;
     letter-spacing: 0.5px;
@@ -454,7 +454,7 @@ img {
 .orbit-item:hover {
     color: var(--primary);
     border-color: var(--primary);
-    box-shadow: 0 0 20px rgba(0, 212, 255, 0.15);
+    box-shadow: 0 0 20px rgba(179, 0, 0, 0.15);
 }
 
 /* ===== HERO STATS ===== */
@@ -555,9 +555,9 @@ img {
 }
 
 .code-window {
-    background: #0a0e1a;
+    background: #0d0d0d;
     border-radius: 12px;
-    border: 1px solid rgba(0, 212, 255, 0.08);
+    border: 1px solid rgba(179, 0, 0, 0.08);
     overflow: hidden;
     box-shadow: 0 20px 40px rgba(0,0,0,0.5);
 }
@@ -631,8 +631,8 @@ img {
 .tech-card:hover {
     transform: translateY(-6px);
     border-color: var(--primary);
-    box-shadow: 0 0 30px rgba(0, 212, 255, 0.05);
-    background: rgba(0, 212, 255, 0.04);
+    box-shadow: 0 0 30px rgba(179, 0, 0, 0.05);
+    background: rgba(179, 0, 0, 0.04);
 }
 
 .tech-card i {
@@ -697,8 +697,8 @@ img {
 .filtro-btn.active {
     background: var(--primary);
     border-color: var(--primary);
-    color: #0a0e1a;
-    box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
+    color: #fff;
+    box-shadow: 0 0 20px rgba(179, 0, 0, 0.2);
 }
 
 .busca {
@@ -713,7 +713,7 @@ img {
 }
 
 .busca:focus-within {
-    border-color: rgba(0, 212, 255, 0.3);
+    border-color: rgba(179, 0, 0, 0.3);
 }
 
 .busca i {
@@ -751,7 +751,7 @@ img {
 }
 
 .destaque-image {
-    background: #0f1629;
+    background: #111111;
     min-height: 300px;
     display: flex;
     align-items: center;
@@ -842,13 +842,13 @@ img {
 
 .projeto-card:hover {
     transform: translateY(-8px);
-    border-color: rgba(0, 212, 255, 0.2);
+    border-color: rgba(179, 0, 0, 0.2);
     box-shadow: 0 20px 40px rgba(0,0,0,0.4);
 }
 
 .projeto-card-image {
     height: 200px;
-    background: #0f1629;
+    background: #111111;
     background-size: cover;
     background-position: center;
     position: relative;
@@ -1044,7 +1044,7 @@ img {
 }
 
 .step:hover {
-    border-color: rgba(0, 212, 255, 0.2);
+    border-color: rgba(179, 0, 0, 0.2);
     transform: translateY(-4px);
 }
 
@@ -1098,7 +1098,7 @@ img {
 
 /* ===== FOOTER ===== */
 .footer {
-    background: #060a14;
+    background: #030303;
     padding: 48px 0 24px;
     border-top: 1px solid rgba(255,255,255,0.03);
 }
@@ -1236,7 +1236,7 @@ img {
     width: 100%;
     border-radius: 12px;
     margin-bottom: 20px;
-    background: #0f1629;
+    background: #111111;
     min-height: 200px;
     object-fit: cover;
 }
@@ -1296,7 +1296,7 @@ img {
 }
 
 /* ============================================================= */
-/* PRELOADER — FOX RUBY DIGITAL LAB                             */
+/* PRELOADER — DEV RUBY DIGITAL LAB                             */
 /* ============================================================= */
 
 #preloader {
@@ -1385,7 +1385,7 @@ img {
     width: 4px;
     height: 4px;
     border-radius: 50%;
-    background: var(--red-neon);
+    background: var(--accent);
     margin-right: 6px;
     animation: pulse-dot 2s infinite;
 }
@@ -1440,7 +1440,7 @@ img {
     font-weight: 700;
     font-size: 2.2rem;
     letter-spacing: 1px;
-    color: var(--red-neon);
+    color: var(--accent);
 }
 
 .preloader-sub {
@@ -1502,7 +1502,7 @@ img {
 .log-line .ok { color: #4ade80; }
 .log-line .sync { color: #facc15; }
 .log-line .load { color: #60a5fa; }
-.log-line .ready { color: var(--red-neon); font-weight: bold; }
+.log-line .ready { color: var(--accent); font-weight: bold; }
 
 @keyframes logFade {
     to { opacity: 1; }
@@ -1526,7 +1526,7 @@ img {
 
 .preloader-percent .pct-symbol {
     font-size: 1.4rem;
-    color: var(--red-neon);
+    color: var(--accent);
 }
 
 .preloader-bar-container {
@@ -1542,7 +1542,7 @@ img {
 .preloader-bar {
     width: 0%;
     height: 100%;
-    background: linear-gradient(90deg, var(--red-dark), var(--red-neon));
+    background: linear-gradient(90deg, var(--primary-dark), var(--accent));
     border-radius: 4px;
     transition: width 0.3s ease;
     position: relative;
@@ -1648,181 +1648,4 @@ img {
     .preloader-brand .logo-fox,
     .preloader-brand .logo-ruby { font-size: 1.4rem; }
     .preloader-percent { font-size: 1.6rem; }
-}
-/* ============================================================= */
-/* CORREÇÕES PARA MOBILE — PRELOADER E LAYOUT                   */
-/* ============================================================= */
-
-@media (max-width: 768px) {
-    /* Preloader mobile */
-    #preloader {
-        min-height: 100vh;
-        height: 100vh;
-        overflow: hidden;
-    }
-
-    .preloader-center {
-        padding: 0 16px;
-        width: 100%;
-        max-width: 100%;
-    }
-
-    .preloader-logo {
-        gap: 10px;
-        flex-direction: column;
-        align-items: center;
-        margin-bottom: 12px;
-    }
-
-    .fox-symbol {
-        width: 36px;
-        height: 36px;
-    }
-
-    .preloader-brand {
-        text-align: center;
-    }
-
-    .preloader-brand .logo-fox,
-    .preloader-brand .logo-ruby {
-        font-size: 1.6rem;
-    }
-
-    .preloader-sub {
-        font-size: 0.6rem;
-        letter-spacing: 2px;
-    }
-
-    .preloader-status {
-        font-size: 0.7rem;
-        margin-bottom: 10px;
-        min-height: 1.2em;
-    }
-
-    .preloader-terminal {
-        font-size: 0.55rem;
-        padding: 8px 12px;
-        min-height: 50px;
-        max-height: 70px;
-        margin-bottom: 16px;
-        border-radius: 6px;
-    }
-
-    .preloader-progress-area {
-        max-width: 100%;
-        width: 100%;
-        padding: 0 4px;
-    }
-
-    .preloader-percent {
-        font-size: 2rem;
-    }
-
-    .preloader-bar-container {
-        height: 3px;
-    }
-
-    .preloader-label {
-        font-size: 0.5rem;
-        letter-spacing: 1.5px;
-    }
-
-    .preloader-ready .ready-main {
-        font-size: 1.8rem;
-    }
-
-    .preloader-ready .ready-sub {
-        font-size: 0.7rem;
-        letter-spacing: 2px;
-    }
-
-    /* HUD mobile — reduzir e reposicionar */
-    .hud {
-        font-size: 0.45rem;
-        letter-spacing: 0.5px;
-        opacity: 0.6;
-    }
-
-    .hud-tl {
-        top: 12px;
-        left: 12px;
-    }
-
-    .hud-tr {
-        top: 12px;
-        right: 12px;
-        text-align: right;
-    }
-
-    .hud-bl {
-        bottom: 12px;
-        left: 12px;
-    }
-
-    .hud-br {
-        bottom: 12px;
-        right: 12px;
-        text-align: right;
-    }
-
-    /* Ocultar alguns HUDs se necessário, mas manter os principais */
-    .hud-tr, .hud-bl {
-        display: none; /* esconde para não poluir */
-    }
-
-    /* Ajuste do grid de fundo */
-    .preloader-grid {
-        background-size: 20px 20px;
-        opacity: 0.15;
-    }
-
-    /* Remover scroll do body durante preloader */
-    body.preloader-active {
-        overflow: hidden;
-        position: fixed;
-        width: 100%;
-    }
-}
-
-@media (max-width: 480px) {
-    .preloader-brand .logo-fox,
-    .preloader-brand .logo-ruby {
-        font-size: 1.4rem;
-    }
-
-    .preloader-percent {
-        font-size: 1.6rem;
-    }
-
-    .preloader-terminal {
-        font-size: 0.5rem;
-        min-height: 40px;
-        max-height: 60px;
-    }
-
-    .preloader-status {
-        font-size: 0.65rem;
-    }
-
-    .hud-tl, .hud-br {
-        font-size: 0.4rem;
-    }
-
-    .hud-tl {
-        top: 8px;
-        left: 8px;
-    }
-
-    .hud-br {
-        bottom: 8px;
-        right: 8px;
-    }
-
-    .preloader-ready .ready-main {
-        font-size: 1.4rem;
-    }
-
-    .preloader-ready .ready-sub {
-        font-size: 0.6rem;
-    }
 }
