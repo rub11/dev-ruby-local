@@ -12,6 +12,16 @@ const projectsData = [
         url: "https://camille-nutricionista.netlify.app/",
         github: "https://github.com/seu-usuario/nutricamille"
     },
+     {
+        title: "Fox Secure - Seguros",
+        category: "landing",
+        description: "Landing page moderna e profissional para uma plataforma de seguros, com categorias de proteção, benefícios, planos, cotação, depoimentos, FAQ e integração com WhatsApp.",
+        image: "img/seguros-01.png",
+        technologies: ["HTML5", "CSS3", "JavaScript"],
+        status: "online",
+        url: "https://rub11.github.io/seguros-01/",
+        github: "https://github.com/rub11/seguros-01"
+    },
     {
         title: "Adega DEV RUBY",
         category: "ecommerce",
@@ -33,35 +43,25 @@ const projectsData = [
         github: "https://github.com/seu-usuario/dashboard-financeiro"
     },
     {
-        title: "Fox CRM",
-        category: "sistema",
-        description: "Sistema simples para gerenciamento de clientes e informações comerciais.",
-        image: "https://via.placeholder.com/600x400/1a1a1a/ffffff?text=Fox+CRM",
-        technologies: ["HTML5", "CSS3", "JavaScript", "LocalStorage"],
-        status: "dev",
-        url: "https://seu-link-aqui.com",
-        github: "https://github.com/seu-usuario/fox-crm"
-    },
-    {
-        title: "Landing Page Tech",
+        title: "Adega DEV RUBY",
         category: "landing",
-        description: "Landing page moderna para uma startup de tecnologia.",
-        image: "https://via.placeholder.com/600x400/1a1a1a/ffffff?text=Landing+Page+Tech",
-        technologies: ["HTML5", "CSS3", "JavaScript", "GSAP"],
+        description: "Catálogo digital moderno e responsivo para adega, com produtos organizados por categorias, busca, filtros, ordenação e visualização detalhada dos produtos.",
+        image: "img/adegas-02.png",
+        technologies: ["HTML5", "CSS3", "JavaScript"],
         status: "online",
-        url: "https://seu-link-aqui.com",
-        github: "https://github.com/seu-usuario/landing-tech"
+        url: "https://dev-ruby-adegas-02-modelo.netlify.app/",
+        github: "https://github.com/rub11/adegas-01"
     },
-    {
-        title: "Sistema de Pedidos",
-        category: "sistema",
-        description: "Sistema de gerenciamento de pedidos com interface intuitiva.",
-        image: "https://via.placeholder.com/600x400/1a1a1a/ffffff?text=Sistema+de+Pedidos",
-        technologies: ["React", "Node.js", "MongoDB"],
-        status: "dev",
-        url: "https://seu-link-aqui.com",
-        github: "https://github.com/seu-usuario/sistema-pedidos"
-    },
+   {
+    title: "Academia Fitness",
+    category: "landing",
+    description: "Landing page moderna e responsiva para academia, com apresentação de planos, modalidades, estrutura, benefícios, depoimentos e chamada para aula experimental.",
+    image: "img/academia-01.png",
+    technologies: ["HTML5", "CSS3", "JavaScript"],
+    status: "online",
+    url: "https://rub11.github.io/academia-01-modelo/",
+    github: "https://github.com/rub11/academia-01"
+},
     {
         title: "Portfólio Interativo",
         category: "experimento",
