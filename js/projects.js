@@ -6,20 +6,30 @@ const projectsData = [
         title: "NutriCamille",
         category: "website",
         description: "Website profissional desenvolvido para apresentação de serviços de nutrição.",
-        image: "https://via.placeholder.com/600x400/1a1a1a/ffffff?text=NutriCamille",
+        image: "img/site-nutri-01.png",
         technologies: ["HTML5", "CSS3", "JavaScript"],
         status: "online",
-        url: "https://seu-link-aqui.com",
+        url: "https://camille-nutricionista.netlify.app/",
         github: "https://github.com/seu-usuario/nutricamille"
+    },
+    {
+        title: "Adega DEV RUBY",
+        category: "ecommerce",
+        description: "Cardápio digital moderno para adega, com categorias de produtos, carrinho de pedidos, controle de quantidades e envio do pedido diretamente pelo WhatsApp.",
+        image: "img/adega-01.png",
+        technologies: ["HTML5", "CSS3", "JavaScript", "WhatsApp"],
+        status: "online",
+        url: "https://adegas-devruby.netlify.app/",
+        github: "https://github.com/rub11/adegas-01"
     },
     {
         title: "Dashboard Financeiro",
         category: "dashboard",
         description: "Dashboard para controle financeiro, vendas, estoque e indicadores.",
-        image: "https://via.placeholder.com/600x400/1a1a1a/ffffff?text=Dashboard+Financeiro",
+        image: "img/dashboard-01.png",
         technologies: ["HTML5", "CSS3", "JavaScript", "Chart.js"],
         status: "online",
-        url: "https://seu-link-aqui.com",
+        url: "https://dashboard-financeiro-a.netlify.app/",
         github: "https://github.com/seu-usuario/dashboard-financeiro"
     },
     {
