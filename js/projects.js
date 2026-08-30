@@ -22,6 +22,16 @@ const projectsData = [
         url: "https://rub11.github.io/seguros-01/",
         github: "https://github.com/rub11/seguros-01"
     },
+      {
+    title: "Imobiliária de Alto Padrão",
+    category: "landing",
+    description: "Landing page sofisticada e responsiva para uma imobiliária de alto padrão, com imóveis em destaque, busca, informações comerciais e contato.",
+    image: "img/imobiliaria-01.png",
+    technologies: ["HTML5", "CSS3", "JavaScript"],
+    status: "online",
+    url: "https://rub11.github.io/imobiliaria-01/",
+    github: "https://github.com/rub11/imobiliaria-01"
+},
     {
         title: "Adega DEV RUBY",
         category: "ecommerce",
@@ -32,26 +42,8 @@ const projectsData = [
         url: "https://adegas-devruby.netlify.app/",
         github: "https://github.com/rub11/adegas-01"
     },
-    {
-        title: "Dashboard Financeiro",
-        category: "dashboard",
-        description: "Dashboard para controle financeiro, vendas, estoque e indicadores.",
-        image: "img/dashboard-01.png",
-        technologies: ["HTML5", "CSS3", "JavaScript", "Chart.js"],
-        status: "online",
-        url: "https://dashboard-financeiro-a.netlify.app/",
-        github: "https://github.com/seu-usuario/dashboard-financeiro"
-    },
-    {
-        title: "Adega DEV RUBY",
-        category: "landing",
-        description: "Catálogo digital moderno e responsivo para adega, com produtos organizados por categorias, busca, filtros, ordenação e visualização detalhada dos produtos.",
-        image: "img/adegas-02.png",
-        technologies: ["HTML5", "CSS3", "JavaScript"],
-        status: "online",
-        url: "https://dev-ruby-adegas-02-modelo.netlify.app/",
-        github: "https://github.com/rub11/adegas-01"
-    },
+  
+   
    {
     title: "Academia Fitness",
     category: "landing",
@@ -62,16 +54,38 @@ const projectsData = [
     url: "https://rub11.github.io/academia-01-modelo/",
     github: "https://github.com/rub11/academia-01"
 },
-    {
-        title: "Portfólio Interativo",
-        category: "experimento",
-        description: "Experimento visual com efeitos 3D e interações imersivas.",
-        image: "https://via.placeholder.com/600x400/1a1a1a/ffffff?text=Portf%C3%B3lio+Interativo",
-        technologies: ["HTML5", "CSS3", "JavaScript", "Three.js"],
-        status: "online",
-        url: "https://seu-link-aqui.com",
-        github: "https://github.com/seu-usuario/portfolio-interativo"
-    }
+{
+    title: "Loja de Tênis",
+    category: "e-commerce",
+    description: "Loja virtual moderna e responsiva para apresentação e venda de tênis, com catálogo de produtos e experiência de navegação intuitiva.",
+    image: "img/tenis-01.png",
+    technologies: ["HTML5", "CSS3", "JavaScript"],
+    status: "online",
+    url: "https://rub11.github.io/lojadetenis-01/",
+    github: ""
+},
+{
+    title: "Curso de programação",
+    category: "landing",
+    description: "Landing page premium para curso de programação, com apresentação da formação, módulos, tecnologias, projetos práticos, benefícios, depoimentos, oferta, FAQ e chamadas para conversão.",
+    image: "img/cursoprogramação-01.png",
+    technologies: ["HTML5", "CSS3", "JavaScript"],
+    status: "online",
+    url: "https://rub11.github.io/curso-programa-o-01/",
+    github: ""
+},
+{
+    title: "Barbearia Premium",
+    category: "landing",
+    description: "Landing page moderna e elegante para barbearia, com apresentação dos serviços, informações sobre o espaço e chamada para agendamento.",
+    image: "img/barbearia-01.png",
+    technologies: ["HTML5", "CSS3", "JavaScript"],
+    status: "online",
+    url: "https://rub11.github.io/Barbearia-0-/",
+    github: "https://github.com/rub11/Barbearia-0-"
+},
+
+ 
 ];
 
 // Projeto em destaque (índice do array)

@@ -102,7 +102,7 @@
                     </ul>
                 </nav>
                 <div class="header-social">
-                    <a href="#" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                   
                     <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                     <a href="#" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                 </div>
@@ -147,16 +147,16 @@
             </div>
             <div class="hero-stats container">
                 <div class="stat-item">
-                    <span class="stat-number" data-count="20">0</span>
-                    <span class="stat-label">PROJETOS</span>
+                    <span class="stat-number" data-count="57">0</span>
+                    <span class="stat-label">PROJETOS JÁ CRIADOS</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-number" data-count="10">0</span>
-                    <span class="stat-label">SISTEMAS</span>
+                    <span class="stat-number" data-count="17">0</span>
+                    <span class="stat-label">SISTEMAS DESENVOLVIDOS</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-number" data-count="10">0</span>
-                    <span class="stat-label">WEBSITES</span>
+                    <span class="stat-number" data-count="28">0</span>
+                    <span class="stat-label">WEBSITES PERSONALIZADOS</span>
                 </div>
                 <div class="stat-item">
                     <span class="stat-number" data-count="100">0</span>
@@ -300,20 +300,375 @@
             </div>
         </section>
 
-        <!-- ===== CONTATO ===== -->
-        <section id="contato" class="contato section">
-            <div class="container">
-                <div class="section-label">// CONTATO</div>
-                <h2 class="section-title">VAMOS CRIAR ALGO?</h2>
-                <p class="section-sub">Tem uma ideia, projeto ou oportunidade? Entre em contato.</p>
-                <div class="contato-buttons">
-                    <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary"><i class="fab fa-whatsapp"></i> WHATSAPP</a>
-                    <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-secondary"><i class="fab fa-instagram"></i> INSTAGRAM</a>
-                    <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-secondary"><i class="fab fa-linkedin-in"></i> LINKEDIN</a>
-                    <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-secondary"><i class="fab fa-github"></i> GITHUB</a>
+      <!-- ===== CONTATO / BRIEFING ===== -->
+<section id="contato" class="contato section">
+    <div class="container">
+        <div class="section-label">// BRIEFING DE PROJETO</div>
+        <h2 class="section-title">Vamos transformar sua ideia em realidade.</h2>
+        <p class="section-sub">Responda algumas perguntas e conte para nós o que você precisa. No final, seu briefing será enviado diretamente pelo WhatsApp.</p>
+
+        <!-- FORMULÁRIO MULTI-ETAPAS -->
+        <div class="briefing-container" id="briefingContainer">
+            <!-- Barra de progresso -->
+            <div class="progress-wrapper">
+                <div class="progress-steps" id="progressSteps">
+                    <span class="step-indicator active" data-step="1">1</span>
+                    <span class="step-indicator" data-step="2">2</span>
+                    <span class="step-indicator" data-step="3">3</span>
+                    <span class="step-indicator" data-step="4">4</span>
+                    <span class="step-indicator" data-step="5">5</span>
+                    <span class="step-indicator" data-step="6">6</span>
+                    <span class="step-indicator" data-step="7">7</span>
+                    <span class="step-indicator" data-step="8">8</span>
+                </div>
+                <div class="progress-bar-track">
+                    <div class="progress-bar-fill" id="progressFill" style="width: 0%;"></div>
+                </div>
+                <div class="progress-label">
+                    <span id="stepCounter">1 de 8</span>
                 </div>
             </div>
-        </section>
+
+            <!-- Formulário -->
+            <form id="briefingForm" novalidate>
+                <!-- ETAPA 1 -->
+                <div class="form-step active" data-step="1">
+                    <h3>Primeiro, vamos conhecer você</h3>
+                    <div class="form-group">
+                        <label for="nome">Nome completo</label>
+                        <input type="text" id="nome" placeholder="Digite seu nome">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" placeholder="seuemail@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="whatsapp">WhatsApp</label>
+                        <input type="tel" id="whatsapp" placeholder="(11) 99999-9999">
+                    </div>
+                    <div class="form-group">
+                        <label for="empresa">Nome da empresa ou negócio</label>
+                        <input type="text" id="empresa" placeholder="Nome da empresa (opcional)">
+                    </div>
+                    <div class="form-group">
+                        <label for="instagram">Instagram ou rede social</label>
+                        <input type="text" id="instagram" placeholder="@seunegocio">
+                    </div>
+                </div>
+
+                <!-- ETAPA 2 -->
+                <div class="form-step" data-step="2">
+                    <h3>Que tipo de projeto você está procurando?</h3>
+                    <p class="step-desc">Selecione uma ou mais opções</p>
+                    <div class="options-grid" id="tipoProjeto">
+                        <label class="option-card" data-value="Landing Page">
+                            <span class="option-icon">🌐</span> Landing Page
+                            <input type="checkbox" name="tipo" value="Landing Page" hidden>
+                        </label>
+                        <label class="option-card" data-value="Website Institucional">
+                            <span class="option-icon">💻</span> Website Institucional
+                            <input type="checkbox" name="tipo" value="Website Institucional" hidden>
+                        </label>
+                        <label class="option-card" data-value="Loja Virtual / E-commerce">
+                            <span class="option-icon">🛒</span> Loja Virtual / E-commerce
+                            <input type="checkbox" name="tipo" value="Loja Virtual / E-commerce" hidden>
+                        </label>
+                        <label class="option-card" data-value="Sistema Web">
+                            <span class="option-icon">📱</span> Sistema Web
+                            <input type="checkbox" name="tipo" value="Sistema Web" hidden>
+                        </label>
+                        <label class="option-card" data-value="Dashboard">
+                            <span class="option-icon">📊</span> Dashboard
+                            <input type="checkbox" name="tipo" value="Dashboard" hidden>
+                        </label>
+                        <label class="option-card" data-value="CRM">
+                            <span class="option-icon">👥</span> CRM
+                            <input type="checkbox" name="tipo" value="CRM" hidden>
+                        </label>
+                        <label class="option-card" data-value="Sistema de Gestão">
+                            <span class="option-icon">📦</span> Sistema de Gestão
+                            <input type="checkbox" name="tipo" value="Sistema de Gestão" hidden>
+                        </label>
+                        <label class="option-card" data-value="Sistema de Agendamento">
+                            <span class="option-icon">📅</span> Sistema de Agendamento
+                            <input type="checkbox" name="tipo" value="Sistema de Agendamento" hidden>
+                        </label>
+                        <label class="option-card" data-value="Sistema Financeiro">
+                            <span class="option-icon">💰</span> Sistema Financeiro
+                            <input type="checkbox" name="tipo" value="Sistema Financeiro" hidden>
+                        </label>
+                        <label class="option-card" data-value="Catálogo Digital">
+                            <span class="option-icon">🏪</span> Catálogo Digital
+                            <input type="checkbox" name="tipo" value="Catálogo Digital" hidden>
+                        </label>
+                        <label class="option-card" data-value="Sistema para Restaurante">
+                            <span class="option-icon">🍔</span> Sistema para Restaurante
+                            <input type="checkbox" name="tipo" value="Sistema para Restaurante" hidden>
+                        </label>
+                        <label class="option-card" data-value="Sistema para Adega/Delivery">
+                            <span class="option-icon">🥂</span> Sistema para Adega/Delivery
+                            <input type="checkbox" name="tipo" value="Sistema para Adega/Delivery" hidden>
+                        </label>
+                        <label class="option-card" data-value="Aplicativo">
+                            <span class="option-icon">📱</span> Aplicativo
+                            <input type="checkbox" name="tipo" value="Aplicativo" hidden>
+                        </label>
+                        <label class="option-card" data-value="Sistema com Inteligência Artificial">
+                            <span class="option-icon">🤖</span> Sistema com IA
+                            <input type="checkbox" name="tipo" value="Sistema com Inteligência Artificial" hidden>
+                        </label>
+                        <label class="option-card" data-value="Outro">
+                            <span class="option-icon">🔧</span> Outro
+                            <input type="checkbox" name="tipo" value="Outro" hidden>
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label for="outroProjeto">Se outro, especifique</label>
+                        <input type="text" id="outroProjeto" placeholder="Descreva o que você precisa...">
+                    </div>
+                </div>
+
+                <!-- ETAPA 3 -->
+                <div class="form-step" data-step="3">
+                    <h3>Conte um pouco sobre o seu projeto</h3>
+                    <div class="form-group">
+                        <label for="descricao">O que você gostaria que fosse desenvolvido?</label>
+                        <textarea id="descricao" rows="4" placeholder="Explique brevemente sua ideia, negócio ou projeto..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Você já possui um site ou sistema atualmente?</label>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="possuiSite" value="Sim"> Sim
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="possuiSite" value="Não"> Não
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group conditional" id="siteAtualGroup" style="display:none;">
+                        <label for="siteAtual">Link do site/sistema atual</label>
+                        <input type="url" id="siteAtual" placeholder="https://exemplo.com">
+                    </div>
+                </div>
+
+                <!-- ETAPA 4 -->
+                <div class="form-step" data-step="4">
+                    <h3>Qual é o principal objetivo do projeto?</h3>
+                    <p class="step-desc">Selecione uma ou mais opções</p>
+                    <div class="options-grid" id="objetivoProjeto">
+                        <label class="option-card" data-value="Aumentar vendas">
+                            <span class="option-icon">📈</span> Aumentar vendas
+                            <input type="checkbox" name="objetivo" value="Aumentar vendas" hidden>
+                        </label>
+                        <label class="option-card" data-value="Divulgar minha empresa">
+                            <span class="option-icon">📢</span> Divulgar minha empresa
+                            <input type="checkbox" name="objetivo" value="Divulgar minha empresa" hidden>
+                        </label>
+                        <label class="option-card" data-value="Conseguir mais clientes">
+                            <span class="option-icon">👥</span> Conseguir mais clientes
+                            <input type="checkbox" name="objetivo" value="Conseguir mais clientes" hidden>
+                        </label>
+                        <label class="option-card" data-value="Criar presença profissional na internet">
+                            <span class="option-icon">🌐</span> Presença profissional
+                            <input type="checkbox" name="objetivo" value="Criar presença profissional na internet" hidden>
+                        </label>
+                        <label class="option-card" data-value="Automatizar processos">
+                            <span class="option-icon">⚙️</span> Automatizar processos
+                            <input type="checkbox" name="objetivo" value="Automatizar processos" hidden>
+                        </label>
+                        <label class="option-card" data-value="Organizar informações">
+                            <span class="option-icon">📂</span> Organizar informações
+                            <input type="checkbox" name="objetivo" value="Organizar informações" hidden>
+                        </label>
+                        <label class="option-card" data-value="Melhorar um sistema existente">
+                            <span class="option-icon">🔄</span> Melhorar sistema existente
+                            <input type="checkbox" name="objetivo" value="Melhorar um sistema existente" hidden>
+                        </label>
+                        <label class="option-card" data-value="Criar uma plataforma para clientes">
+                            <span class="option-icon">🏛️</span> Plataforma para clientes
+                            <input type="checkbox" name="objetivo" value="Criar uma plataforma para clientes" hidden>
+                        </label>
+                        <label class="option-card" data-value="Criar um produto digital">
+                            <span class="option-icon">💎</span> Produto digital
+                            <input type="checkbox" name="objetivo" value="Criar um produto digital" hidden>
+                        </label>
+                        <label class="option-card" data-value="Criar uma loja online">
+                            <span class="option-icon">🛍️</span> Loja online
+                            <input type="checkbox" name="objetivo" value="Criar uma loja online" hidden>
+                        </label>
+                        <label class="option-card" data-value="Outro">
+                            <span class="option-icon">🔧</span> Outro
+                            <input type="checkbox" name="objetivo" value="Outro" hidden>
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label for="outroObjetivo">Se outro, especifique</label>
+                        <input type="text" id="outroObjetivo" placeholder="Descreva o objetivo...">
+                    </div>
+                </div>
+
+                <!-- ETAPA 5 -->
+                <div class="form-step" data-step="5">
+                    <h3>O que você gostaria que o projeto tivesse?</h3>
+                    <p class="step-desc">Selecione as funcionalidades desejadas</p>
+                    <div class="options-grid funcionalidades-grid" id="funcionalidades">
+                        <label class="option-card" data-value="Login e cadastro de usuários">🔐 Login e cadastro</label>
+                        <label class="option-card" data-value="Área do cliente">👤 Área do cliente</label>
+                        <label class="option-card" data-value="Área administrativa">👨‍💼 Área administrativa</label>
+                        <label class="option-card" data-value="Dashboard">📊 Dashboard</label>
+                        <label class="option-card" data-value="Pagamentos online">💳 Pagamentos online</label>
+                        <label class="option-card" data-value="Carrinho de compras">🛒 Carrinho de compras</label>
+                        <label class="option-card" data-value="Controle de pedidos">📦 Controle de pedidos</label>
+                        <label class="option-card" data-value="Responsividade para celular">📱 Responsivo</label>
+                        <label class="option-card" data-value="Busca">🔎 Busca</label>
+                        <label class="option-card" data-value="Filtros e categorias">🗂️ Filtros e categorias</label>
+                        <label class="option-card" data-value="Envio de e-mails">📧 Envio de e-mails</label>
+                        <label class="option-card" data-value="Integração com WhatsApp">💬 Integração WhatsApp</label>
+                        <label class="option-card" data-value="Agendamento">📅 Agendamento</label>
+                        <label class="option-card" data-value="Relatórios">📈 Relatórios</label>
+                        <label class="option-card" data-value="Gráficos">📊 Gráficos</label>
+                        <label class="option-card" data-value="Exportação para Excel/PDF">📥 Exportação Excel/PDF</label>
+                        <label class="option-card" data-value="Notificações">🔔 Notificações</label>
+                        <label class="option-card" data-value="Inteligência Artificial">🤖 IA</label>
+                        <label class="option-card" data-value="Integração com APIs">🔗 Integração APIs</label>
+                        <label class="option-card" data-value="Banco de dados">🗄️ Banco de dados</label>
+                        <label class="option-card" data-value="Sistema de autenticação">🔑 Autenticação</label>
+                        <label class="option-card" data-value="Outro">🔧 Outro</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="outraFuncionalidade">Existe alguma funcionalidade específica que você gostaria?</label>
+                        <input type="text" id="outraFuncionalidade" placeholder="Descreva...">
+                    </div>
+                </div>
+
+                <!-- ETAPA 6 -->
+                <div class="form-step" data-step="6">
+                    <h3>Como você imagina o visual?</h3>
+                    <div class="form-group">
+                        <label>Qual estilo você prefere?</label>
+                        <div class="options-grid" id="estiloDesign">
+                            <label class="option-card" data-value="Moderno">Moderno</label>
+                            <label class="option-card" data-value="Minimalista">Minimalista</label>
+                            <label class="option-card" data-value="Elegante">Elegante</label>
+                            <label class="option-card" data-value="Premium">Premium</label>
+                            <label class="option-card" data-value="Futurista">Futurista</label>
+                            <label class="option-card" data-value="Tecnológico">Tecnológico</label>
+                            <label class="option-card" data-value="Corporativo">Corporativo</label>
+                            <label class="option-card" data-value="Criativo">Criativo</label>
+                            <label class="option-card" data-value="Escuro / Dark">Escuro / Dark</label>
+                            <label class="option-card" data-value="Claro / Clean">Claro / Clean</label>
+                            <label class="option-card" data-value="Não sei, quero que vocês sugiram">Não sei, quero sugestão</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="referencia">Possui algum site como referência?</label>
+                        <input type="url" id="referencia" placeholder="https://exemplo.com">
+                    </div>
+                    <div class="form-group">
+                        <label>Possui logotipo, identidade visual ou cores da marca?</label>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="possuiIdentidade" value="Sim"> Sim
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="possuiIdentidade" value="Não"> Não
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="cores">Quais cores você gostaria de utilizar?</label>
+                        <input type="text" id="cores" placeholder="Ex: Preto, dourado, azul...">
+                    </div>
+                </div>
+
+                <!-- ETAPA 7 -->
+                <div class="form-step" data-step="7">
+                    <h3>Vamos falar sobre o projeto</h3>
+                    <div class="form-group">
+                        <label>Quando você gostaria de colocar o projeto no ar?</label>
+                        <div class="options-grid" id="prazo">
+                            <label class="option-card" data-value="O quanto antes">O quanto antes</label>
+                            <label class="option-card" data-value="Até 7 dias">Até 7 dias</label>
+                            <label class="option-card" data-value="Até 15 dias">Até 15 dias</label>
+                            <label class="option-card" data-value="Até 30 dias">Até 30 dias</label>
+                            <label class="option-card" data-value="1 a 2 meses">1 a 2 meses</label>
+                            <label class="option-card" data-value="Ainda não tenho prazo">Ainda não tenho prazo</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Você já possui domínio?</label>
+                        <div class="radio-group">
+                            <label class="radio-label"><input type="radio" name="dominio" value="Sim"> Sim</label>
+                            <label class="radio-label"><input type="radio" name="dominio" value="Não"> Não</label>
+                            <label class="radio-label"><input type="radio" name="dominio" value="Não sei o que é"> Não sei o que é</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Você já possui hospedagem?</label>
+                        <div class="radio-group">
+                            <label class="radio-label"><input type="radio" name="hospedagem" value="Sim"> Sim</label>
+                            <label class="radio-label"><input type="radio" name="hospedagem" value="Não"> Não</label>
+                            <label class="radio-label"><input type="radio" name="hospedagem" value="Não sei o que é"> Não sei o que é</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Já possui algum material para o projeto?</label>
+                        <div class="options-grid" id="materiais">
+                            <label class="option-card" data-value="Logo">Logo</label>
+                            <label class="option-card" data-value="Fotos">Fotos</label>
+                            <label class="option-card" data-value="Textos">Textos</label>
+                            <label class="option-card" data-value="Vídeos">Vídeos</label>
+                            <label class="option-card" data-value="Produtos">Produtos</label>
+                            <label class="option-card" data-value="Dados">Dados</label>
+                            <label class="option-card" data-value="Nenhum">Nenhum</label>
+                            <label class="option-card" data-value="Outros">Outros</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ETAPA 8 -->
+                <div class="form-step" data-step="8">
+                    <h3>Qual faixa de investimento você imagina para esse projeto?</h3>
+                    <div class="options-grid" id="investimento">
+                        <label class="option-card" data-value="Até R$ 500">Até R$ 500</label>
+                        <label class="option-card" data-value="R$ 500 – R$ 1.000">R$ 500 – R$ 1.000</label>
+                        <label class="option-card" data-value="R$ 1.000 – R$ 2.500">R$ 1.000 – R$ 2.500</label>
+                        <label class="option-card" data-value="R$ 2.500 – R$ 5.000">R$ 2.500 – R$ 5.000</label>
+                        <label class="option-card" data-value="R$ 5.000 – R$ 10.000">R$ 5.000 – R$ 10.000</label>
+                        <label class="option-card" data-value="Acima de R$ 10.000">Acima de R$ 10.000</label>
+                        <label class="option-card" data-value="Ainda não sei">Ainda não sei</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="observacoes">Existe alguma informação importante que não perguntamos?</label>
+                        <textarea id="observacoes" rows="4" placeholder="Compartilhe qualquer detalhe adicional..."></textarea>
+                    </div>
+                </div>
+
+                <!-- REVISÃO FINAL -->
+                <div class="form-step" data-step="review">
+                    <h3>Confira suas informações</h3>
+                    <div id="reviewContent" class="review-content">
+                        <!-- Preenchido via JS -->
+                    </div>
+                    <button type="button" class="btn btn-primary btn-enviar" id="enviarWhatsApp">
+                        <i class="fab fa-whatsapp"></i> ENVIAR BRIEFING PELO WHATSAPP
+                    </button>
+                </div>
+
+                <!-- NAVEGAÇÃO -->
+                <div class="form-navigation">
+                    <button type="button" class="btn btn-secondary btn-voltar" id="btnVoltar" style="display:none;">
+                        <i class="fas fa-arrow-left"></i> Voltar
+                    </button>
+                    <button type="button" class="btn btn-primary btn-continuar" id="btnContinuar">
+                        Continuar <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
 
         <!-- ===== FOOTER ===== -->
         <footer class="footer">
@@ -332,7 +687,7 @@
                         <a href="#contato">Contato</a>
                     </div>
                     <div class="footer-social">
-                        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        
                         <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                         <a href="#" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                     </div>
@@ -362,6 +717,7 @@
    <script src="js/projects.js"></script>
 <script src="js/animations.js"></script>
 <script src="js/main.js"></script>
+<script src="js/form-script.js"></script>
 
 </body>
 </html>
