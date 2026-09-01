@@ -300,7 +300,7 @@
             </div>
         </section>
 
-      <!-- ===== CONTATO / BRIEFING ===== -->
+<!-- ===== CONTATO / BRIEFING ===== -->
 <section id="contato" class="contato section">
     <div class="container">
         <div class="section-label">// BRIEFING DE PROJETO</div>
@@ -336,23 +336,23 @@
                     <h3>Primeiro, vamos conhecer você</h3>
                     <div class="form-group">
                         <label for="nome">Nome completo</label>
-                        <input type="text" id="nome" placeholder="Digite seu nome">
+                        <input type="text" id="nome" name="nome" placeholder="Digite seu nome">
                     </div>
                     <div class="form-group">
                         <label for="email">E-mail</label>
-                        <input type="email" id="email" placeholder="seuemail@email.com">
+                        <input type="email" id="email" name="email" placeholder="seuemail@email.com">
                     </div>
                     <div class="form-group">
                         <label for="whatsapp">WhatsApp</label>
-                        <input type="tel" id="whatsapp" placeholder="(11) 99999-9999">
+                        <input type="tel" id="whatsapp" name="whatsapp" placeholder="(11) 99999-9999">
                     </div>
                     <div class="form-group">
                         <label for="empresa">Nome da empresa ou negócio</label>
-                        <input type="text" id="empresa" placeholder="Nome da empresa (opcional)">
+                        <input type="text" id="empresa" name="empresa" placeholder="Nome da empresa (opcional)">
                     </div>
                     <div class="form-group">
                         <label for="instagram">Instagram ou rede social</label>
-                        <input type="text" id="instagram" placeholder="@seunegocio">
+                        <input type="text" id="instagram" name="instagram" placeholder="@seunegocio">
                     </div>
                 </div>
 
@@ -424,7 +424,7 @@
                     </div>
                     <div class="form-group">
                         <label for="outroProjeto">Se outro, especifique</label>
-                        <input type="text" id="outroProjeto" placeholder="Descreva o que você precisa...">
+                        <input type="text" id="outroProjeto" name="outroProjeto" placeholder="Descreva o que você precisa...">
                     </div>
                 </div>
 
@@ -433,7 +433,7 @@
                     <h3>Conte um pouco sobre o seu projeto</h3>
                     <div class="form-group">
                         <label for="descricao">O que você gostaria que fosse desenvolvido?</label>
-                        <textarea id="descricao" rows="4" placeholder="Explique brevemente sua ideia, negócio ou projeto..."></textarea>
+                        <textarea id="descricao" name="descricao" rows="4" placeholder="Explique brevemente sua ideia, negócio ou projeto..."></textarea>
                     </div>
                     <div class="form-group">
                         <label>Você já possui um site ou sistema atualmente?</label>
@@ -448,7 +448,7 @@
                     </div>
                     <div class="form-group conditional" id="siteAtualGroup" style="display:none;">
                         <label for="siteAtual">Link do site/sistema atual</label>
-                        <input type="url" id="siteAtual" placeholder="https://exemplo.com">
+                        <input type="url" id="siteAtual" name="siteAtual" placeholder="https://exemplo.com">
                     </div>
                 </div>
 
@@ -504,7 +504,7 @@
                     </div>
                     <div class="form-group">
                         <label for="outroObjetivo">Se outro, especifique</label>
-                        <input type="text" id="outroObjetivo" placeholder="Descreva o objetivo...">
+                        <input type="text" id="outroObjetivo" name="outroObjetivo" placeholder="Descreva o objetivo...">
                     </div>
                 </div>
 
@@ -513,32 +513,76 @@
                     <h3>O que você gostaria que o projeto tivesse?</h3>
                     <p class="step-desc">Selecione as funcionalidades desejadas</p>
                     <div class="options-grid funcionalidades-grid" id="funcionalidades">
-                        <label class="option-card" data-value="Login e cadastro de usuários">🔐 Login e cadastro</label>
-                        <label class="option-card" data-value="Área do cliente">👤 Área do cliente</label>
-                        <label class="option-card" data-value="Área administrativa">👨‍💼 Área administrativa</label>
-                        <label class="option-card" data-value="Dashboard">📊 Dashboard</label>
-                        <label class="option-card" data-value="Pagamentos online">💳 Pagamentos online</label>
-                        <label class="option-card" data-value="Carrinho de compras">🛒 Carrinho de compras</label>
-                        <label class="option-card" data-value="Controle de pedidos">📦 Controle de pedidos</label>
-                        <label class="option-card" data-value="Responsividade para celular">📱 Responsivo</label>
-                        <label class="option-card" data-value="Busca">🔎 Busca</label>
-                        <label class="option-card" data-value="Filtros e categorias">🗂️ Filtros e categorias</label>
-                        <label class="option-card" data-value="Envio de e-mails">📧 Envio de e-mails</label>
-                        <label class="option-card" data-value="Integração com WhatsApp">💬 Integração WhatsApp</label>
-                        <label class="option-card" data-value="Agendamento">📅 Agendamento</label>
-                        <label class="option-card" data-value="Relatórios">📈 Relatórios</label>
-                        <label class="option-card" data-value="Gráficos">📊 Gráficos</label>
-                        <label class="option-card" data-value="Exportação para Excel/PDF">📥 Exportação Excel/PDF</label>
-                        <label class="option-card" data-value="Notificações">🔔 Notificações</label>
-                        <label class="option-card" data-value="Inteligência Artificial">🤖 IA</label>
-                        <label class="option-card" data-value="Integração com APIs">🔗 Integração APIs</label>
-                        <label class="option-card" data-value="Banco de dados">🗄️ Banco de dados</label>
-                        <label class="option-card" data-value="Sistema de autenticação">🔑 Autenticação</label>
-                        <label class="option-card" data-value="Outro">🔧 Outro</label>
+                        <label class="option-card" data-value="Login e cadastro de usuários">🔐 Login e cadastro
+                            <input type="checkbox" name="funcionalidades" value="Login e cadastro de usuários" hidden>
+                        </label>
+                        <label class="option-card" data-value="Área do cliente">👤 Área do cliente
+                            <input type="checkbox" name="funcionalidades" value="Área do cliente" hidden>
+                        </label>
+                        <label class="option-card" data-value="Área administrativa">👨‍💼 Área administrativa
+                            <input type="checkbox" name="funcionalidades" value="Área administrativa" hidden>
+                        </label>
+                        <label class="option-card" data-value="Dashboard">📊 Dashboard
+                            <input type="checkbox" name="funcionalidades" value="Dashboard" hidden>
+                        </label>
+                        <label class="option-card" data-value="Pagamentos online">💳 Pagamentos online
+                            <input type="checkbox" name="funcionalidades" value="Pagamentos online" hidden>
+                        </label>
+                        <label class="option-card" data-value="Carrinho de compras">🛒 Carrinho de compras
+                            <input type="checkbox" name="funcionalidades" value="Carrinho de compras" hidden>
+                        </label>
+                        <label class="option-card" data-value="Controle de pedidos">📦 Controle de pedidos
+                            <input type="checkbox" name="funcionalidades" value="Controle de pedidos" hidden>
+                        </label>
+                        <label class="option-card" data-value="Responsividade para celular">📱 Responsivo
+                            <input type="checkbox" name="funcionalidades" value="Responsividade para celular" hidden>
+                        </label>
+                        <label class="option-card" data-value="Busca">🔎 Busca
+                            <input type="checkbox" name="funcionalidades" value="Busca" hidden>
+                        </label>
+                        <label class="option-card" data-value="Filtros e categorias">🗂️ Filtros e categorias
+                            <input type="checkbox" name="funcionalidades" value="Filtros e categorias" hidden>
+                        </label>
+                        <label class="option-card" data-value="Envio de e-mails">📧 Envio de e-mails
+                            <input type="checkbox" name="funcionalidades" value="Envio de e-mails" hidden>
+                        </label>
+                        <label class="option-card" data-value="Integração com WhatsApp">💬 Integração WhatsApp
+                            <input type="checkbox" name="funcionalidades" value="Integração com WhatsApp" hidden>
+                        </label>
+                        <label class="option-card" data-value="Agendamento">📅 Agendamento
+                            <input type="checkbox" name="funcionalidades" value="Agendamento" hidden>
+                        </label>
+                        <label class="option-card" data-value="Relatórios">📈 Relatórios
+                            <input type="checkbox" name="funcionalidades" value="Relatórios" hidden>
+                        </label>
+                        <label class="option-card" data-value="Gráficos">📊 Gráficos
+                            <input type="checkbox" name="funcionalidades" value="Gráficos" hidden>
+                        </label>
+                        <label class="option-card" data-value="Exportação para Excel/PDF">📥 Exportação Excel/PDF
+                            <input type="checkbox" name="funcionalidades" value="Exportação para Excel/PDF" hidden>
+                        </label>
+                        <label class="option-card" data-value="Notificações">🔔 Notificações
+                            <input type="checkbox" name="funcionalidades" value="Notificações" hidden>
+                        </label>
+                        <label class="option-card" data-value="Inteligência Artificial">🤖 IA
+                            <input type="checkbox" name="funcionalidades" value="Inteligência Artificial" hidden>
+                        </label>
+                        <label class="option-card" data-value="Integração com APIs">🔗 Integração APIs
+                            <input type="checkbox" name="funcionalidades" value="Integração com APIs" hidden>
+                        </label>
+                        <label class="option-card" data-value="Banco de dados">🗄️ Banco de dados
+                            <input type="checkbox" name="funcionalidades" value="Banco de dados" hidden>
+                        </label>
+                        <label class="option-card" data-value="Sistema de autenticação">🔑 Autenticação
+                            <input type="checkbox" name="funcionalidades" value="Sistema de autenticação" hidden>
+                        </label>
+                        <label class="option-card" data-value="Outro">🔧 Outro
+                            <input type="checkbox" name="funcionalidades" value="Outro" hidden>
+                        </label>
                     </div>
                     <div class="form-group">
                         <label for="outraFuncionalidade">Existe alguma funcionalidade específica que você gostaria?</label>
-                        <input type="text" id="outraFuncionalidade" placeholder="Descreva...">
+                        <input type="text" id="outraFuncionalidade" name="outraFuncionalidade" placeholder="Descreva...">
                     </div>
                 </div>
 
@@ -548,22 +592,44 @@
                     <div class="form-group">
                         <label>Qual estilo você prefere?</label>
                         <div class="options-grid" id="estiloDesign">
-                            <label class="option-card" data-value="Moderno">Moderno</label>
-                            <label class="option-card" data-value="Minimalista">Minimalista</label>
-                            <label class="option-card" data-value="Elegante">Elegante</label>
-                            <label class="option-card" data-value="Premium">Premium</label>
-                            <label class="option-card" data-value="Futurista">Futurista</label>
-                            <label class="option-card" data-value="Tecnológico">Tecnológico</label>
-                            <label class="option-card" data-value="Corporativo">Corporativo</label>
-                            <label class="option-card" data-value="Criativo">Criativo</label>
-                            <label class="option-card" data-value="Escuro / Dark">Escuro / Dark</label>
-                            <label class="option-card" data-value="Claro / Clean">Claro / Clean</label>
-                            <label class="option-card" data-value="Não sei, quero que vocês sugiram">Não sei, quero sugestão</label>
+                            <label class="option-card" data-value="Moderno">Moderno
+                                <input type="checkbox" name="estilo" value="Moderno" hidden>
+                            </label>
+                            <label class="option-card" data-value="Minimalista">Minimalista
+                                <input type="checkbox" name="estilo" value="Minimalista" hidden>
+                            </label>
+                            <label class="option-card" data-value="Elegante">Elegante
+                                <input type="checkbox" name="estilo" value="Elegante" hidden>
+                            </label>
+                            <label class="option-card" data-value="Premium">Premium
+                                <input type="checkbox" name="estilo" value="Premium" hidden>
+                            </label>
+                            <label class="option-card" data-value="Futurista">Futurista
+                                <input type="checkbox" name="estilo" value="Futurista" hidden>
+                            </label>
+                            <label class="option-card" data-value="Tecnológico">Tecnológico
+                                <input type="checkbox" name="estilo" value="Tecnológico" hidden>
+                            </label>
+                            <label class="option-card" data-value="Corporativo">Corporativo
+                                <input type="checkbox" name="estilo" value="Corporativo" hidden>
+                            </label>
+                            <label class="option-card" data-value="Criativo">Criativo
+                                <input type="checkbox" name="estilo" value="Criativo" hidden>
+                            </label>
+                            <label class="option-card" data-value="Escuro / Dark">Escuro / Dark
+                                <input type="checkbox" name="estilo" value="Escuro / Dark" hidden>
+                            </label>
+                            <label class="option-card" data-value="Claro / Clean">Claro / Clean
+                                <input type="checkbox" name="estilo" value="Claro / Clean" hidden>
+                            </label>
+                            <label class="option-card" data-value="Não sei, quero que vocês sugiram">Não sei, quero sugestão
+                                <input type="checkbox" name="estilo" value="Não sei, quero que vocês sugiram" hidden>
+                            </label>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="referencia">Possui algum site como referência?</label>
-                        <input type="url" id="referencia" placeholder="https://exemplo.com">
+                        <input type="url" id="referencia" name="referencia" placeholder="https://exemplo.com">
                     </div>
                     <div class="form-group">
                         <label>Possui logotipo, identidade visual ou cores da marca?</label>
@@ -578,7 +644,7 @@
                     </div>
                     <div class="form-group">
                         <label for="cores">Quais cores você gostaria de utilizar?</label>
-                        <input type="text" id="cores" placeholder="Ex: Preto, dourado, azul...">
+                        <input type="text" id="cores" name="cores" placeholder="Ex: Preto, dourado, azul...">
                     </div>
                 </div>
 
@@ -588,12 +654,24 @@
                     <div class="form-group">
                         <label>Quando você gostaria de colocar o projeto no ar?</label>
                         <div class="options-grid" id="prazo">
-                            <label class="option-card" data-value="O quanto antes">O quanto antes</label>
-                            <label class="option-card" data-value="Até 7 dias">Até 7 dias</label>
-                            <label class="option-card" data-value="Até 15 dias">Até 15 dias</label>
-                            <label class="option-card" data-value="Até 30 dias">Até 30 dias</label>
-                            <label class="option-card" data-value="1 a 2 meses">1 a 2 meses</label>
-                            <label class="option-card" data-value="Ainda não tenho prazo">Ainda não tenho prazo</label>
+                            <label class="option-card" data-value="O quanto antes">O quanto antes
+                                <input type="checkbox" name="prazo" value="O quanto antes" hidden>
+                            </label>
+                            <label class="option-card" data-value="Até 7 dias">Até 7 dias
+                                <input type="checkbox" name="prazo" value="Até 7 dias" hidden>
+                            </label>
+                            <label class="option-card" data-value="Até 15 dias">Até 15 dias
+                                <input type="checkbox" name="prazo" value="Até 15 dias" hidden>
+                            </label>
+                            <label class="option-card" data-value="Até 30 dias">Até 30 dias
+                                <input type="checkbox" name="prazo" value="Até 30 dias" hidden>
+                            </label>
+                            <label class="option-card" data-value="1 a 2 meses">1 a 2 meses
+                                <input type="checkbox" name="prazo" value="1 a 2 meses" hidden>
+                            </label>
+                            <label class="option-card" data-value="Ainda não tenho prazo">Ainda não tenho prazo
+                                <input type="checkbox" name="prazo" value="Ainda não tenho prazo" hidden>
+                            </label>
                         </div>
                     </div>
                     <div class="form-group">
@@ -615,14 +693,30 @@
                     <div class="form-group">
                         <label>Já possui algum material para o projeto?</label>
                         <div class="options-grid" id="materiais">
-                            <label class="option-card" data-value="Logo">Logo</label>
-                            <label class="option-card" data-value="Fotos">Fotos</label>
-                            <label class="option-card" data-value="Textos">Textos</label>
-                            <label class="option-card" data-value="Vídeos">Vídeos</label>
-                            <label class="option-card" data-value="Produtos">Produtos</label>
-                            <label class="option-card" data-value="Dados">Dados</label>
-                            <label class="option-card" data-value="Nenhum">Nenhum</label>
-                            <label class="option-card" data-value="Outros">Outros</label>
+                            <label class="option-card" data-value="Logo">Logo
+                                <input type="checkbox" name="materiais" value="Logo" hidden>
+                            </label>
+                            <label class="option-card" data-value="Fotos">Fotos
+                                <input type="checkbox" name="materiais" value="Fotos" hidden>
+                            </label>
+                            <label class="option-card" data-value="Textos">Textos
+                                <input type="checkbox" name="materiais" value="Textos" hidden>
+                            </label>
+                            <label class="option-card" data-value="Vídeos">Vídeos
+                                <input type="checkbox" name="materiais" value="Vídeos" hidden>
+                            </label>
+                            <label class="option-card" data-value="Produtos">Produtos
+                                <input type="checkbox" name="materiais" value="Produtos" hidden>
+                            </label>
+                            <label class="option-card" data-value="Dados">Dados
+                                <input type="checkbox" name="materiais" value="Dados" hidden>
+                            </label>
+                            <label class="option-card" data-value="Nenhum">Nenhum
+                                <input type="checkbox" name="materiais" value="Nenhum" hidden>
+                            </label>
+                            <label class="option-card" data-value="Outros">Outros
+                                <input type="checkbox" name="materiais" value="Outros" hidden>
+                            </label>
                         </div>
                     </div>
                 </div>
@@ -631,17 +725,31 @@
                 <div class="form-step" data-step="8">
                     <h3>Qual faixa de investimento você imagina para esse projeto?</h3>
                     <div class="options-grid" id="investimento">
-                        <label class="option-card" data-value="Até R$ 500">Até R$ 500</label>
-                        <label class="option-card" data-value="R$ 500 – R$ 1.000">R$ 500 – R$ 1.000</label>
-                        <label class="option-card" data-value="R$ 1.000 – R$ 2.500">R$ 1.000 – R$ 2.500</label>
-                        <label class="option-card" data-value="R$ 2.500 – R$ 5.000">R$ 2.500 – R$ 5.000</label>
-                        <label class="option-card" data-value="R$ 5.000 – R$ 10.000">R$ 5.000 – R$ 10.000</label>
-                        <label class="option-card" data-value="Acima de R$ 10.000">Acima de R$ 10.000</label>
-                        <label class="option-card" data-value="Ainda não sei">Ainda não sei</label>
+                        <label class="option-card" data-value="Até R$ 500">Até R$ 500
+                            <input type="checkbox" name="investimento" value="Até R$ 500" hidden>
+                        </label>
+                        <label class="option-card" data-value="R$ 500 – R$ 1.000">R$ 500 – R$ 1.000
+                            <input type="checkbox" name="investimento" value="R$ 500 – R$ 1.000" hidden>
+                        </label>
+                        <label class="option-card" data-value="R$ 1.000 – R$ 2.500">R$ 1.000 – R$ 2.500
+                            <input type="checkbox" name="investimento" value="R$ 1.000 – R$ 2.500" hidden>
+                        </label>
+                        <label class="option-card" data-value="R$ 2.500 – R$ 5.000">R$ 2.500 – R$ 5.000
+                            <input type="checkbox" name="investimento" value="R$ 2.500 – R$ 5.000" hidden>
+                        </label>
+                        <label class="option-card" data-value="R$ 5.000 – R$ 10.000">R$ 5.000 – R$ 10.000
+                            <input type="checkbox" name="investimento" value="R$ 5.000 – R$ 10.000" hidden>
+                        </label>
+                        <label class="option-card" data-value="Acima de R$ 10.000">Acima de R$ 10.000
+                            <input type="checkbox" name="investimento" value="Acima de R$ 10.000" hidden>
+                        </label>
+                        <label class="option-card" data-value="Ainda não sei">Ainda não sei
+                            <input type="checkbox" name="investimento" value="Ainda não sei" hidden>
+                        </label>
                     </div>
                     <div class="form-group">
                         <label for="observacoes">Existe alguma informação importante que não perguntamos?</label>
-                        <textarea id="observacoes" rows="4" placeholder="Compartilhe qualquer detalhe adicional..."></textarea>
+                        <textarea id="observacoes" name="observacoes" rows="4" placeholder="Compartilhe qualquer detalhe adicional..."></textarea>
                     </div>
                 </div>
 
@@ -651,9 +759,9 @@
                     <div id="reviewContent" class="review-content">
                         <!-- Preenchido via JS -->
                     </div>
-                    <button type="button" class="btn btn-primary btn-enviar" id="enviarWhatsApp">
-                        <i class="fab fa-whatsapp"></i> ENVIAR BRIEFING PELO WHATSAPP
-                    </button>
+                    <button type="button" class="btn btn-primary btn-enviar" id="enviarNetlify">
+    <i class="fas fa-paper-plane"></i> ENVIAR BRIEFING
+</button>
                 </div>
 
                 <!-- NAVEGAÇÃO -->
@@ -665,6 +773,42 @@
                         Continuar <i class="fas fa-arrow-right"></i>
                     </button>
                 </div>
+            </form>
+
+            <!-- ===== FORMULÁRIO OCULTO PARA DETECÇÃO DO NETLIFY ===== -->
+            <form
+                name="briefing"
+                data-netlify="true"
+                netlify-honeypot="bot-field"
+                hidden
+            >
+                <input type="hidden" name="form-name" value="briefing" />
+                <input type="hidden" name="bot-field" />
+                <!-- Todos os campos que serão enviados -->
+                <input type="hidden" name="nome" />
+                <input type="hidden" name="email" />
+                <input type="hidden" name="whatsapp" />
+                <input type="hidden" name="empresa" />
+                <input type="hidden" name="instagram" />
+                <input type="hidden" name="tipo" />
+                <input type="hidden" name="outroProjeto" />
+                <input type="hidden" name="descricao" />
+                <input type="hidden" name="possuiSite" />
+                <input type="hidden" name="siteAtual" />
+                <input type="hidden" name="objetivo" />
+                <input type="hidden" name="outroObjetivo" />
+                <input type="hidden" name="funcionalidades" />
+                <input type="hidden" name="outraFuncionalidade" />
+                <input type="hidden" name="estilo" />
+                <input type="hidden" name="referencia" />
+                <input type="hidden" name="possuiIdentidade" />
+                <input type="hidden" name="cores" />
+                <input type="hidden" name="prazo" />
+                <input type="hidden" name="dominio" />
+                <input type="hidden" name="hospedagem" />
+                <input type="hidden" name="materiais" />
+                <input type="hidden" name="investimento" />
+                <input type="hidden" name="observacoes" />
             </form>
         </div>
     </div>

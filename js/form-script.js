@@ -1,5 +1,5 @@
 // ============================================================
-// FORMULÁRIO DE BRIEFING - DEV RUBY
+// FORMULÁRIO DE BRIEFING - DEV RUBY (APENAS NETLIFY FORMS)
 // ============================================================
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const btnContinuar = document.getElementById('btnContinuar');
     const form = document.getElementById('briefingForm');
     const reviewContent = document.getElementById('reviewContent');
-    const btnEnviar = document.getElementById('enviarWhatsApp');
+    const btnEnviar = document.getElementById('enviarNetlify'); // ID alterado
 
     let currentStep = 0;
     const totalSteps = steps.length; // inclui a revisão
@@ -30,7 +30,6 @@ document.addEventListener('DOMContentLoaded', function() {
                         checkbox.checked = !checkbox.checked;
                         this.classList.toggle('selected', checkbox.checked);
                     } else {
-                        // Para seleção única (estilo, prazo, investimento)
                         const parent = this.closest('.options-grid');
                         parent.querySelectorAll('.option-card').forEach(c => c.classList.remove('selected'));
                         this.classList.add('selected');
@@ -55,8 +54,8 @@ document.addEventListener('DOMContentLoaded', function() {
         btnContinuar.addEventListener('click', nextStep);
         btnVoltar.addEventListener('click', prevStep);
 
-        // Envio
-        btnEnviar.addEventListener('click', enviarBriefing);
+        // Envio (agora apenas Netlify)
+        btnEnviar.addEventListener('click', enviarParaNetlify);
 
         // Teclado
         document.addEventListener('keydown', function(e) {
@@ -65,18 +64,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA') {
                     e.preventDefault();
                     if (currentStep === totalSteps - 1) {
-                        enviarBriefing();
+                        enviarParaNetlify();
                     } else {
                         nextStep();
                     }
                 }
             }
-            if (e.key === 'Escape') {
-                // Fechar modal se houver
-            }
         });
 
-        // Mostrar primeira etapa
         showStep(0);
     }
 
@@ -88,7 +83,6 @@ document.addEventListener('DOMContentLoaded', function() {
             step.classList.toggle('active', i === index);
         });
 
-        // Atualizar indicadores
         const indicators = document.querySelectorAll('.step-indicator');
         indicators.forEach((ind, i) => {
             ind.classList.remove('active', 'done');
@@ -96,12 +90,10 @@ document.addEventListener('DOMContentLoaded', function() {
             else if (i < index) ind.classList.add('done');
         });
 
-        // Progresso
         const progress = ((index + 1) / totalSteps) * 100;
         progressFill.style.width = Math.min(progress, 100) + '%';
         stepCounter.textContent = (index + 1) + ' de ' + totalSteps;
 
-        // Botões
         btnVoltar.style.display = index === 0 ? 'none' : 'inline-flex';
         if (index === totalSteps - 1) {
             btnContinuar.style.display = 'none';
@@ -112,7 +104,6 @@ document.addEventListener('DOMContentLoaded', function() {
             btnEnviar.style.display = 'none';
         }
 
-        // Scroll para o topo do formulário
         document.getElementById('briefingContainer').scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 
@@ -157,7 +148,7 @@ document.addEventListener('DOMContentLoaded', function() {
         data.dominio = document.querySelector('input[name="dominio"]:checked')?.value || '';
         data.hospedagem = document.querySelector('input[name="hospedagem"]:checked')?.value || '';
 
-        // Multi-select (cards com checkbox)
+        // Multi-select
         data.tipoProjeto = getSelectedValues('tipoProjeto', 'tipo');
         data.objetivo = getSelectedValues('objetivoProjeto', 'objetivo');
         data.funcionalidades = getSelectedValues('funcionalidades', null);
@@ -179,7 +170,6 @@ document.addEventListener('DOMContentLoaded', function() {
             if (checkbox) {
                 values.push(checkbox.value);
             } else {
-                // Para seleção única (estilo, prazo, investimento)
                 values.push(card.dataset.value || card.textContent.trim());
             }
         });
@@ -245,109 +235,102 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // ============================================================
-    // ENVIO PARA WHATSAPP
+    // ENVIO EXCLUSIVO PARA NETLIFY
     // ============================================================
-    function enviarBriefing() {
+    function enviarParaNetlify() {
         const data = getFormData();
 
-        // Montar mensagem
-        let msg = '🚀 NOVO BRIEFING DE PROJETO\n\n';
-        msg += 'Olá! Vim através do site e gostaria de solicitar um orçamento.\n\n';
+        // Montar FormData
+        const formData = new FormData();
+        formData.append('form-name', 'briefing');
+        formData.append('nome', data.nome);
+        formData.append('email', data.email);
+        formData.append('whatsapp', data.whatsapp);
+        formData.append('empresa', data.empresa);
+        formData.append('instagram', data.instagram);
+        formData.append('descricao', data.descricao);
+        formData.append('siteAtual', data.siteAtual);
+        formData.append('outroProjeto', data.outroProjeto);
+        formData.append('outroObjetivo', data.outroObjetivo);
+        formData.append('outraFuncionalidade', data.outraFuncionalidade);
+        formData.append('referencia', data.referencia);
+        formData.append('cores', data.cores);
+        formData.append('observacoes', data.observacoes);
+        formData.append('possuiSite', data.possuiSite);
+        formData.append('possuiIdentidade', data.possuiIdentidade);
+        formData.append('dominio', data.dominio);
+        formData.append('hospedagem', data.hospedagem);
+        formData.append('tipoProjeto', data.tipoProjeto.join(', '));
+        formData.append('objetivo', data.objetivo.join(', '));
+        formData.append('funcionalidades', data.funcionalidades.join(', '));
+        formData.append('estiloDesign', data.estiloDesign.join(', '));
+        formData.append('prazo', data.prazo.join(', '));
+        formData.append('materiais', data.materiais.join(', '));
+        formData.append('investimento', data.investimento.join(', '));
 
-        // Seção Dados
-        msg += '━━━━━━━━━━━━━━━━━━\n';
-        msg += '👤 DADOS DO CLIENTE\n';
-        msg += '━━━━━━━━━━━━━━━━━━\n';
-        if (data.nome) msg += `Nome: ${data.nome}\n`;
-        if (data.email) msg += `E-mail: ${data.email}\n`;
-        if (data.whatsapp) msg += `WhatsApp: ${data.whatsapp}\n`;
-        if (data.empresa) msg += `Empresa: ${data.empresa}\n`;
-        if (data.instagram) msg += `Instagram: ${data.instagram}\n`;
-        msg += '\n';
+        // Feedback visual
+        btnEnviar.disabled = true;
+        btnEnviar.innerHTML = '<i class="fas fa-spinner fa-spin"></i> ENVIANDO...';
 
-        // Projeto
-        msg += '━━━━━━━━━━━━━━━━━━\n';
-        msg += '💻 PROJETO\n';
-        msg += '━━━━━━━━━━━━━━━━━━\n';
-        const tipos = data.tipoProjeto.join(', ');
-        if (tipos) msg += `Tipo de projeto: ${tipos}\n`;
-        if (data.outroProjeto) msg += `Outro: ${data.outroProjeto}\n`;
-        if (data.descricao) msg += `Descrição: ${data.descricao}\n`;
-        if (data.possuiSite) msg += `Possui site: ${data.possuiSite}\n`;
-        if (data.siteAtual) msg += `Site atual: ${data.siteAtual}\n`;
-        const objetivos = data.objetivo.join(', ');
-        if (objetivos) msg += `Objetivo: ${objetivos}\n`;
-        if (data.outroObjetivo) msg += `Outro objetivo: ${data.outroObjetivo}\n`;
-        msg += '\n';
+        // Enviar para Netlify
+        fetch('/', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => {
+            if (response.ok) {
+                // Sucesso: redirecionar para página de agradecimento ou mostrar mensagem
+                // Opção 1: redirecionar para uma página de sucesso (crie uma página /obrigado.html)
+                // window.location.href = '/obrigado';
+                // Opção 2: mostrar mensagem no próprio formulário
+                mostrarMensagemSucesso();
+            } else {
+                throw new Error('Falha no envio: ' + response.status);
+            }
+        })
+        .catch(error => {
+            console.error('Erro:', error);
+            mostrarMensagemErro(error.message);
+        })
+        .finally(() => {
+            btnEnviar.disabled = false;
+            btnEnviar.innerHTML = '<i class="fas fa-paper-plane"></i> ENVIAR BRIEFING';
+        });
+    }
 
-        // Funcionalidades
-        const funcs = data.funcionalidades.join(', ');
-        if (funcs || data.outraFuncionalidade) {
-            msg += '━━━━━━━━━━━━━━━━━━\n';
-            msg += '⚙️ FUNCIONALIDADES\n';
-            msg += '━━━━━━━━━━━━━━━━━━\n';
-            if (funcs) msg += `${funcs}\n`;
-            if (data.outraFuncionalidade) msg += `Outra: ${data.outraFuncionalidade}\n`;
-            msg += '\n';
-        }
+    // ============================================================
+    // MENSAGENS DE FEEDBACK
+    // ============================================================
+    function mostrarMensagemSucesso() {
+        // Substituir o conteúdo da revisão por uma mensagem de sucesso
+        reviewContent.innerHTML = `
+            <div style="text-align: center; padding: 40px 20px;">
+                <i class="fas fa-check-circle" style="font-size: 4rem; color: #4ade80; margin-bottom: 20px;"></i>
+                <h3 style="font-family: var(--font-title); font-size: 1.8rem;">Briefing enviado com sucesso!</h3>
+                <p style="color: var(--text-secondary); margin-top: 8px;">Agradecemos pelo seu contato. Em breve entraremos em contato.</p>
+                <button onclick="location.reload()" class="btn btn-secondary" style="margin-top: 24px;">
+                    <i class="fas fa-plus"></i> NOVO BRIEFING
+                </button>
+            </div>
+        `;
+        // Ocultar o botão de envio
+        btnEnviar.style.display = 'none';
+    }
 
-        // Design
-        const estilos = data.estiloDesign.join(', ');
-        if (estilos || data.referencia || data.cores) {
-            msg += '━━━━━━━━━━━━━━━━━━\n';
-            msg += '🎨 DESIGN\n';
-            msg += '━━━━━━━━━━━━━━━━━━\n';
-            if (estilos) msg += `Estilo: ${estilos}\n`;
-            if (data.referencia) msg += `Referência: ${data.referencia}\n`;
-            if (data.possuiIdentidade) msg += `Possui identidade: ${data.possuiIdentidade}\n`;
-            if (data.cores) msg += `Cores: ${data.cores}\n`;
-            msg += '\n';
-        }
-
-        // Prazo e infra
-        const prazos = data.prazo.join(', ');
-        if (prazos || data.dominio || data.hospedagem) {
-            msg += '━━━━━━━━━━━━━━━━━━\n';
-            msg += '📅 PRAZO E INFRA\n';
-            msg += '━━━━━━━━━━━━━━━━━━\n';
-            if (prazos) msg += `Prazo: ${prazos}\n`;
-            if (data.dominio) msg += `Domínio: ${data.dominio}\n`;
-            if (data.hospedagem) msg += `Hospedagem: ${data.hospedagem}\n`;
-            msg += '\n';
-        }
-
-        // Materiais
-        const mats = data.materiais.join(', ');
-        if (mats) {
-            msg += '━━━━━━━━━━━━━━━━━━\n';
-            msg += '📎 MATERIAIS\n';
-            msg += '━━━━━━━━━━━━━━━━━━\n';
-            msg += `${mats}\n\n`;
-        }
-
-        // Investimento
-        const inv = data.investimento.join(', ');
-        if (inv) {
-            msg += '━━━━━━━━━━━━━━━━━━\n';
-            msg += '💰 INVESTIMENTO\n';
-            msg += '━━━━━━━━━━━━━━━━━━\n';
-            msg += `Faixa: ${inv}\n\n`;
-        }
-
-        // Observações
-        if (data.observacoes) {
-            msg += '━━━━━━━━━━━━━━━━━━\n';
-            msg += '📝 OBSERVAÇÕES\n';
-            msg += '━━━━━━━━━━━━━━━━━━\n';
-            msg += `${data.observacoes}\n\n`;
-        }
-
-        msg += '━━━━━━━━━━━━━━━━━━\n';
-        msg += 'Aguardo o contato para conversarmos sobre o projeto. 🚀';
-
-        // Codificar e abrir WhatsApp
-        const url = 'https://wa.me/5511974793895?text=' + encodeURIComponent(msg);
-        window.open(url, '_blank');
+    function mostrarMensagemErro(mensagem) {
+        // Exibir erro sem recarregar a página
+        reviewContent.innerHTML = `
+            <div style="text-align: center; padding: 40px 20px;">
+                <i class="fas fa-exclamation-circle" style="font-size: 4rem; color: #f87171; margin-bottom: 20px;"></i>
+                <h3 style="font-family: var(--font-title); font-size: 1.8rem;">Ops! Algo deu errado.</h3>
+                <p style="color: var(--text-secondary); margin-top: 8px;">Não foi possível enviar seu briefing. Tente novamente ou entre em contato diretamente.</p>
+                <p style="color: var(--text-secondary); font-size: 0.85rem; margin-top: 8px;">Detalhe técnico: ${mensagem}</p>
+                <button onclick="location.reload()" class="btn btn-primary" style="margin-top: 24px;">
+                    <i class="fas fa-redo"></i> TENTAR NOVAMENTE
+                </button>
+            </div>
+        `;
+        btnEnviar.style.display = 'none';
     }
 
     // ============================================================
