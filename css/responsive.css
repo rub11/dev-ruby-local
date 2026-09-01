@@ -136,9 +136,13 @@
 }
 
 /* ============================================================= */
-/* ===== MOBILE — 768px ===== */
+/* ============================================================ */
+/* RESPONSIVO — ATÉ 768px                                       */
+/* ============================================================ */
+
 @media (max-width: 768px) {
-    /* ---- HEADER ---- */
+
+    /* ---------- HEADER ---------- */
     .header-container {
         flex-wrap: wrap;
     }
@@ -173,7 +177,8 @@
         display: none;
     }
 
-    /* ---- HERO — NOVA ESTRUTURA ---- */
+
+    /* ---------- HERO ---------- */
     .hero {
         display: flex;
         flex-direction: column;
@@ -188,7 +193,7 @@
         align-items: center;
         text-align: center;
         width: 100%;
-        order: 1; /* será o primeiro bloco */
+        order: 1;
     }
 
     .hero-content {
@@ -214,14 +219,14 @@
         margin-bottom: 16px;
     }
 
-    /* ---- BOTÕES ---- */
+    /* --- Botões --- */
     .hero-buttons {
         flex-direction: column;
         gap: 12px;
         align-items: stretch;
         width: 100%;
         max-width: 320px;
-        margin: 0 auto 24px; /* espaço abaixo dos botões */
+        margin: 0 auto 24px;
     }
 
     .hero-buttons .btn {
@@ -232,20 +237,20 @@
         border-radius: 8px;
     }
 
-    /* ---- ORBITAL (depois dos botões) ---- */
+    /* --- Orbital --- */
     .hero-visual {
         order: 2;
         width: 100%;
         display: flex;
         justify-content: center;
-        margin: 12px 0 20px; /* espaço acima e abaixo */
+        margin: 12px 0 20px;
         min-height: 160px;
     }
 
     .orbital-system {
         width: 200px;
         height: 200px;
-        overflow: hidden; /* EVITA QUE ELEMENTOS ABSOLUTOS TRANSBORDEM E COBRAM BOTÕES */
+        overflow: hidden;
         position: relative;
     }
 
@@ -258,9 +263,18 @@
         font-size: 0.75rem;
     }
 
-    .orbit-ring:nth-child(1) { width: 130px; height: 130px; }
-    .orbit-ring:nth-child(2) { width: 170px; height: 170px; }
-    .orbit-ring:nth-child(3) { width: 210px; height: 210px; }
+    .orbit-ring:nth-child(1) {
+        width: 130px;
+        height: 130px;
+    }
+    .orbit-ring:nth-child(2) {
+        width: 170px;
+        height: 170px;
+    }
+    .orbit-ring:nth-child(3) {
+        width: 210px;
+        height: 210px;
+    }
 
     .orbit-item {
         font-size: 0.5rem;
@@ -269,7 +283,7 @@
         border: 1px solid rgba(255, 255, 255, 0.05);
     }
 
-    /* ---- ESTATÍSTICAS (depois do orbital) ---- */
+    /* --- Estatísticas --- */
     .hero-stats {
         order: 3;
         display: grid;
@@ -293,7 +307,6 @@
         font-size: 1.6rem;
         display: block;
     }
-
     .stat-number::after {
         font-size: 1.1rem;
     }
@@ -311,7 +324,8 @@
         display: none;
     }
 
-    /* ---- DEMAIS SEÇÕES ---- */
+
+    /* ---------- TECNOLOGIAS ---------- */
     .tech-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 12px;
@@ -320,11 +334,12 @@
     .tech-card {
         padding: 16px 10px;
     }
-
     .tech-card i {
         font-size: 1.8rem;
     }
 
+
+    /* ---------- PROJETOS ---------- */
     .projetos-toolbar {
         flex-direction: column;
         align-items: stretch;
@@ -344,7 +359,6 @@
     .busca {
         width: 100%;
     }
-
     .busca input {
         width: 100%;
     }
@@ -358,6 +372,7 @@
         height: 180px;
     }
 
+    /* --- Destaque (carrossel, se existir) --- */
     .projeto-destaque {
         grid-template-columns: 1fr;
         border-radius: 12px;
@@ -370,11 +385,12 @@
     .destaque-info {
         padding: 24px 20px;
     }
-
     .destaque-info h3 {
         font-size: 1.4rem;
     }
 
+
+    /* ---------- ESTATÍSTICAS (seção) ---------- */
     .stats-grid {
         grid-template-columns: 1fr 1fr;
         gap: 12px;
@@ -391,6 +407,8 @@
         font-size: 1.4rem;
     }
 
+
+    /* ---------- PROCESSO ---------- */
     .processo-steps {
         flex-direction: column;
         gap: 4px;
@@ -413,11 +431,15 @@
         font-size: 1.6rem;
     }
 
+
+    /* ---------- CONTATO ---------- */
     .contato-buttons .btn {
         flex: 1 1 100%;
         justify-content: center;
     }
 
+
+    /* ---------- FOOTER ---------- */
     .footer-content {
         flex-direction: column;
         align-items: center;
@@ -437,6 +459,8 @@
         font-size: 0.65rem;
     }
 
+
+    /* ---------- MODAL ---------- */
     .modal {
         padding: 20px;
         margin: 16px;
@@ -447,6 +471,8 @@
         font-size: 1.4rem;
     }
 
+
+    /* ---------- SOBRE ---------- */
     .sobre-text h2 {
         font-size: 1.6rem;
     }
@@ -456,14 +482,27 @@
         padding: 16px;
     }
 
-    /* ---- PRELOADER ---- */
+
+    /* ---------- PRELOADER ---------- */
     .hud {
         font-size: 0.5rem;
     }
-    .hud-tl { top: 12px; left: 12px; }
-    .hud-tr { top: 12px; right: 12px; }
-    .hud-bl { bottom: 12px; left: 12px; }
-    .hud-br { bottom: 12px; right: 12px; }
+    .hud-tl {
+        top: 12px;
+        left: 12px;
+    }
+    .hud-tr {
+        top: 12px;
+        right: 12px;
+    }
+    .hud-bl {
+        bottom: 12px;
+        left: 12px;
+    }
+    .hud-br {
+        bottom: 12px;
+        right: 12px;
+    }
 
     .preloader-logo {
         gap: 12px;
@@ -494,7 +533,8 @@
     .preloader-ready .ready-sub {
         font-size: 0.7rem;
     }
-}
+
+} /* fim @media */
 
 /* ===== 576px ===== */
 @media (max-width: 576px) {

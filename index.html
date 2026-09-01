@@ -211,37 +211,36 @@
             </div>
         </section>
 
-        <!-- ===== PROJETOS ===== -->
-        <section id="projetos" class="projetos section">
-            <div class="container">
-                <div class="section-label">// PROJETOS</div>
-                <h2 class="section-title">PROJETOS QUE GANHARAM VIDA.</h2>
-                <p class="section-sub">Explore alguns dos projetos que desenvolvi.</p>
-                
-                <div class="projetos-toolbar">
-                    <div class="filtros" id="filtros">
-                        <button class="filtro-btn active" data-filter="todos">TODOS</button>
-                        <button class="filtro-btn" data-filter="website">WEBSITES</button>
-                        <button class="filtro-btn" data-filter="sistema">SISTEMAS</button>
-                        <button class="filtro-btn" data-filter="dashboard">DASHBOARDS</button>
-                        <button class="filtro-btn" data-filter="landing">LANDING PAGES</button>
-                        <button class="filtro-btn" data-filter="experimento">EXPERIMENTOS</button>
-                    </div>
-                    <div class="busca">
-                        <i class="fas fa-search"></i>
-                        <input type="text" id="buscaInput" placeholder="Pesquisar projetos..." aria-label="Pesquisar projetos">
-                    </div>
-                </div>
+       <!-- ===== PROJETOS ===== -->
+<section id="projetos" class="projetos section">
+    <div class="container">
+        <div class="section-label">// PROJETOS</div>
+        <h2 class="section-title">PROJETOS QUE GANHARAM VIDA.</h2>
+        <p class="section-sub">Explore alguns dos projetos que desenvolvi.</p>
+        
+        <!-- FILTROS POR GÊNERO (NOVO) -->
+        <div class="filtros-genero" id="filtrosGenero">
+            <!-- Os botões serão gerados pelo JS -->
+        </div>
 
-                <div class="projeto-destaque" id="projetoDestaque">
-                    <!-- Gerado via JS -->
-                </div>
+     <div class="projetos-toolbar">
+    <!-- FILTROS POR GÊNERO (gerados pelo JS) -->
+    <div class="filtros-genero" id="filtrosGenero">
+        <!-- Os botões serão gerados automaticamente -->
+    </div>
+    <div class="busca">
+        <i class="fas fa-search"></i>
+        <input type="text" id="buscaInput" placeholder="Pesquisar projetos..." aria-label="Pesquisar projetos">
+    </div>
+</div>
 
-                <div class="projetos-grid" id="projetosGrid">
-                    <!-- Gerado via JS -->
-                </div>
-            </div>
-        </section>
+        <!-- REMOVIDO: <div class="projeto-destaque" id="projetoDestaque"> -->
+
+        <div class="projetos-grid" id="projetosGrid">
+            <!-- Gerado via JS -->
+        </div>
+    </div>
+</section>
 
         <!-- ===== ESTATÍSTICAS ===== -->
         <section id="estatisticas" class="estatisticas section">
@@ -858,7 +857,9 @@
     <!-- ========================================================= -->
     <!-- SCRIPTS                                                  -->
     <!-- ========================================================= -->
-   <script src="js/projects.js"></script>
+
+<script src="js/projects.js"></script>
+<script src="js/filtros-genero.js"></script>   <!-- NOVO: caminho corrigido -->
 <script src="js/animations.js"></script>
 <script src="js/main.js"></script>
 <script src="js/form-script.js"></script>
