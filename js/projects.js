@@ -111,7 +111,41 @@ const projectsData = [
         status: "online",
         url: "https://rub11.github.io/NOVAERA-AGENCIA-01/",
         github: "https://github.com/rub11/NOVAERA-AGENCIA-01"
-    }
+    },
+    {
+    title: "Sistema Financeiro Premium",
+    category: "landing",
+    genero: "financeiro",
+    description: "Landing page moderna e sofisticada para apresentação de plataforma financeira, com foco em controle financeiro, organização, análise de dados e gestão inteligente.",
+    image: "img/aureum-01.png",
+    technologies: ["HTML5", "CSS3", "JavaScript"],
+    status: "online",
+    url: "https://rub11.github.io/financeiro-modelo-01-devruby/",
+    github: "https://github.com/rub11/financeiro-modelo-01-devruby/"
+},
+{
+    title: "Sistema Financeiro Premium",
+    category: "landing",
+    genero: "financeiro",
+    description: "Landing page financeira premium com visual moderno e sofisticado, desenvolvida para apresentar uma plataforma de controle, organização e inteligência financeira.",
+    image: "img/financeiro-02.png",
+    technologies: ["HTML5", "CSS3", "JavaScript"],
+    status: "online",
+    url: "https://rub11.github.io/financeiro-02/",
+    github: "https://github.com/rub11/financeiro-02/"
+},
+{
+    title: "Orion — Tutor Financeiro",
+    category: "landing",
+    genero: "financeiro",
+    description: "Landing page premium para um tutor financeiro inteligente, criada para apresentar uma solução de organização financeira, planejamento de metas, análises e recomendações personalizadas.",
+    image: "img/financeiro-03.png",
+    technologies: ["HTML5", "CSS3", "JavaScript"],
+    status: "online",
+    url: "https://rub11.github.io/dev-rubyy-modelo-financeiro-03/",
+    github: "https://github.com/rub11/dev-rubyy-modelo-financeiro-03/"
+},
+
 ];
 
 // Projeto em destaque (índice do array) — não usado mais, mas mantido
