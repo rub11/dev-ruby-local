@@ -780,3 +780,39 @@
         font-size: 1.4rem;
     }
 }
+/* Ícones responsivos */
+@media (max-width: 768px) {
+    .desafio-icon {
+        width: 52px;
+        height: 52px;
+    }
+    .desafio-icon i {
+        font-size: 1.8rem;
+    }
+    .servico-icon {
+        width: 44px;
+        height: 44px;
+    }
+    .servico-icon i {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .desafio-icon {
+        width: 44px;
+        height: 44px;
+        border-radius: 10px;
+    }
+    .desafio-icon i {
+        font-size: 1.4rem;
+    }
+    .servico-icon {
+        width: 38px;
+        height: 38px;
+        border-radius: 8px;
+    }
+    .servico-icon i {
+        font-size: 1.2rem;
+    }
+}
