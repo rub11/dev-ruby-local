@@ -146,6 +146,12 @@ const projectsData = [
     github: "https://github.com/rub11/dev-rubyy-modelo-financeiro-03/"
 },
 
+{
+
+    title: "Gestão Financeira",
+    category: "ladding",
+    genero:
+}
 ];
 
 // Projeto em destaque (índice do array) — não usado mais, mas mantido
