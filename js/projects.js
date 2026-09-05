@@ -150,7 +150,8 @@ const projectsData = [
 
     title: "Gestão Financeira",
     category: "ladding",
-    genero:
+    genero: "Financeiro", 
+    
 }
 ];
 
