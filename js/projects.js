@@ -145,6 +145,17 @@ const projectsData = [
     url: "https://rub11.github.io/dev-rubyy-modelo-financeiro-03/",
     github: "https://github.com/rub11/dev-rubyy-modelo-financeiro-03/"
 },
+{
+    title: "VITALIS — Saúde e Cuidado",
+    category: "landing",
+    genero: "saude",
+    description: "Landing page premium para uma clínica de saúde moderna, criada para apresentar especialidades, profissionais, estrutura, atendimento e agendamento de consultas.",
+    image: "img/vitalis.png",
+    technologies: ["HTML5", "CSS3", "JavaScript"],
+    status: "online",
+    url: "https://rub11.github.io/VITALIS/",
+    github: "https://github.com/rub11/VITALIS/"
+},
 
 
 ];
