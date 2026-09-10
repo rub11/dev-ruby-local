@@ -3361,3 +3361,2365 @@ img { max-width: 100%; display: block; }
     font-size: 0.85rem;
   }
 }
+/* ============================================================ */
+/* 23. PLANOS / PREÇOS                                          */
+/* ============================================================ */
+
+.planos {
+    background: var(--bg-primary);
+    position: relative;
+    overflow: hidden;
+}
+
+.planos::before {
+    content: '';
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 900px;
+    height: 900px;
+    background: radial-gradient(circle, rgba(179, 0, 0, 0.06) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.planos .container {
+    position: relative;
+    z-index: 1;
+}
+
+.planos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 40px;
+    align-items: stretch;
+}
+
+/* ---------- CARD BASE ---------- */
+.plano-card {
+    background: linear-gradient(180deg, rgba(255,255,255,0.035) 0%, rgba(255,255,255,0.015) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 18px;
+    padding: 32px 26px 28px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    overflow: hidden;
+}
+
+.plano-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(179, 0, 0, 0.4), transparent);
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+
+.plano-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(255, 255, 255, 0.12);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+}
+
+.plano-card:hover::before {
+    opacity: 1;
+}
+
+.plano-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    background: rgba(179, 0, 0, 0.08);
+    border: 1px solid rgba(179, 0, 0, 0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+    transition: all 0.4s;
+}
+
+.plano-icon i {
+    font-size: 1.5rem;
+    color: var(--red-bright);
+    transition: all 0.4s;
+}
+
+.plano-card:hover .plano-icon {
+    background: rgba(179, 0, 0, 0.15);
+    border-color: rgba(179, 0, 0, 0.3);
+    box-shadow: 0 0 30px rgba(179, 0, 0, 0.15);
+}
+
+.plano-card:hover .plano-icon i {
+    transform: scale(1.1);
+    text-shadow: 0 0 25px rgba(255, 51, 51, 0.4);
+}
+
+.plano-name {
+    font-family: var(--font-title);
+    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    margin-bottom: 6px;
+}
+
+.plano-position {
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin-bottom: 20px;
+    min-height: 2.4em;
+}
+
+.plano-price {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+    margin-bottom: 16px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.plano-currency {
+    font-family: var(--font-title);
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    align-self: flex-start;
+    margin-top: 8px;
+}
+
+.plano-value {
+    font-family: var(--font-title);
+    font-weight: 700;
+    font-size: 3.2rem;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    color: var(--text-primary);
+}
+
+.plano-cents {
+    font-family: var(--font-title);
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.plano-period {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-left: 4px;
+}
+
+.plano-desc {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.plano-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    flex: 1;
+}
+
+.plano-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    line-height: 1.4;
+}
+
+.plano-features li i {
+    color: var(--red-bright);
+    font-size: 0.75rem;
+    margin-top: 4px;
+    flex-shrink: 0;
+}
+
+.plano-cta {
+    width: 100%;
+    justify-content: center;
+    margin-top: auto;
+}
+
+/* ---------- START / PROFISSIONAL ---------- */
+.plano-card:not(.destaque) .plano-cta {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
+}
+
+.plano-card:not(.destaque) .plano-cta:hover {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.plano-not {
+    margin-bottom: 18px;
+    padding: 12px 14px;
+    background: rgba(255, 255, 255, 0.02);
+    border-left: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+}
+
+.plano-not span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.68rem;
+    color: var(--text-muted);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.plano-not span i {
+    color: #facc15;
+    font-size: 0.7rem;
+}
+
+.plano-not p {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* ---------- BUSINESS (DESTAQUE) ---------- */
+.plano-card.destaque {
+    background: linear-gradient(180deg, rgba(179, 0, 0, 0.12) 0%, rgba(10, 10, 10, 0.9) 60%);
+    border: 1px solid rgba(179, 0, 0, 0.35);
+    transform: scale(1.04);
+    z-index: 2;
+    box-shadow: 0 30px 80px rgba(179, 0, 0, 0.18);
+}
+
+.plano-card.destaque::before {
+    opacity: 1;
+    background: linear-gradient(90deg, transparent, rgba(255, 51, 51, 0.7), transparent);
+}
+
+.plano-card.destaque:hover {
+    transform: scale(1.04) translateY(-8px);
+    border-color: rgba(179, 0, 0, 0.6);
+    box-shadow: 0 40px 100px rgba(179, 0, 0, 0.3);
+}
+
+.plano-card.destaque .plano-icon {
+    background: rgba(179, 0, 0, 0.18);
+    border-color: rgba(179, 0, 0, 0.4);
+    box-shadow: 0 0 30px rgba(179, 0, 0, 0.15);
+}
+
+.plano-card.destaque .plano-name {
+    font-size: 1.7rem;
+    background: linear-gradient(180deg, #fff 0%, #ff8888 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.plano-card.destaque .plano-value {
+    color: #fff;
+    text-shadow: 0 0 40px rgba(255, 51, 51, 0.3);
+}
+
+.plano-badge {
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, var(--red-bright), var(--red-dark));
+    color: #fff;
+    padding: 6px 18px;
+    border-radius: 100px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    box-shadow: 0 8px 25px rgba(179, 0, 0, 0.4);
+    animation: badge-pulse 2.5s ease-in-out infinite;
+}
+
+@keyframes badge-pulse {
+    0%, 100% { box-shadow: 0 8px 25px rgba(179, 0, 0, 0.4); }
+    50% { box-shadow: 0 8px 35px rgba(255, 51, 51, 0.6); }
+}
+
+.plano-bonus {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 12px 14px;
+    background: rgba(179, 0, 0, 0.08);
+    border: 1px solid rgba(179, 0, 0, 0.15);
+    border-radius: 8px;
+    margin-bottom: 12px;
+    font-size: 0.78rem;
+    color: var(--text-primary);
+    line-height: 1.5;
+}
+
+.plano-bonus i {
+    color: #facc15;
+    font-size: 0.9rem;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+.plano-bonus strong {
+    color: #fff;
+    font-weight: 600;
+}
+
+.plano-note {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    font-style: italic;
+    margin-bottom: 16px;
+}
+
+/* ---------- PROJETO SOB MEDIDA ---------- */
+.plano-custom {
+    position: relative;
+    background: linear-gradient(135deg, rgba(179, 0, 0, 0.08) 0%, rgba(10, 10, 10, 0.6) 100%);
+    border: 1px solid rgba(179, 0, 0, 0.2);
+    border-radius: 20px;
+    padding: 36px 36px 32px;
+    margin-bottom: 40px;
+    overflow: hidden;
+    transition: all 0.4s;
+}
+
+.plano-custom:hover {
+    border-color: rgba(179, 0, 0, 0.4);
+    box-shadow: 0 30px 70px rgba(179, 0, 0, 0.12);
+}
+
+.plano-custom-glow {
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(179, 0, 0, 0.15) 0%, transparent 60%);
+    pointer-events: none;
+}
+
+.plano-custom-content {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 28px;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.plano-custom-icon {
+    width: 72px;
+    height: 72px;
+    border-radius: 18px;
+    background: rgba(179, 0, 0, 0.12);
+    border: 1px solid rgba(179, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.plano-custom-icon i {
+    font-size: 2rem;
+    color: var(--red-bright);
+    text-shadow: 0 0 30px rgba(255, 51, 51, 0.4);
+}
+
+.plano-custom-label {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+    color: var(--red-bright);
+    text-transform: uppercase;
+    opacity: 0.8;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.plano-custom-text h3 {
+    font-family: var(--font-title);
+    font-weight: 700;
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+}
+
+.plano-custom-price {
+    font-family: var(--font-title);
+    font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    color: var(--text-secondary);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.plano-custom-text p {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 14px;
+    max-width: 640px;
+}
+
+.plano-custom-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.plano-custom-tags span {
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+    padding: 4px 12px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 100px;
+    transition: all 0.25s;
+}
+
+.plano-custom-tags span:hover {
+    color: var(--text-primary);
+    border-color: rgba(179, 0, 0, 0.3);
+    background: rgba(179, 0, 0, 0.06);
+}
+
+.plano-custom-cta {
+    align-self: center;
+    white-space: nowrap;
+}
+
+/* ---------- COMPARAÇÃO ---------- */
+.plano-comparacao {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-top: 32px;
+}
+
+.comparacao-item {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    transition: all 0.3s;
+}
+
+.comparacao-item:hover {
+    border-color: rgba(179, 0, 0, 0.25);
+    background: rgba(179, 0, 0, 0.03);
+    transform: translateY(-2px);
+}
+
+.comparacao-tag {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 1.5px;
+    color: var(--red-bright);
+    font-weight: 600;
+    opacity: 0.8;
+}
+
+.comparacao-desc {
+    font-size: 0.85rem;
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+/* ============================================================ */
+/* 24. MANUTENÇÃO                                               */
+/* ============================================================ */
+
+.manutencao {
+    background: var(--bg-secondary);
+    position: relative;
+}
+
+.manutencao-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.manutencao-intro {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 24px;
+    max-width: 520px;
+}
+
+.manutencao-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 24px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 20px;
+}
+
+.manutencao-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.manutencao-list li i {
+    color: #4ade80;
+    font-size: 0.75rem;
+    flex-shrink: 0;
+}
+
+.manutencao-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px 18px;
+    background: rgba(250, 204, 21, 0.05);
+    border: 1px solid rgba(250, 204, 21, 0.15);
+    border-radius: 10px;
+    font-size: 0.8rem;
+    color: #fde68a;
+    line-height: 1.5;
+}
+
+.manutencao-note i {
+    color: #facc15;
+    font-size: 0.95rem;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+.manutencao-note p {
+    margin: 0;
+    color: #fde68a;
+}
+
+.manutencao-card {
+    background: linear-gradient(180deg, rgba(179, 0, 0, 0.08) 0%, rgba(10, 10, 10, 0.8) 100%);
+    border: 1px solid rgba(179, 0, 0, 0.25);
+    border-radius: 18px;
+    padding: 32px 28px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.manutencao-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--red-bright), transparent);
+    opacity: 0.6;
+}
+
+.manutencao-card-header {
+    margin-bottom: 16px;
+}
+
+.manutencao-label {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 2px;
+    color: var(--red-bright);
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border: 1px solid rgba(179, 0, 0, 0.3);
+    border-radius: 100px;
+    margin-bottom: 10px;
+}
+
+.manutencao-card-header h3 {
+    font-family: var(--font-title);
+    font-weight: 700;
+    font-size: 1.4rem;
+    letter-spacing: 1.5px;
+}
+
+.manutencao-price {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 2px;
+    margin: 20px 0 8px;
+}
+
+.manutencao-card-desc {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+}
+
+.manutencao-card .btn {
+    width: 100%;
+    justify-content: center;
+}
+
+/* ============================================================ */
+/* 25. DESCOBRIR                                                */
+/* ============================================================ */
+
+.descobrir {
+    background: var(--bg-primary);
+    text-align: center;
+}
+
+.descobrir .section-sub {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.descobrir-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 12px;
+    margin: 0 auto 32px;
+    max-width: 1000px;
+}
+
+.descobrir-btn {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 16px 18px;
+    color: var(--text-secondary);
+    font-family: var(--font-body);
+    font-size: 0.88rem;
+    font-weight: 500;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.3s ease;
+    line-height: 1.3;
+}
+
+.descobrir-btn i {
+    font-size: 1.1rem;
+    color: var(--red-bright);
+    width: 24px;
+    text-align: center;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.descobrir-btn:hover {
+    border-color: rgba(179, 0, 0, 0.3);
+    background: rgba(179, 0, 0, 0.04);
+    color: var(--text-primary);
+    transform: translateY(-2px);
+}
+
+.descobrir-btn.selected {
+    border-color: var(--red-bright);
+    background: rgba(179, 0, 0, 0.1);
+    color: var(--text-primary);
+    box-shadow: 0 0 30px rgba(179, 0, 0, 0.15);
+}
+
+.descobrir-btn.selected i {
+    transform: scale(1.15);
+    text-shadow: 0 0 20px rgba(255, 51, 51, 0.5);
+}
+
+.descobrir-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.descobrir-cta .btn {
+    padding: 14px 36px;
+    font-size: 0.9rem;
+}
+
+.descobrir-hint {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+/* Ajustes visuais nos cards de serviços/desafios existentes já OK */
+
+/* ============================================================ */
+/* SEÇÃO PLANOS — ESTILOS COMPLETOS                             */
+/* ============================================================ */
+
+.planos {
+    background: var(--bg-primary);
+    position: relative;
+    overflow: hidden;
+}
+
+.planos .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* ---- GRID DOS 3 CARDS ---- */
+.planos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 40px;
+    align-items: stretch;
+}
+
+/* ---- CARD BASE ---- */
+.plano-card {
+    background: linear-gradient(180deg, rgba(255,255,255,0.035) 0%, rgba(255,255,255,0.015) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 18px;
+    padding: 32px 26px 28px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    overflow: hidden;
+}
+
+.plano-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(179, 0, 0, 0.4), transparent);
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+
+.plano-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(255, 255, 255, 0.12);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+}
+
+.plano-card:hover::before {
+    opacity: 1;
+}
+
+/* ---- ÍCONE ---- */
+.plano-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    background: rgba(179, 0, 0, 0.08);
+    border: 1px solid rgba(179, 0, 0, 0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+    transition: all 0.4s;
+}
+
+.plano-icon i {
+    font-size: 1.5rem;
+    color: var(--red-bright);
+    transition: all 0.4s;
+}
+
+.plano-card:hover .plano-icon {
+    background: rgba(179, 0, 0, 0.15);
+    border-color: rgba(179, 0, 0, 0.3);
+    box-shadow: 0 0 30px rgba(179, 0, 0, 0.15);
+}
+
+.plano-card:hover .plano-icon i {
+    transform: scale(1.1);
+    text-shadow: 0 0 25px rgba(255, 51, 51, 0.4);
+}
+
+/* ---- TÍTULO E POSICIONAMENTO ---- */
+.plano-name {
+    font-family: var(--font-title);
+    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    margin-bottom: 6px;
+}
+
+.plano-position {
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin-bottom: 20px;
+    min-height: 2.4em;
+}
+
+/* ---- PREÇO ---- */
+.plano-price {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+    margin-bottom: 16px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.plano-currency {
+    font-family: var(--font-title);
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    align-self: flex-start;
+    margin-top: 8px;
+}
+
+.plano-value {
+    font-family: var(--font-title);
+    font-weight: 700;
+    font-size: 3.2rem;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    color: var(--text-primary);
+}
+
+.plano-cents {
+    font-family: var(--font-title);
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.plano-period {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-left: 4px;
+}
+
+/* ---- DESCRIÇÃO + LISTA ---- */
+.plano-desc {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.plano-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    flex: 1;
+}
+
+.plano-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    line-height: 1.4;
+}
+
+.plano-features li i {
+    color: var(--red-bright);
+    font-size: 0.75rem;
+    margin-top: 4px;
+    flex-shrink: 0;
+}
+
+/* ---- CTA ---- */
+.plano-cta {
+    width: 100%;
+    justify-content: center;
+    margin-top: auto;
+}
+
+.plano-card:not(.destaque) .plano-cta {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
+}
+
+.plano-card:not(.destaque) .plano-cta:hover {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+/* ---- AVISO "NÃO INDICADO" ---- */
+.plano-not {
+    margin-bottom: 18px;
+    padding: 12px 14px;
+    background: rgba(255, 255, 255, 0.02);
+    border-left: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+}
+
+.plano-not span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.68rem;
+    color: var(--text-muted);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.plano-not span i {
+    color: #facc15;
+    font-size: 0.7rem;
+}
+
+.plano-not p {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* ---- BUSINESS (DESTAQUE) ---- */
+.plano-card.destaque {
+    background: linear-gradient(180deg, rgba(179, 0, 0, 0.12) 0%, rgba(10, 10, 10, 0.9) 60%);
+    border: 1px solid rgba(179, 0, 0, 0.35);
+    transform: scale(1.04);
+    z-index: 2;
+    box-shadow: 0 30px 80px rgba(179, 0, 0, 0.18);
+}
+
+.plano-card.destaque::before {
+    opacity: 1;
+    background: linear-gradient(90deg, transparent, rgba(255, 51, 51, 0.7), transparent);
+}
+
+.plano-card.destaque:hover {
+    transform: scale(1.04) translateY(-8px);
+    border-color: rgba(179, 0, 0, 0.6);
+    box-shadow: 0 40px 100px rgba(179, 0, 0, 0.3);
+}
+
+.plano-card.destaque .plano-icon {
+    background: rgba(179, 0, 0, 0.18);
+    border-color: rgba(179, 0, 0, 0.4);
+    box-shadow: 0 0 30px rgba(179, 0, 0, 0.15);
+}
+
+.plano-card.destaque .plano-name {
+    font-size: 1.7rem;
+    background: linear-gradient(180deg, #fff 0%, #ff8888 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.plano-card.destaque .plano-value {
+    color: #fff;
+    text-shadow: 0 0 40px rgba(255, 51, 51, 0.3);
+}
+
+.plano-badge {
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, var(--red-bright), var(--red-dark));
+    color: #fff;
+    padding: 6px 18px;
+    border-radius: 100px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    box-shadow: 0 8px 25px rgba(179, 0, 0, 0.4);
+    animation: badge-pulse 2.5s ease-in-out infinite;
+}
+
+@keyframes badge-pulse {
+    0%, 100% { box-shadow: 0 8px 25px rgba(179, 0, 0, 0.4); }
+    50%      { box-shadow: 0 8px 35px rgba(255, 51, 51, 0.6); }
+}
+
+.plano-bonus {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 12px 14px;
+    background: rgba(179, 0, 0, 0.08);
+    border: 1px solid rgba(179, 0, 0, 0.15);
+    border-radius: 8px;
+    margin-bottom: 12px;
+    font-size: 0.78rem;
+    color: var(--text-primary);
+    line-height: 1.5;
+}
+
+.plano-bonus i {
+    color: #facc15;
+    font-size: 0.9rem;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+.plano-bonus strong {
+    color: #fff;
+    font-weight: 600;
+}
+
+.plano-note {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    font-style: italic;
+    margin-bottom: 16px;
+}
+
+/* ---- PROJETO SOB MEDIDA ---- */
+.plano-custom {
+    position: relative;
+    background: linear-gradient(135deg, rgba(179, 0, 0, 0.08) 0%, rgba(10, 10, 10, 0.6) 100%);
+    border: 1px solid rgba(179, 0, 0, 0.2);
+    border-radius: 20px;
+    padding: 36px 36px 32px;
+    margin-bottom: 40px;
+    overflow: hidden;
+    transition: all 0.4s;
+}
+
+.plano-custom:hover {
+    border-color: rgba(179, 0, 0, 0.4);
+    box-shadow: 0 30px 70px rgba(179, 0, 0, 0.12);
+}
+
+.plano-custom-glow {
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(179, 0, 0, 0.15) 0%, transparent 60%);
+    pointer-events: none;
+}
+
+.plano-custom-content {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 28px;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.plano-custom-icon {
+    width: 72px;
+    height: 72px;
+    border-radius: 18px;
+    background: rgba(179, 0, 0, 0.12);
+    border: 1px solid rgba(179, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.plano-custom-icon i {
+    font-size: 2rem;
+    color: var(--red-bright);
+    text-shadow: 0 0 30px rgba(255, 51, 51, 0.4);
+}
+
+.plano-custom-label {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+    color: var(--red-bright);
+    text-transform: uppercase;
+    opacity: 0.8;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.plano-custom-text h3 {
+    font-family: var(--font-title);
+    font-weight: 700;
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+}
+
+.plano-custom-price {
+    font-family: var(--font-title);
+    font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    color: var(--text-secondary);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.plano-custom-text p {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 14px;
+    max-width: 640px;
+}
+
+.plano-custom-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.plano-custom-tags span {
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+    padding: 4px 12px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 100px;
+    transition: all 0.25s;
+}
+
+.plano-custom-tags span:hover {
+    color: var(--text-primary);
+    border-color: rgba(179, 0, 0, 0.3);
+    background: rgba(179, 0, 0, 0.06);
+}
+
+.plano-custom-cta {
+    align-self: center;
+    white-space: nowrap;
+}
+
+/* ---- COMPARAÇÃO VISUAL ---- */
+.plano-comparacao {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-top: 32px;
+}
+
+.comparacao-item {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    transition: all 0.3s;
+}
+
+.comparacao-item:hover {
+    border-color: rgba(179, 0, 0, 0.25);
+    background: rgba(179, 0, 0, 0.03);
+    transform: translateY(-2px);
+}
+
+.comparacao-tag {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 1.5px;
+    color: var(--red-bright);
+    font-weight: 600;
+    opacity: 0.8;
+}
+
+.comparacao-desc {
+    font-size: 0.85rem;
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+/* ============================================================ */
+/* MANUTENÇÃO                                                   */
+/* ============================================================ */
+
+.manutencao {
+    background: var(--bg-secondary);
+    position: relative;
+}
+
+.manutencao-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.manutencao-intro {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 24px;
+    max-width: 520px;
+}
+
+.manutencao-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 24px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 20px;
+}
+
+.manutencao-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.manutencao-list li i {
+    color: #4ade80;
+    font-size: 0.75rem;
+    flex-shrink: 0;
+}
+
+.manutencao-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px 18px;
+    background: rgba(250, 204, 21, 0.05);
+    border: 1px solid rgba(250, 204, 21, 0.15);
+    border-radius: 10px;
+    font-size: 0.8rem;
+    color: #fde68a;
+    line-height: 1.5;
+}
+
+.manutencao-note i {
+    color: #facc15;
+    font-size: 0.95rem;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+.manutencao-note p {
+    margin: 0;
+    color: #fde68a;
+}
+
+.manutencao-card {
+    background: linear-gradient(180deg, rgba(179, 0, 0, 0.08) 0%, rgba(10, 10, 10, 0.8) 100%);
+    border: 1px solid rgba(179, 0, 0, 0.25);
+    border-radius: 18px;
+    padding: 32px 28px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.manutencao-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--red-bright), transparent);
+    opacity: 0.6;
+}
+
+.manutencao-card-header {
+    margin-bottom: 16px;
+}
+
+.manutencao-label {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 2px;
+    color: var(--red-bright);
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border: 1px solid rgba(179, 0, 0, 0.3);
+    border-radius: 100px;
+    margin-bottom: 10px;
+}
+
+.manutencao-card-header h3 {
+    font-family: var(--font-title);
+    font-weight: 700;
+    font-size: 1.4rem;
+    letter-spacing: 1.5px;
+}
+
+.manutencao-price {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 2px;
+    margin: 20px 0 8px;
+}
+
+.manutencao-card-desc {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+}
+
+.manutencao-card .btn {
+    width: 100%;
+    justify-content: center;
+}
+
+/* ============================================================ */
+/* DESCOBRIR                                                    */
+/* ============================================================ */
+
+.descobrir {
+    background: var(--bg-primary);
+    text-align: center;
+}
+
+.descobrir .section-sub {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.descobrir-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 12px;
+    margin: 0 auto 32px;
+    max-width: 1000px;
+}
+
+.descobrir-btn {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 16px 18px;
+    color: var(--text-secondary);
+    font-family: var(--font-body);
+    font-size: 0.88rem;
+    font-weight: 500;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.3s ease;
+    line-height: 1.3;
+}
+
+.descobrir-btn i {
+    font-size: 1.1rem;
+    color: var(--red-bright);
+    width: 24px;
+    text-align: center;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.descobrir-btn:hover {
+    border-color: rgba(179, 0, 0, 0.3);
+    background: rgba(179, 0, 0, 0.04);
+    color: var(--text-primary);
+    transform: translateY(-2px);
+}
+
+.descobrir-btn.selected {
+    border-color: var(--red-bright);
+    background: rgba(179, 0, 0, 0.1);
+    color: var(--text-primary);
+    box-shadow: 0 0 30px rgba(179, 0, 0, 0.15);
+}
+
+.descobrir-btn.selected i {
+    transform: scale(1.15);
+    text-shadow: 0 0 20px rgba(255, 51, 51, 0.5);
+}
+
+.descobrir-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.descobrir-cta .btn {
+    padding: 14px 36px;
+    font-size: 0.9rem;
+}
+
+.descobrir-hint {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+/* ============================================================ */
+/* RESPONSIVO — PLANOS / MANUTENÇÃO / DESCOBRIR                 */
+/* ============================================================ */
+
+@media (max-width: 992px) {
+    .planos-grid {
+        grid-template-columns: 1fr;
+        max-width: 520px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .plano-card.destaque {
+        transform: scale(1);
+        order: -1;
+    }
+
+    .plano-card.destaque:hover {
+        transform: translateY(-8px);
+    }
+
+    .plano-custom-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .plano-custom-icon {
+        margin: 0 auto;
+    }
+
+    .plano-custom-tags {
+        justify-content: center;
+    }
+
+    .plano-custom-cta {
+        justify-self: center;
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .plano-comparacao {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .manutencao-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+}
+
+@media (max-width: 768px) {
+    .planos-grid {
+        max-width: 100%;
+    }
+
+    .plano-card {
+        padding: 26px 22px 24px;
+    }
+
+    .plano-value {
+        font-size: 2.8rem;
+    }
+
+    .plano-custom {
+        padding: 28px 22px;
+    }
+
+    .plano-custom-text h3 {
+        font-size: 1.4rem;
+    }
+
+    .manutencao-list {
+        grid-template-columns: 1fr;
+    }
+
+    .descobrir-options {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .descobrir-btn {
+        padding: 14px 14px;
+        font-size: 0.82rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .planos-grid {
+        gap: 18px;
+    }
+
+    .plano-card {
+        padding: 24px 18px 22px;
+        border-radius: 16px;
+    }
+
+    .plano-name {
+        font-size: 1.35rem;
+    }
+
+    .plano-card.destaque .plano-name {
+        font-size: 1.5rem;
+    }
+
+    .plano-value {
+        font-size: 2.4rem;
+    }
+
+    .plano-currency {
+        font-size: 0.9rem;
+    }
+
+    .plano-badge {
+        font-size: 0.58rem;
+        padding: 5px 14px;
+    }
+
+    .plano-features li {
+        font-size: 0.78rem;
+    }
+
+    .plano-custom {
+        padding: 24px 18px;
+        border-radius: 16px;
+    }
+
+    .plano-custom-text h3 {
+        font-size: 1.25rem;
+    }
+
+    .plano-custom-tags span {
+        font-size: 0.65rem;
+        padding: 3px 10px;
+    }
+
+    .manutencao-card {
+        padding: 26px 20px;
+    }
+
+    .descobrir-options {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 400px) {
+    .plano-value {
+        font-size: 2.1rem;
+    }
+
+    .plano-custom-text h3 {
+        font-size: 1.1rem;
+    }
+}
+
+/* ============================================================ */
+/* SEÇÃO PLANOS — CARDS COM SCROLL INTERNO                      */
+/* ============================================================ */
+
+.planos {
+    background: var(--bg-primary);
+    position: relative;
+    overflow: hidden;
+}
+
+.planos::before {
+    content: '';
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 900px;
+    height: 900px;
+    background: radial-gradient(circle, rgba(179, 0, 0, 0.06) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.planos .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* ============ GRID PRINCIPAL ============ */
+.pt-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 20px;
+    overflow: hidden;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.005));
+    margin-top: 40px;
+}
+
+/* ============ PLANO (coluna) ============ */
+.pt-plan {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+    transition: background 0.3s;
+}
+
+.pt-plan:last-child {
+    border-right: none;
+}
+
+/* ============ HEADER (fixo) ============ */
+.pt-head {
+    padding: 30px 16px 20px;
+    text-align: center;
+    flex-shrink: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+    background: rgba(255, 255, 255, 0.008);
+}
+
+.pt-name {
+    font-family: var(--font-title);
+    font-weight: 700;
+    font-size: 1.15rem;
+    letter-spacing: 2px;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+}
+
+.pt-price {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 2px;
+    margin-bottom: 8px;
+}
+
+.pt-cur {
+    font-family: var(--font-title);
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    align-self: flex-start;
+    margin-top: 6px;
+    font-weight: 500;
+}
+
+.pt-val {
+    font-family: var(--font-title);
+    font-weight: 700;
+    font-size: 2.6rem;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: var(--text-primary);
+}
+
+.pt-price-custom {
+    font-family: var(--font-title);
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    color: var(--text-primary);
+    padding: 12px 0;
+    text-transform: uppercase;
+}
+
+.pt-tag {
+    font-size: 0.72rem;
+    color: var(--text-secondary);
+    line-height: 1.4;
+    max-width: 160px;
+    margin: 0 auto;
+}
+
+/* ============ ÁREA DE BENEFÍCIOS (rolável) ============ */
+.pt-benefits-wrap {
+    position: relative;
+    flex: 1;
+    min-height: 0;
+}
+
+.pt-benefits {
+    height: 360px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 14px 14px 24px;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(179, 0, 0, 0.35) transparent;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+}
+
+.pt-benefits::-webkit-scrollbar {
+    width: 4px;
+}
+
+.pt-benefits::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.pt-benefits::-webkit-scrollbar-thumb {
+    background: rgba(179, 0, 0, 0.35);
+    border-radius: 10px;
+    transition: background 0.3s;
+}
+
+.pt-benefits::-webkit-scrollbar-thumb:hover {
+    background: rgba(179, 0, 0, 0.6);
+}
+
+.pt-benefits ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.pt-benefits li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 7px 4px;
+    font-size: 0.82rem;
+    line-height: 1.4;
+    color: var(--text-secondary);
+}
+
+.pt-benefits li i {
+    color: var(--red-bright);
+    font-size: 0.72rem;
+    margin-top: 4px;
+    flex-shrink: 0;
+}
+
+.pt-li-bonus {
+    color: var(--text-primary) !important;
+    border-top: 1px dashed rgba(255, 255, 255, 0.08);
+    margin-top: 8px;
+    padding-top: 10px !important;
+    font-weight: 500;
+}
+
+.pt-li-bonus i {
+    color: #facc15 !important;
+}
+
+/* FADE indicando "mais conteúdo abaixo" */
+.pt-benefits-wrap::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 34px;
+    background: linear-gradient(to bottom, transparent, rgba(10, 10, 10, 0.96) 85%);
+    pointer-events: none;
+    transition: opacity 0.3s;
+}
+
+/* ============ CTA (fixo) ============ */
+.pt-cta {
+    padding: 16px 14px 18px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.15);
+}
+
+.pt-btn {
+    width: 100%;
+    justify-content: center;
+    font-size: 0.75rem;
+    padding: 12px 14px;
+    letter-spacing: 0.5px;
+    white-space: normal;
+    line-height: 1.3;
+    text-align: center;
+}
+
+/* ============ BUSINESS (destaque) ============ */
+.pt-destaque {
+    background: linear-gradient(180deg, rgba(179, 0, 0, 0.09) 0%, rgba(179, 0, 0, 0.02) 100%);
+}
+
+.pt-destaque .pt-head {
+    background: linear-gradient(180deg, rgba(179, 0, 0, 0.18) 0%, rgba(179, 0, 0, 0.05) 100%);
+    border-bottom-color: rgba(179, 0, 0, 0.22);
+    padding-top: 38px;
+}
+
+.pt-destaque .pt-name {
+    font-size: 1.35rem;
+    background: linear-gradient(180deg, #fff 0%, #ff8888 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.pt-destaque .pt-val {
+    color: #fff;
+    text-shadow: 0 0 40px rgba(255, 51, 51, 0.35);
+    font-size: 2.9rem;
+}
+
+.pt-destaque .pt-benefits li i {
+    color: #ff5555;
+    text-shadow: 0 0 12px rgba(255, 51, 51, 0.4);
+}
+
+.pt-destaque .pt-cta {
+    background: rgba(179, 0, 0, 0.08);
+    border-top-color: rgba(179, 0, 0, 0.22);
+}
+
+.pt-destaque .pt-benefits-wrap::after {
+    background: linear-gradient(to bottom, transparent, rgba(32, 0, 0, 0.96) 85%);
+}
+
+/* BADGE BUSINESS */
+.pt-badge {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, var(--red-bright), var(--red-dark));
+    color: #fff;
+    padding: 4px 14px;
+    border-radius: 100px;
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    box-shadow: 0 6px 20px rgba(179, 0, 0, 0.4);
+    animation: badge-pulse 2.5s ease-in-out infinite;
+    z-index: 2;
+}
+
+@keyframes badge-pulse {
+    0%, 100% { box-shadow: 0 6px 20px rgba(179, 0, 0, 0.4); }
+    50%      { box-shadow: 0 6px 30px rgba(255, 51, 51, 0.65); }
+}
+
+/* ============ SOB MEDIDA ============ */
+.pt-custom {
+    background: rgba(255, 255, 255, 0.012);
+}
+
+.pt-custom .pt-head {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.045) 0%, rgba(255, 255, 255, 0.01) 100%);
+}
+
+/* ============ HOVER SUTIL ============ */
+.pt-benefits li:hover {
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 6px;
+}
+
+.pt-destaque .pt-benefits li:hover {
+    background: rgba(179, 0, 0, 0.08);
+}
+
+/* ============================================================ */
+/* RESPONSIVO — PLANOS                                          */
+/* ============================================================ */
+
+/* Tablet — 2 colunas */
+@media (max-width: 1100px) {
+    .pt-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .pt-plan {
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .pt-plan:nth-child(odd) {
+        border-right: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .pt-plan:nth-last-child(-n+2) {
+        border-bottom: none;
+    }
+
+    .pt-val { font-size: 2.4rem; }
+    .pt-destaque .pt-val { font-size: 2.6rem; }
+}
+
+/* Mobile — pilha vertical */
+@media (max-width: 900px) {
+    .pt-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        border: none;
+        border-radius: 0;
+        background: transparent;
+    }
+
+    .pt-plan {
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.035) 0%, rgba(255, 255, 255, 0.015) 100%);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        border-radius: 18px;
+        overflow: hidden;
+    }
+
+    .pt-plan.pt-destaque {
+        border-color: rgba(179, 0, 0, 0.4);
+        box-shadow: 0 25px 60px rgba(179, 0, 0, 0.15);
+    }
+
+    .pt-plan[data-plano="start"]        { order: 1; }
+    .pt-plan[data-plano="business"]     { order: 2; }
+    .pt-plan[data-plano="profissional"] { order: 3; }
+    .pt-plan[data-plano="sobmedida"]    { order: 4; }
+
+    .pt-benefits {
+        height: 280px;
+        padding: 12px 16px 22px;
+    }
+
+    .pt-benefits li {
+        font-size: 0.85rem;
+        padding: 8px 4px;
+    }
+}
+
+/* Celular */
+@media (max-width: 576px) {
+    .pt-plan { border-radius: 16px; }
+
+    .pt-head { padding: 26px 16px 18px; }
+    .pt-destaque .pt-head { padding-top: 32px; }
+
+    .pt-name { font-size: 1.2rem; letter-spacing: 1.5px; }
+    .pt-destaque .pt-name { font-size: 1.4rem; }
+
+    .pt-val { font-size: 2.3rem; }
+    .pt-destaque .pt-val { font-size: 2.6rem; }
+
+    .pt-price-custom { font-size: 0.85rem; padding: 10px 0; }
+
+    .pt-benefits { height: 260px; padding: 10px 14px 20px; }
+    .pt-benefits li { font-size: 0.82rem; padding: 7px 4px; }
+
+    .pt-cta { padding: 14px 14px 16px; }
+    .pt-btn { font-size: 0.72rem; padding: 12px 12px; }
+
+    .pt-badge {
+        font-size: 0.55rem;
+        padding: 4px 12px;
+        letter-spacing: 1px;
+    }
+}
+
+/* Celular pequeno */
+@media (max-width: 400px) {
+    .pt-val { font-size: 2rem; }
+    .pt-destaque .pt-val { font-size: 2.3rem; }
+    .pt-name { font-size: 1.1rem; }
+    .pt-destaque .pt-name { font-size: 1.25rem; }
+
+    .pt-benefits { height: 240px; }
+    .pt-benefits li { font-size: 0.78rem; padding: 6px 4px; }
+
+    .pt-btn { font-size: 0.7rem; padding: 11px 10px; }
+}
+
+
+/* ============================================================ */
+/* MANUTENÇÃO OPCIONAL                                          */
+/* ============================================================ */
+
+.pt-manutencao {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 48px;
+    align-items: center;
+    margin-top: 56px;
+    padding: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.005));
+    position: relative;
+    overflow: hidden;
+}
+
+.pt-manutencao::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--red-bright), transparent);
+    opacity: 0.4;
+}
+
+.pt-manutencao-text h3 {
+    font-family: var(--font-title);
+    font-weight: 700;
+    font-size: 1.6rem;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    margin-bottom: 12px;
+}
+
+.pt-manutencao-text > p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 22px;
+    max-width: 520px;
+}
+
+.pt-manutencao-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 22px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 20px;
+}
+
+.pt-manutencao-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.pt-manutencao-list li i {
+    color: #4ade80;
+    font-size: 0.72rem;
+    flex-shrink: 0;
+}
+
+.pt-manutencao-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px 16px;
+    background: rgba(250, 204, 21, 0.05);
+    border: 1px solid rgba(250, 204, 21, 0.15);
+    border-radius: 10px;
+}
+
+.pt-manutencao-note i {
+    color: #facc15;
+    font-size: 0.9rem;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+.pt-manutencao-note p {
+    margin: 0;
+    font-size: 0.78rem;
+    line-height: 1.5;
+    color: #fde68a;
+}
+
+.pt-manutencao-card {
+    background: linear-gradient(180deg, rgba(179, 0, 0, 0.08) 0%, rgba(10, 10, 10, 0.8) 100%);
+    border: 1px solid rgba(179, 0, 0, 0.25);
+    border-radius: 16px;
+    padding: 32px 26px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.pt-manutencao-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--red-bright), transparent);
+    opacity: 0.6;
+}
+
+.pt-manutencao-label {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 2px;
+    color: var(--red-bright);
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border: 1px solid rgba(179, 0, 0, 0.3);
+    border-radius: 100px;
+    margin-bottom: 12px;
+}
+
+.pt-manutencao-card h4 {
+    font-family: var(--font-title);
+    font-weight: 700;
+    font-size: 1.25rem;
+    letter-spacing: 1.5px;
+    margin-bottom: 4px;
+}
+
+.pt-manutencao-price {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 2px;
+    margin: 16px 0 6px;
+}
+
+.pt-manutencao-price .pt-val {
+    font-size: 2.4rem;
+}
+
+.pt-manutencao-price .pt-cents {
+    font-family: var(--font-title);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.pt-manutencao-price .pt-period {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-left: 4px;
+}
+
+.pt-manutencao-desc {
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+}
+
+.pt-manutencao-card .btn {
+    width: 100%;
+    justify-content: center;
+}
+
+/* ============================================================ */
+/* RESPONSIVO — PLANOS                                          */
+/* ============================================================ */
+
+/* Tablet */
+@media (max-width: 1100px) {
+    .pt-grid {
+        grid-template-columns: 180px repeat(4, minmax(0, 1fr));
+    }
+
+    .pt-val { font-size: 2.2rem; }
+    .pt-destaque .pt-val { font-size: 2.4rem; }
+
+    .pt-name { font-size: 1rem; letter-spacing: 1.5px; }
+    .pt-destaque .pt-name { font-size: 1.15rem; }
+
+    .pt-cell { padding: 10px 12px; font-size: 0.8rem; }
+    .pt-tag { font-size: 0.68rem; max-width: 140px; }
+    .pt-btn { font-size: 0.7rem; padding: 10px 12px; }
+}
+
+/* Mobile — empilha como cards verticais */
+@media (max-width: 900px) {
+    .pt-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        background: transparent;
+        border: none;
+        border-radius: 0;
+        overflow: visible;
+        padding: 0;
+        margin-top: 32px;
+    }
+
+    .pt-labels { display: none; }
+
+    .pt-plan {
+        display: flex;
+        flex-direction: column;
+        grid-row: auto;
+        grid-column: auto;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.035) 0%, rgba(255, 255, 255, 0.015) 100%);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        border-radius: 18px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .pt-plan.pt-destaque {
+        border-color: rgba(179, 0, 0, 0.4);
+        box-shadow: 0 25px 60px rgba(179, 0, 0, 0.15);
+    }
+
+    .pt-plan.pt-custom {
+        border-color: rgba(179, 0, 0, 0.2);
+    }
+
+    /* Head no mobile */
+    .pt-head {
+        padding: 30px 20px 22px;
+        min-height: auto;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.025) 0%, transparent 100%);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .pt-destaque .pt-head {
+        background: linear-gradient(180deg, rgba(179, 0, 0, 0.2) 0%, rgba(179, 0, 0, 0.05) 100%);
+    }
+
+    .pt-name { font-size: 1.35rem; letter-spacing: 2px; margin-bottom: 14px; }
+    .pt-destaque .pt-name { font-size: 1.55rem; }
+
+    .pt-val { font-size: 2.8rem; }
+    .pt-destaque .pt-val { font-size: 3.1rem; }
+
+    .pt-price-custom { font-size: 1rem; padding: 16px 0; }
+
+    .pt-tag { font-size: 0.78rem; max-width: 100%; }
+
+    /* Features no mobile — mostram a label à esquerda */
+    .pt-feat {
+        justify-content: space-between;
+        text-align: left;
+        padding: 12px 18px;
+        min-height: auto;
+        font-size: 0.85rem;
+        gap: 12px;
+    }
+
+    .pt-feat::before {
+        content: attr(data-label);
+        flex: 1;
+        font-size: 0.82rem;
+        color: var(--text-secondary);
+        font-weight: 500;
+        line-height: 1.35;
+    }
+
+    .pt-mark {
+        flex-shrink: 0;
+        font-size: 1rem;
+    }
+
+    .pt-mark.no {
+        font-size: 0.95rem;
+    }
+
+    .pt-text {
+        flex-shrink: 0;
+        font-size: 0.82rem;
+        text-align: right;
+    }
+
+    .pt-destaque .pt-feat {
+        background: rgba(179, 0, 0, 0.04);
+    }
+
+    .pt-destaque .pt-feat::before {
+        color: rgba(255, 255, 255, 0.85);
+    }
+
+    /* CTA no mobile */
+    .pt-cta {
+        padding: 18px 18px 22px;
+        border-bottom: none;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        margin-top: auto;
+    }
+
+    .pt-destaque .pt-cta {
+        border-top-color: rgba(179, 0, 0, 0.2);
+        background: rgba(179, 0, 0, 0.06);
+    }
+
+    .pt-btn {
+        font-size: 0.85rem;
+        padding: 14px 20px;
+    }
+
+    /* Ordem mobile garantida */
+    .pt-plan[data-plano="start"]        { order: 1; }
+    .pt-plan[data-plano="business"]     { order: 2; }
+    .pt-plan[data-plano="profissional"] { order: 3; }
+    .pt-plan[data-plano="sobmedida"]    { order: 4; }
+
+    /* Manutenção no mobile */
+    .pt-manutencao {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        padding: 28px 22px;
+        margin-top: 40px;
+    }
+
+    .pt-manutencao-text h3 { font-size: 1.35rem; }
+    .pt-manutencao-list { grid-template-columns: 1fr; }
+    .pt-manutencao-card { padding: 26px 22px; }
+    .pt-manutencao-price .pt-val { font-size: 2.2rem; }
+}
+
+/* Celular pequeno */
+@media (max-width: 576px) {
+    .pt-plan { border-radius: 16px; }
+
+    .pt-head { padding: 26px 18px 20px; }
+    .pt-name { font-size: 1.2rem; }
+    .pt-destaque .pt-name { font-size: 1.4rem; }
+    .pt-val { font-size: 2.5rem; }
+    .pt-destaque .pt-val { font-size: 2.8rem; }
+    .pt-price-custom { font-size: 0.9rem; }
+
+    .pt-feat { padding: 11px 16px; font-size: 0.82rem; }
+    .pt-feat::before { font-size: 0.78rem; }
+
+    .pt-btn { font-size: 0.8rem; padding: 13px 16px; }
+
+    .pt-badge {
+        font-size: 0.55rem;
+        padding: 4px 12px;
+        letter-spacing: 1px;
+    }
+
+    .pt-manutencao { padding: 24px 18px; border-radius: 16px; }
+    .pt-manutencao-text h3 { font-size: 1.2rem; }
+    .pt-manutencao-card { padding: 22px 18px; }
+    .pt-manutencao-price .pt-val { font-size: 2rem; }
+}
+
+@media (max-width: 400px) {
+    .pt-name { font-size: 1.1rem; letter-spacing: 1.5px; }
+    .pt-val { font-size: 2.2rem; }
+    .pt-destaque .pt-val { font-size: 2.5rem; }
+    .pt-feat { padding: 10px 14px; font-size: 0.78rem; }
+    .pt-feat::before { font-size: 0.74rem; }
+    .pt-btn { font-size: 0.75rem; padding: 12px 14px; }
+    .pt-manutencao-text h3 { font-size: 1.1rem; }
+}

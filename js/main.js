@@ -1,4 +1,5 @@
-// main.js — com filtros de gênero embutidos e tecnologias em badges
+// main.js — Preloader, modal, tecnologias, filtros, busca, FAQ,
+// diagnóstico "Descobrir" e pré-seleção de planos.
 document.addEventListener('DOMContentLoaded', function () {
   'use strict';
 
@@ -31,7 +32,9 @@ document.addEventListener('DOMContentLoaded', function () {
   setTimeout(updateProgress, 300);
 
   // ===== DADOS DOS PROJETOS =====
-  const allProjects = (typeof projectsData !== 'undefined' && projectsData.length > 0) ? projectsData : [];
+  const allProjects = (typeof projectsData !== 'undefined' && projectsData.length > 0)
+    ? projectsData
+    : [];
 
   // ===== MODAL =====
   const modalOverlay = document.getElementById('modalOverlay');
@@ -40,12 +43,13 @@ document.addEventListener('DOMContentLoaded', function () {
   let currentModalIndex = 0;
 
   function openModal(index) {
-    if (!allProjects.length) return;
+    if (!allProjects.length || !modalOverlay || !modalContent) return;
     if (index < 0) index = allProjects.length - 1;
     if (index >= allProjects.length) index = 0;
     currentModalIndex = index;
     const proj = allProjects[index];
     const total = allProjects.length;
+
     modalContent.innerHTML = `
       <div class="modal-preview">
         <img src="${proj.image}" alt="${proj.title}" loading="lazy">
@@ -66,31 +70,45 @@ document.addEventListener('DOMContentLoaded', function () {
         <button class="next-btn" id="modalNext"><i class="fas fa-chevron-right"></i></button>
       </div>
     `;
-    document.getElementById('modalPrev')?.addEventListener('click', function(e) {
-      e.stopPropagation();
-      openModal(currentModalIndex - 1);
-    });
-    document.getElementById('modalNext')?.addEventListener('click', function(e) {
-      e.stopPropagation();
-      openModal(currentModalIndex + 1);
-    });
+
+    const prevBtn = document.getElementById('modalPrev');
+    const nextBtn = document.getElementById('modalNext');
+    if (prevBtn) {
+      prevBtn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        openModal(currentModalIndex - 1);
+      });
+    }
+    if (nextBtn) {
+      nextBtn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        openModal(currentModalIndex + 1);
+      });
+    }
+
     modalOverlay.classList.add('active');
     document.body.style.overflow = 'hidden';
   }
 
   function closeModal() {
+    if (!modalOverlay) return;
     modalOverlay.classList.remove('active');
     document.body.style.overflow = '';
   }
-  modalClose?.addEventListener('click', closeModal);
-  modalOverlay?.addEventListener('click', function(e) {
-    if (e.target === modalOverlay) closeModal();
-  });
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape' && modalOverlay.classList.contains('active')) closeModal();
+
+  if (modalClose) modalClose.addEventListener('click', closeModal);
+  if (modalOverlay) {
+    modalOverlay.addEventListener('click', function (e) {
+      if (e.target === modalOverlay) closeModal();
+    });
+  }
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && modalOverlay && modalOverlay.classList.contains('active')) {
+      closeModal();
+    }
   });
 
-  // ===== TECNOLOGIAS — VERSÃO COM BADGES HARMÔNICOS =====
+  // ===== TECNOLOGIAS =====
   function renderTech() {
     const techIcons = {
       'HTML5': 'fab fa-html5',
@@ -128,7 +146,7 @@ document.addEventListener('DOMContentLoaded', function () {
     Object.keys(techData).forEach(cat => {
       const div = document.createElement('div');
       div.className = 'tech-category';
-      
+
       let html = `<h3>${cat}</h3><div class="tech-items">`;
       techData[cat].forEach(item => {
         const icon = techIcons[item] || 'fas fa-code';
@@ -152,16 +170,20 @@ document.addEventListener('DOMContentLoaded', function () {
   function renderProjects() {
     const projetosGrid = document.getElementById('projetosGrid');
     if (!projetosGrid) return;
+
     const filtered = allProjects.filter(p => {
       const matchGenero = currentGenero === 'todos' || p.genero === currentGenero;
       const matchSearch = p.title.toLowerCase().includes(currentSearch.toLowerCase()) ||
                           p.description.toLowerCase().includes(currentSearch.toLowerCase());
       return matchGenero && matchSearch;
     });
+
     if (filtered.length === 0) {
-      projetosGrid.innerHTML = '<p style="grid-column:1/-1;text-align:center;color:var(--text-secondary)">Nenhum projeto encontrado.</p>';
+      projetosGrid.innerHTML =
+        '<p style="grid-column:1/-1;text-align:center;color:var(--text-secondary)">Nenhum projeto encontrado.</p>';
       return;
     }
+
     projetosGrid.innerHTML = filtered.map((proj, i) => {
       const idx = allProjects.indexOf(proj);
       return `
@@ -182,10 +204,11 @@ document.addEventListener('DOMContentLoaded', function () {
         </div>
       `;
     }).join('');
+
     document.querySelectorAll('.projeto-card').forEach(card => {
-      card.addEventListener('click', function(e) {
+      card.addEventListener('click', function (e) {
         if (e.target.closest('a')) return;
-        const index = parseInt(this.dataset.index);
+        const index = parseInt(this.dataset.index, 10);
         if (!isNaN(index)) openModal(index);
       });
     });
@@ -195,17 +218,20 @@ document.addEventListener('DOMContentLoaded', function () {
   function renderFiltrosGenero() {
     const container = document.getElementById('filtrosGenero');
     if (!container) return;
+
     const generos = new Set();
     allProjects.forEach(p => { if (p.genero) generos.add(p.genero); });
     const generosList = Array.from(generos);
+
     let html = `<button class="filtro-genero-btn active" data-genero="todos">TODOS</button>`;
     generosList.forEach(g => {
       const label = g.charAt(0).toUpperCase() + g.slice(1);
       html += `<button class="filtro-genero-btn" data-genero="${g}">${label}</button>`;
     });
     container.innerHTML = html;
+
     container.querySelectorAll('.filtro-genero-btn').forEach(btn => {
-      btn.addEventListener('click', function() {
+      btn.addEventListener('click', function () {
         container.querySelectorAll('.filtro-genero-btn').forEach(b => b.classList.remove('active'));
         this.classList.add('active');
         currentGenero = this.dataset.genero;
@@ -217,7 +243,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // ===== HEADER =====
   const header = document.getElementById('header');
   if (header) {
-    window.addEventListener('scroll', function() {
+    window.addEventListener('scroll', function () {
       header.classList.toggle('scrolled', window.scrollY > 50);
     });
   }
@@ -225,12 +251,12 @@ document.addEventListener('DOMContentLoaded', function () {
   const hamburger = document.getElementById('hamburger');
   const navMenu = document.getElementById('navMenu');
   if (hamburger && navMenu) {
-    hamburger.addEventListener('click', function() {
+    hamburger.addEventListener('click', function () {
       navMenu.classList.toggle('active');
       hamburger.classList.toggle('active');
     });
-    navMenu.querySelectorAll('a').forEach(function(link) {
-      link.addEventListener('click', function() {
+    navMenu.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
         navMenu.classList.remove('active');
         hamburger.classList.remove('active');
       });
@@ -240,28 +266,129 @@ document.addEventListener('DOMContentLoaded', function () {
   // ===== BUSCA =====
   const buscaInput = document.getElementById('buscaInput');
   if (buscaInput) {
-    buscaInput.addEventListener('input', function(e) {
+    buscaInput.addEventListener('input', function (e) {
       currentSearch = e.target.value.trim();
       renderProjects();
     });
   }
 
-  // ===== FAQ (toggle) =====
-  document.querySelectorAll('.faq-pergunta').forEach(function(btn) {
-    btn.addEventListener('click', function() {
+  // ===== FAQ =====
+  document.querySelectorAll('.faq-pergunta').forEach(function (btn) {
+    btn.addEventListener('click', function () {
       const item = this.closest('.faq-item');
+      if (!item) return;
       const resposta = item.querySelector('.faq-resposta');
       const icon = this.querySelector('i');
       item.classList.toggle('open');
       if (item.classList.contains('open')) {
-        resposta.style.display = 'block';
-        icon.style.transform = 'rotate(180deg)';
+        if (resposta) resposta.style.display = 'block';
+        if (icon) icon.style.transform = 'rotate(180deg)';
       } else {
-        resposta.style.display = 'none';
-        icon.style.transform = 'rotate(0deg)';
+        if (resposta) resposta.style.display = 'none';
+        if (icon) icon.style.transform = 'rotate(0deg)';
       }
     });
   });
+
+  // ===== DESCOBRIR / DIAGNÓSTICO =====
+  (function initDescobrir() {
+    const buttons = document.querySelectorAll('#descobrirOptions .descobrir-btn');
+    const cta = document.getElementById('descobrirCta');
+    const hint = document.getElementById('descobrirHint');
+    if (!buttons.length || !cta) return;
+
+    const selecionadas = new Set();
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', function () {
+        const val = this.dataset.value;
+        if (selecionadas.has(val)) {
+          selecionadas.delete(val);
+          this.classList.remove('selected');
+        } else {
+          selecionadas.add(val);
+          this.classList.add('selected');
+        }
+        if (hint) {
+          hint.style.color = '';
+          hint.textContent = selecionadas.size === 0
+            ? 'Selecione uma ou mais opções acima.'
+            : `${selecionadas.size} opção(ões) selecionada(s).`;
+        }
+      });
+    });
+
+    cta.addEventListener('click', function () {
+      if (selecionadas.size === 0) {
+        if (hint) {
+          hint.textContent = 'Selecione ao menos uma opção para personalizar sua mensagem.';
+          hint.style.color = '#f87171';
+        }
+        return;
+      }
+
+      // Injeta escolhas na descrição (se vazia)
+      const descricao = document.getElementById('descricao');
+      if (descricao && !descricao.value.trim()) {
+        const lista = Array.from(selecionadas).join(', ');
+        descricao.value = `Necessidades identificadas: ${lista}.`;
+      }
+
+      // Marca tipo de projeto correspondente
+      const mapa = {
+        'Criar um sistema próprio': 'Sistema Web',
+        'Automatizar processos': 'Automação',
+        'Acompanhar meus dados': 'Dashboard',
+        'Organizar meus clientes': 'CRM',
+        'Controlar meu estoque': 'Controle de Estoque',
+        'Receber pedidos': 'Sistema de Pedidos',
+        'Apresentar minha empresa': 'Site Profissional'
+      };
+
+      selecionadas.forEach(val => {
+        const alvo = mapa[val];
+        if (!alvo) return;
+        const card = document.querySelector(`#tipoProjeto .option-card[data-value="${alvo}"]`);
+        if (card && !card.classList.contains('selected')) {
+          const cb = card.querySelector('input[type="checkbox"]');
+          if (cb) cb.checked = true;
+          card.classList.add('selected');
+        }
+      });
+
+      const contato = document.getElementById('contato');
+      if (contato) contato.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  })();
+
+  // ===== PRÉ-SELEÇÃO DE PLANO VIA CTA =====
+  (function initPlanoCtas() {
+   const ctas = document.querySelectorAll('.plano-cta');
+    if (!ctas.length) return;
+
+    ctas.forEach(btn => {
+      btn.addEventListener('click', function () {
+        const plano = this.dataset.plano || this.textContent.trim();
+        const descricao = document.getElementById('descricao');
+
+        if (descricao && !descricao.value.trim()) {
+          descricao.value = `Tenho interesse no plano ${plano}. `;
+        }
+
+        // Destaque visual no briefing
+        const briefing = document.getElementById('briefingContainer');
+        if (briefing) {
+          briefing.style.transition = 'box-shadow 0.6s';
+          setTimeout(() => {
+            briefing.style.boxShadow = '0 0 0 2px rgba(179,0,0,0.4), 0 20px 60px rgba(0,0,0,0.6)';
+            setTimeout(() => {
+              briefing.style.boxShadow = '';
+            }, 1800);
+          }, 600);
+        }
+      });
+    });
+  })();
 
   // ===== INICIALIZAÇÃO =====
   renderTech();
