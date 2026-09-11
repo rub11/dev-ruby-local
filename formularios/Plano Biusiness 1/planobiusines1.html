@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#08080a">
+<meta name="description" content="Briefing do Projeto BUSINESS (R$890,00) da Dev Ruby. Hospedagem e domínio .com.br inclusos.">
+<title>Projeto BUSINESS — R$890,00 | Dev Ruby</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="plano-business.css">
+</head>
+<body>
+
+<div class="bg" aria-hidden="true">
+  <div class="bg-glow"></div>
+  <div class="bg-grid"></div>
+</div>
+
+<a class="skip-link" href="#briefing">Ir para o formulário</a>
+
+<div class="page">
+
+  <header class="topbar">
+    <a class="brand" href="../../index.html" aria-label="Dev Ruby — voltar para a página inicial">
+      <span class="brand-mark" aria-hidden="true">DR</span>
+      <span class="brand-name">DEV RUBY</span>
+    </a>
+
+    <a class="back-link" href="../../index.html">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M19 12H5"></path><path d="m12 19-7-7 7-7"></path>
+      </svg>
+      Voltar ao site
+    </a>
+  </header>
+
+  <main class="shell" id="briefing">
+
+    <!-- ==========================================================
+         RAIL — identidade + progresso
+         ========================================================== -->
+    <aside class="rail">
+
+      <div class="rail-head">
+        <p class="rail-lab">Digital Lab</p>
+        <h1 class="rail-plan">Projeto <br class="br-lg">Business<span class="dot">.</span></h1>
+      </div>
+
+      <div class="rail-meta">
+        <p class="rail-price">R$890<span>,00</span></p>
+        <p class="rail-includes">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M20 6 9 17l-5-5"></path>
+          </svg>
+          Hospedagem + domínio <strong>.com.br</strong> inclusos
+        </p>
+      </div>
+
+      <p class="rail-note">
+        Você não precisa explicar tecnicamente. Conte o que precisa — nós ajudamos
+        a transformar sua ideia em solução.
+      </p>
+
+      <div class="rail-progress">
+        <div class="rail-counter" aria-live="polite">
+          <span id="progress-current">01</span><span class="rail-slash">/</span><span id="progress-total">10</span>
+        </div>
+        <div class="rail-track" role="presentation">
+          <div class="rail-fill" id="progress-fill"></div>
+        </div>
+        <p class="rail-stage" id="progress-stage">Conhecendo você</p>
+      </div>
+
+    </aside>
+
+    <!-- ==========================================================
+         STAGE — formulário
+         ========================================================== -->
+    <section class="stage">
+
+      <form
+        id="form-plano-business"
+        name="plano-business"
+        method="POST"
+        action="/"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+        novalidate
+      >
+        <input type="hidden" name="form-name" value="plano-business">
+
+        <p class="hidden-honeypot" aria-hidden="true">
+          <label for="bot-field">Não preencha este campo</label>
+          <input type="text" id="bot-field" name="bot-field" tabindex="-1" autocomplete="off">
+        </p>
+
+        <input type="hidden" name="plano" value="BUSINESS">
+        <input type="hidden" name="investimento" value="R$890,00">
+        <input type="hidden" name="inclusos" value="Hospedagem + Domínio .com.br">
+
+        <!-- ==========================================================
+             ETAPA 01 — Você
+             ========================================================== -->
+        <div class="step is-active" data-step="1">
+          <p class="step-kicker">Etapa 01</p>
+          <h2 class="step-title">Vamos começar por você.</h2>
+          <p class="step-sub">Só precisamos do essencial para conseguirmos falar com você.</p>
+
+          <div class="field" data-field="nome">
+            <label class="field-label" for="nome">Nome <span class="req" aria-hidden="true">*</span></label>
+            <input type="text" id="nome" name="nome" autocomplete="name"
+                   placeholder="Seu nome completo" required>
+            <p class="field-error" data-error role="alert"></p>
+          </div>
+
+          <div class="field" data-field="whatsapp">
+            <label class="field-label" for="whatsapp">WhatsApp <span class="req" aria-hidden="true">*</span></label>
+            <input type="tel" id="whatsapp" name="whatsapp" autocomplete="tel"
+                   inputmode="numeric" maxlength="16"
+                   placeholder="(11) 99999-9999" required>
+            <p class="field-hint">Usaremos apenas para falar sobre o projeto.</p>
+            <p class="field-error" data-error role="alert"></p>
+          </div>
+
+          <div class="field" data-field="email">
+            <label class="field-label" for="email">E-mail <span class="opt">(opcional)</span></label>
+            <input type="email" id="email" name="email" autocomplete="email"
+                   inputmode="email" placeholder="voce@email.com">
+            <p class="field-error" data-error role="alert"></p>
+          </div>
+        </div>
+
+        <!-- ==========================================================
+             ETAPA 02 — Negócio
+             ========================================================== -->
+        <div class="step" data-step="2">
+          <p class="step-kicker">Etapa 02</p>
+          <h2 class="step-title">Agora, o seu negócio.</h2>
+          <p class="step-sub">Quanto mais entendermos o contexto, melhor será o resultado.</p>
+
+          <div class="field" data-field="empresa">
+            <label class="field-label" for="empresa">Nome da empresa <span class="opt">(opcional)</span></label>
+            <input type="text" id="empresa" name="empresa" autocomplete="organization"
+                   placeholder="Ex: Barbearia X">
+            <p class="field-error" data-error role="alert"></p>
+          </div>
+
+          <div class="field" data-field="segmento">
+            <label class="field-label" for="segmento">Segmento <span class="opt">(opcional)</span></label>
+            <input type="text" id="segmento" name="segmento"
+                   placeholder="Ex: loja de roupas, restaurante, prestadora de serviços...">
+            <p class="field-error" data-error role="alert"></p>
+          </div>
+
+          <div class="field" data-field="rede_social">
+            <label class="field-label" for="rede_social">Instagram ou rede social <span class="opt">(opcional)</span></label>
+            <input type="text" id="rede_social" name="rede_social"
+                   placeholder="@seunegocio ou link do perfil">
+            <p class="field-error" data-error role="alert"></p>
+          </div>
+
+          <div class="field" data-field="possui_site">
+            <span class="field-question" id="label-possui-site">Você já possui um site ou sistema? <span class="opt">(opcional)</span></span>
+            <div class="options options-inline" data-group="possui_site"
+                 role="radiogroup" aria-labelledby="label-possui-site">
+              <label class="option">
+                <input type="radio" name="possui_site" value="Sim">
+                <span class="option-mark" aria-hidden="true"></span>
+                <span class="option-text">Sim</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="possui_site" value="Não">
+                <span class="option-mark" aria-hidden="true"></span>
+                <span class="option-text">Não</span>
+              </label>
+            </div>
+            <p class="field-error" data-error role="alert"></p>
+          </div>
+
+          <div class="field is-hidden" data-field="site_url">
+            <label class="field-label" for="site_url">Endereço do site ou sistema atual <span class="opt">(opcional)</span></label>
+            <input type="url" id="site_url" name="site_url" inputmode="url"
+                   placeholder="https://seusite.com.br">
+            <p class="field-error" data-error role="alert"></p>
+          </div>
+        </div>
+
+        <!-- ==========================================================
+             ETAPA 03 — Soluções (multiselect)
+             ========================================================== -->
+        <div class="step" data-step="3">
+          <p class="step-kicker">Etapa 03</p>
+          <h2 class="step-title">O que seu negócio precisa?</h2>
+          <p class="step-sub">Você pode selecionar mais de uma opção.</p>
+
+          <div class="field" data-field="solucoes">
+            <span class="field-question" id="label-solucoes">Selecione tudo o que se aplica <span class="opt">(opcional)</span></span>
+            <div class="options options-grid-2" data-group="solucoes" data-type="checkbox"
+                 role="group" aria-labelledby="label-solucoes">
+              <label class="option">
+                <input type="checkbox" name="solucoes" value="Site com múltiplas páginas">
+                <span class="option-mark" aria-hidden="true"></span>
+                <span class="option-text">Site com múltiplas páginas</span>
+              </label>
+              <label class="option">
+                <input type="checkbox" name="solucoes" value="Catálogo digital de produtos/serviços">
+                <span class="option-mark" aria-hidden="true"></span>
+                <span class="option-text">Catálogo digital</span>
+              </label>
+              <label class="option">
+                <input type="checkbox" name="solucoes" value="Sistema de pedidos">
+                <span class="option-mark" aria-hidden="true"></span>
+                <span class="option-text">Sistema de pedidos</span>
+              </label>
+              <label class="option">
+                <input type="checkbox" name="solucoes" value="Painel administrativo">
+                <span class="option-mark" aria-hidden="true"></span>
+                <span class="option-text">Painel administrativo</span>
+              </label>
+              <label class="option">
+                <input type="checkbox" name="solucoes" value="Dashboard com estatísticas">
+                <span class="option-mark" aria-hidden="true"></span>
+                <span class="option-text">Dashboard com estatísticas</span>
+              </label>
+              <label class="option">
+                <input type="checkbox" name="solucoes" value="Sistema de agendamento">
+                <span class="option-mark" aria-hidden="true"></span>
+                <span class="option-text">Sistema de agendamento</span>
+              </label>
+              <label class="option">
+                <input type="checkbox" name="solucoes" value="Área do cliente (login)">
+                <span class="option-mark" aria-hidden="true"></span>
+                <span class="option-text">Área do cliente (login)</span>
+              </label>
+              <label class="option">
+                <input type="checkbox" name="solucoes" value="Blog ou seção de conteúdo">
+                <span class="option-mark" aria-hidden="true"></span>
+                <span class="option-text">Blog ou conteúdo</span>
+              </label>
+              <label class="option">
+                <input type="checkbox" name="solucoes" value="Automações">
+                <span class="option-mark" aria-hidden="true"></span>
+                <span class="option-text">Automações</span>
+              </label>
+              <label class="option">
+                <input type="checkbox" name="solucoes" value="Integrações com outras ferramentas">
+                <span class="option-mark" aria-hidden="true"></span>
+                <span class="option-text">Integrações</span>
+              </label>
+              <label class="option">
+                <input type="checkbox" name="solucoes" value="Outro">
+                <span class="option-mark" aria-hidden="true"></span>
+                <span class="option-text">Outro</span>
+              </label>
+              <label class="option">
+                <input type="checkbox" name="solucoes" value="Ainda não tenho certeza">
+                <span class="option-mark" aria-hidden="true"></span>
+                <span class="option-text">Ainda não tenho certeza</span>
+              </label>
+            </div>
+            <p class="field-error" data-error role="alert"></p>
+          </div>
+        </div>
+
+        <!-- ==========================================================
+             ETAPA 04 — Objetivos (multiselect)
+             ========================================================== -->
+        <div class="step" data-step="4">
+          <p class="step-kicker">Etapa 04</p>
+          <h2 class="step-title">O que você quer alcançar?</h2>
+          <p class="step-sub">Você pode selecionar mais de uma opção.</p>
+
+          <div class="field" data-field="objetivos">
+            <span class="field-question" id="label-objetivos">Quais são os principais objetivos do projeto? <span class="opt">(opcional)</span></span>
+            <div class="options options-grid-2" data-group="objetivos" data-type="checkbox"
+                 role="group" aria-labelledby="label-objetivos">
+              <label class="option">
+                <input type="checkbox" name="objetivos" value="Aumentar as vendas">
+                <span class="option-mark" aria-hidden="true"></span>
+                <span class="option-text">Aumentar as vendas</span>
+              </label>
+              <label class="option">
+                <input type="checkbox" name="objetivos" value="Receber pedidos online">
+                <span class="option-mark" aria-hidden="true"></span>
+                <span class="option-text">Receber pedidos online</span>
+              </label>
+              <label class="option">
+                <input type="checkbox" name="objetivos" value="Conseguir mais clientes">
+                <span class="option-mark" aria-hidden="true"></span>
+                <span class="option-text">Conseguir mais clientes</span>
+              </label>
+              <label class="option">
+                <input type="checkbox" name="objetivos" value="Mostrar produtos ou serviços">
+                <span class="option-mark" aria-hidden="true"></span>
+                <span class="option-text">Mostrar produtos ou serviços</span>
+              </label>
+              <label class="option">
+                <input type="checkbox" name="objetivos" value="Automatizar processos manuais">
+                <span class="option-mark" aria-hidden="true"></span>
+                <span class="option-text">Automatizar processos</span>
+              </label>
+              <label class="option">
+                <input type="checkbox" name="objetivos" value="Reduzir trabalho manual">
+                <span class="option-mark" aria-hidden="true"></span>
+                <span class="option-text">Reduzir trabalho manual</span>
+              </label>
+              <label class="option">
+                <input type="checkbox" name="objetivos" value="Organizar informações do negócio">
+                <span class="option-mark" aria-hidden="true"></span>
+                <span class="option-text">Organizar informações</span>
+              </label>
+              <label class="option">
+                <input type="checkbox" name="objetivos" value="Passar mais profissionalismo">
+                <span class="option-mark" aria-hidden="true"></span>
+                <span class="option-text">Passar mais profissionalismo</span>
+              </label>
+              <label class="option">
+                <input type="checkbox" name="objetivos" value="Melhorar minha presença online">
+                <span class="option-mark" aria-hidden="true"></span>
+                <span class="option-text">Melhorar presença online</span>
+              </label>
+              <label class="option">
+                <input type="checkbox" name="objetivos" value="Outro">
+                <span class="option-mark" aria-hidden="true"></span>
+                <span class="option-text">Outro</span>
+              </label>
+            </div>
+            <p class="field-error" data-error role="alert"></p>
+          </div>
+        </div>
+
+        <!-- ==========================================================
+             ETAPA 05 — Catálogo
+             ========================================================== -->
+        <div class="step" data-step="5">
+          <p class="step-kicker">Etapa 05</p>
+          <h2 class="step-title">Catálogo e produtos.</h2>
+          <p class="step-sub">Essas informações ajudam a dimensionar o projeto. Tudo opcional.</p>
+
+          <div class="field" data-field="tem_catalogo">
+            <span class="field-question" id="label-catalogo">Você quer mostrar produtos ou serviços no site? <span class="opt">(opcional)</span></span>
+            <div class="options options-inline" data-group="tem_catalogo"
+                 role="radiogroup" aria-labelledby="label-catalogo">
+              <label class="option">
+                <input type="radio" name="tem_catalogo" value="Sim">
+                <span class="option-mark" aria-hidden="true"></span>
+                <span class="option-text">Sim</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="tem_catalogo" value="Não">
+                <span class="option-mark" aria-hidden="true"></span>
+                <span class="option-text">Não</span>
+              </label>
+            </div>
+            <p class="field-error" data-error role="alert"></p>
+          </div>
+
+          <div class="field" data-field="qtd_itens">
+            <label class="field-label" for="qtd_itens">Quantos itens, aproximadamente? <span class="opt">(opcional)</span></label>
+            <input type="text" id="qtd_itens" name="qtd_itens"
+                   placeholder="Ex: 10, 50, 100, mais de 500...">
+            <p class="field-error" data-error role="alert"></p>
+          </div>
+
+          <div class="field" data-field="fotos">
+            <span class="field-question" id="label-fotos">Você já tem fotos e descrições prontas? <span class="opt">(opcional)</span></span>
+            <div class="options" data-group="fotos"
+                 role="radiogroup" aria-labelledby="label-fotos">
+              <label class="option">
+                <input type="radio" name="fotos" value="Já tenho tudo pronto">
+                <span class="option-mark" aria-hidden="true"></span>
+                <span class="option-text">Já tenho tudo pronto</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="fotos" value="Tenho parte">
+                <span class="option-mark" aria-hidden="true"></span>
+                <span class="option-text">Tenho parte</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="fotos" value="Não tenho nada ainda">
+                <span class="option-mark" aria-hidden="true"></span>
+                <span class="option-text">Ainda não tenho nada</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="fotos" value="Preciso de ajuda com isso">
+                <span class="option-mark" aria-hidden="true"></span>
+                <span class="option-text">Preciso de ajuda com isso</span>
+              </label>
+            </div>
+            <p class="field-error" data-error role="alert"></p>
+          </div>
+
+          <div class="field" data-field="categorias">
+            <span class="field-question" id="label-categorias">Seu catálogo precisa de categorias? <span class="opt">(opcional)</span></span>
+            <div class="options options-inline" data-group="categorias"
+                 role="radiogroup" aria-labelledby="label-categorias">
+              <label class="option">
+                <input type="radio" name="categorias" value="Sim">
+                <span class="option-mark" aria-hidden="true"></span>
+                <span class="option-text">Sim</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="categorias" value="Não">
+                <span class="option-mark" aria-hidden="true"></span>
+                <span class="option-text">Não</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="categorias" value="Não sei">
+                <span class="option-mark" aria-hidden="true"></span>
+                <span class="option-text">Não sei</span>
+              </label>
+            </div>
+            <p class="field-error" data-error role="alert"></p>
+          </div>
+        </div>
+
+        <!-- ==========================================================
+             ETAPA 06 — Pedidos
+             ========================================================== -->
+        <div class="step" data-step="6">
+          <p class="step-kicker">Etapa 06</p>
+          <h2 class="step-title">Como você quer receber pedidos?</h2>
+          <p class="step-sub">Isso define a estrutura do sistema. Tudo opcional.</p>
+
+          <div class="field" data-field="pedidos">
+            <span class="field-question" id="label-pedidos">Forma de receber pedidos <span class="opt">(opcional)</span></span>
+            <div class="options options-grid-2" data-group="pedidos" data-type="checkbox"
+                 role="group" aria-labelledby="label-pedidos">
+              <label class="option">
+                <input type="checkbox" name="pedidos" value="Pelo WhatsApp">
+                <span class="option-mark" aria-hidden="true"></span>
+                <span class="option-text">Pelo WhatsApp</span>
+              </label>
+              <label class="option">
+                <input type="checkbox" name="pedidos" value="Formulário no site">
+                <span class="option-mark" aria-hidden="true"></span>
+                <span class="option-text">Formulário no site</span>
+              </label>
+              <label class="option">
+                <input type="checkbox" name="pedidos" value="Carrinho completo com checkout">
+                <span class="option-mark" aria-hidden="true"></span>
+                <span class="option-text">Carrinho completo</span>
+              </label>
+              <label class="option">
+                <input type="checkbox" name="pedidos" value="Somente orçamento">
+                <span class="option-mark" aria-hidden="true"></span>
+                <span class="option-text">Somente orçamento</span>
+              </label>
+              <label class="option">
+                <input type="checkbox" name="pedidos" value="Ainda não sei">
+                <span class="option-mark" aria-hidden="true"></span>
+                <span class="option-text">Ainda não sei</span>
+              </label>
+            </div>
+            <p class="field-error" data-error role="alert"></p>
+          </div>
+
+          <div class="field" data-field="pagamento">
+            <span class="field-question" id="label-pagamento">Precisa de pagamento online? <span class="opt">(opcional)</span></span>
+            <div class="options options-inline" data-group="pagamento"
+                 role="radiogroup" aria-labelledby="label-pagamento">
+              <label class="option">
+                <input type="radio" name="pagamento" value="Sim">
+                <span class="option-mark" aria-hidden="true"></span>
+                <span class="option-text">Sim</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="pagamento" value="Não">
+                <span class="option-mark" aria-hidden="true"></span>
+                <span class="option-text">Não</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="pagamento" value="Ainda não sei">
+                <span class="option-mark" aria-hidden="true"></span>
+                <span class="option-text">Não sei</span>
+              </label>
+            </div>
+            <p class="field-error" data-error role="alert"></p>
+          </div>
+
+          <div class="field" data-field="frete">
+            <span class="field-question" id="label-frete">Precisa de cálculo de frete? <span class="opt">(opcional)</span></span>
+            <div class="options options-inline" data-group="frete"
+                 role="radiogroup" aria-labelledby="label-frete">
+              <label class="option">
+                <input type="radio" name="frete" value="Sim">
+                <span class="option-mark" aria-hidden="true"></span>
+                <span class="option-text">Sim</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="frete" value="Não">
+                <span class="option-mark" aria-hidden="true"></span>
+                <span class="option-text">Não</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="frete" value="Ainda não sei">
+                <span class="option-mark" aria-hidden="true"></span>
+                <span class="option-text">Não sei</span>
+              </label>
+            </div>
+            <p class="field-error" data-error role="alert"></p>
+          </div>
+        </div>
+
+        <!-- ==========================================================
+             ETAPA 07 — Painel e integrações
+             ========================================================== -->
+        <div class="step" data-step="7">
+          <p class="step-kicker">Etapa 07</p>
+          <h2 class="step-title">Painel administrativo e integrações.</h2>
+          <p class="step-sub">O que você precisa gerenciar no dia a dia? Tudo opcional.</p>
+
+          <div class="field" data-field="painel">
+            <span class="field-question" id="label-painel">O que precisa no painel administrativo? <span class="opt">(opcional)</span></span>
+            <div class="options options-grid-2" data-group="painel" data-type="checkbox"
+                 role="group" aria-labelledby="label-painel">
+              <label class="option">
+                <input type="checkbox" name="painel" value="Cadastrar/editar produtos">
+                <span class="option-mark" aria-hidden="true"></span>
+                <span class="option-text">Cadastrar/editar produtos</span>
+              </label>
+              <label class="option">
+                <input type="checkbox" name="painel" value="Ver pedidos recebidos">
+                <span class="option-mark" aria-hidden="true"></span>
+                <span class="option-text">Ver pedidos recebidos</span>
+              </label>
+              <label class="option">
+                <input type="checkbox" name="painel" value="Gerenciar clientes">
+                <span class="option-mark" aria-hidden="true"></span>
+                <span class="option-text">Gerenciar clientes</span>
+              </label>
+              <label class="option">
+                <input type="checkbox" name="painel" value="Ver estatísticas e relatórios">
+                <span class="option-mark" aria-hidden="true"></span>
+                <span class="option-text">Estatísticas e relatórios</span>
+              </label>
+              <label class="option">
+                <input type="checkbox" name="painel" value="Gerenciar promoções">
+                <span class="option-mark" aria-hidden="true"></span>
+                <span class="option-text">Gerenciar promoções</span>
+              </label>
+              <label class="option">
+                <input type="checkbox" name="painel" value="Gerenciar agendamentos">
+                <span class="option-mark" aria-hidden="true"></span>
+                <span class="option-text">Gerenciar agendamentos</span>
+              </label>
+              <label class="option">
+                <input type="checkbox" name="painel" value="Controle de estoque">
+                <span class="option-mark" aria-hidden="true"></span>
+                <span class="option-text">Controle de estoque</span>
+              </label>
+              <label class="option">
+                <input type="checkbox" name="painel" value="Ainda não sei">
+                <span class="option-mark" aria-hidden="true"></span>
+                <span class="option-text">Ainda não sei</span>
+              </label>
+            </div>
+            <p class="field-error" data-error role="alert"></p>
+          </div>
+
+          <div class="field" data-field="integracoes">
+            <span class="field-question" id="label-integracoes">Precisa integrar com algum sistema externo? <span class="opt">(opcional)</span></span>
+            <div class="options options-grid-2" data-group="integracoes" data-type="checkbox"
+                 role="group" aria-labelledby="label-integracoes">
+              <label class="option">
+                <input type="checkbox" name="integracoes" value="WhatsApp API">
+                <span class="option-mark" aria-hidden="true"></span>
+                <span class="option-text">WhatsApp API</span>
+              </label>
+              <label class="option">
+                <input type="checkbox" name="integracoes" value="Instagram / Facebook">
+                <span class="option-mark" aria-hidden="true"></span>
+                <span class="option-text">Instagram / Facebook</span>
+              </label>
+              <label class="option">
+                <input type="checkbox" name="integracoes" value="Meios de pagamento">
+                <span class="option-mark" aria-hidden="true"></span>
+                <span class="option-text">Meios de pagamento</span>
+              </label>
+              <label class="option">
+                <input type="checkbox" name="integracoes" value="Sistema de nota fiscal">
+                <span class="option-mark" aria-hidden="true"></span>
+                <span class="option-text">Nota fiscal</span>
+              </label>
+              <label class="option">
+                <input type="checkbox" name="integracoes" value="Google Analytics / Meta Pixel">
+                <span class="option-mark" aria-hidden="true"></span>
+                <span class="option-text">Analytics / Pixel</span>
+              </label>
+              <label class="option">
+                <input type="checkbox" name="integracoes" value="E-mail marketing">
+                <span class="option-mark" aria-hidden="true"></span>
+                <span class="option-text">E-mail marketing</span>
+              </label>
+              <label class="option">
+                <input type="checkbox" name="integracoes" value="ERP ou sistema interno">
+                <span class="option-mark" aria-hidden="true"></span>
+                <span class="option-text">ERP ou sistema interno</span>
+              </label>
+              <label class="option">
+                <input type="checkbox" name="integracoes" value="Outro">
+                <span class="option-mark" aria-hidden="true"></span>
+                <span class="option-text">Outro</span>
+              </label>
+            </div>
+            <p class="field-error" data-error role="alert"></p>
+          </div>
+        </div>
+
+        <!-- ==========================================================
+             ETAPA 08 — Descrição (OBRIGATÓRIA)
+             ========================================================== -->
+        <div class="step" data-step="8">
+          <p class="step-kicker">Etapa 08</p>
+          <h2 class="step-title">Conte sobre o seu projeto.</h2>
+          <p class="step-sub">Essa é a parte mais importante do briefing. Conte com suas palavras.</p>
+
+          <div class="field" data-field="descricao">
+            <label class="field-question" for="descricao">Descreva o que você imagina para o projeto. <span class="req" aria-hidden="true">*</span></label>
+            <textarea id="descricao" name="descricao" rows="7" required
+                      placeholder="Ex: quero um site com várias páginas, um catálogo com meus produtos, sistema de pedidos pelo WhatsApp e um painel para eu cadastrar os produtos sozinho..."></textarea>
+            <p class="field-hint">Sem termos técnicos. Explique com suas próprias palavras.</p>
+            <p class="field-error" data-error role="alert"></p>
+          </div>
+        </div>
+
+        <!-- ==========================================================
+             ETAPA 09 — Prazo, referência e observações
+             ========================================================== -->
+        <div class="step" data-step="9">
+          <p class="step-kicker">Etapa 09</p>
+          <h2 class="step-title">Últimos detalhes.</h2>
+          <p class="step-sub">Prazo, referências e observações finais. Tudo opcional.</p>
+
+          <div class="field" data-field="prazo">
+            <span class="field-label" id="label-prazo">Quando você gostaria de colocar o projeto no ar? <span class="opt">(opcional)</span></span>
+            <div class="options options-grid-2" data-group="prazo"
+                 role="radiogroup" aria-labelledby="label-prazo">
+              <label class="option">
+                <input type="radio" name="prazo" value="O quanto antes">
+                <span class="option-mark" aria-hidden="true"></span>
+                <span class="option-text">O quanto antes</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="prazo" value="Em até 15 dias">
+                <span class="option-mark" aria-hidden="true"></span>
+                <span class="option-text">Em até 15 dias</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="prazo" value="Em até 30 dias">
+                <span class="option-mark" aria-hidden="true"></span>
+                <span class="option-text">Em até 30 dias</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="prazo" value="Em até 60 dias">
+                <span class="option-mark" aria-hidden="true"></span>
+                <span class="option-text">Em até 60 dias</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="prazo" value="Ainda não tenho prazo definido">
+                <span class="option-mark" aria-hidden="true"></span>
+                <span class="option-text">Ainda não tenho prazo definido</span>
+              </label>
+            </div>
+            <p class="field-error" data-error role="alert"></p>
+          </div>
+
+          <div class="field" data-field="referencia">
+            <label class="field-label" for="referencia">Algum site ou sistema de referência? <span class="opt">(opcional)</span></label>
+            <input type="url" id="referencia" name="referencia" inputmode="url"
+                   placeholder="Cole aqui o link, se tiver.">
+            <p class="field-error" data-error role="alert"></p>
+          </div>
+
+          <div class="field" data-field="observacoes">
+            <label class="field-question" for="observacoes">Alguma informação importante que não perguntamos? <span class="opt">(opcional)</span></label>
+            <textarea id="observacoes" name="observacoes" rows="4"
+                      placeholder="Escreva aqui, se quiser."></textarea>
+            <p class="field-error" data-error role="alert"></p>
+          </div>
+        </div>
+
+        <!-- ==========================================================
+             ETAPA 10 — REVISÃO
+             ========================================================== -->
+        <div class="step" data-step="10">
+          <p class="step-kicker">Revisão final</p>
+          <h2 class="step-title">Confira antes de enviar.</h2>
+          <p class="step-sub">Revise os dados abaixo. Você pode voltar e editar qualquer item.</p>
+
+          <div class="summary">
+            <div class="summary-top">
+              <p class="summary-top-label">Seu projeto</p>
+              <p class="summary-top-plan">BUSINESS <span>— R$890,00</span></p>
+            </div>
+            <div class="summary-list" id="summary-list"></div>
+          </div>
+        </div>
+
+        <!-- ==========================================================
+             NAVEGAÇÃO
+             ========================================================== -->
+        <div class="nav">
+          <button type="button" class="btn btn-ghost" id="btn-prev" hidden>
+            <span class="btn-arrow" aria-hidden="true">←</span>
+            <span class="btn-label">Voltar</span>
+          </button>
+
+          <button type="button" class="btn btn-primary" id="btn-next">
+            <span class="btn-label">Continuar</span>
+            <span class="btn-arrow" aria-hidden="true">→</span>
+          </button>
+
+          <button type="submit" class="btn btn-primary" id="btn-submit" hidden>
+            <span class="btn-label">Enviar projeto</span>
+            <span class="btn-arrow" aria-hidden="true">→</span>
+          </button>
+        </div>
+
+        <p class="privacy">
+          Suas informações serão utilizadas exclusivamente para entendermos seu projeto
+          e entrarmos em contato.
+        </p>
+
+        <div class="form-alert" id="form-alert" role="alert"></div>
+      </form>
+
+      <!-- ==========================================================
+           SUCESSO
+           ========================================================== -->
+      <section class="success" id="success" hidden>
+        <p class="success-status">
+          <span class="dot" aria-hidden="true"></span>
+          Projeto recebido
+        </p>
+
+        <h2 class="success-title">Obrigado por compartilhar sua ideia.</h2>
+
+        <p>Agora temos uma visão muito melhor do que você precisa.</p>
+        <p>A Dev Ruby vai analisar as informações e entrar em contato para conversarmos
+           sobre os próximos passos.</p>
+
+        <div class="success-actions">
+          <a class="btn btn-whatsapp" id="btn-whatsapp" href="#" target="_blank" rel="noopener">
+            <span class="btn-label">Falar pelo WhatsApp</span>
+            <span class="btn-arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="btn btn-ghost" href="../../index.html">
+            <span class="btn-arrow" aria-hidden="true">←</span>
+            <span class="btn-label">Voltar ao site</span>
+          </a>
+        </div>
+      </section>
+
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>Dev Ruby · Digital Lab</p>
+  </footer>
+
+</div>
+
+<script src="plano-business.js"></script>
+</body>
+</html>

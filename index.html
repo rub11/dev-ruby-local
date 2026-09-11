@@ -73,92 +73,118 @@
     <div id="main-content" style="display: none;">
 
         <!-- ===== HEADER ===== -->
-        <header id="header" class="header">
-            <div class="container header-container">
-                <div class="logo">
-                    <a href="#hero">
-                        <span class="logo-fox">DEV</span><span class="logo-ruby">RUBY</span>
-                        <span class="logo-lab">DIGITAL LAB</span>
-                    </a>
-                </div>
-                <nav class="nav-menu" id="navMenu">
-                    <ul>
-                        <li><a href="#hero" class="nav-link active">HOME</a></li>
-                        <li><a href="#servicos" class="nav-link">SERVIÇOS</a></li>
-                        <li><a href="#planos" class="nav-link">PLANOS</a></li>
-                        <li><a href="#projetos" class="nav-link">PROJETOS</a></li>
-                        <li><a href="#contato" class="nav-link">CONTATO</a></li>
-                    </ul>
-                </nav>
-                <div class="header-status">
-                    <span class="status-dot"></span> ONLINE
-                </div>
-                <div class="hamburger" id="hamburger" aria-label="Menu" role="button" tabindex="0">
-                    <span></span><span></span><span></span>
-                </div>
-            </div>
-        </header>
+<header id="header" class="header">
+    <div class="container header-container">
+        <div class="logo">
+            <a href="#hero">
+                <span class="logo-fox">DEV</span><span class="logo-ruby">RUBY</span>
+                <span class="logo-lab">DIGITAL LAB</span>
+            </a>
+        </div>
+        <nav class="nav-menu" id="navMenu">
+            <ul>
+                <li><a href="#hero" class="nav-link active">HOME</a></li>
+                <li><a href="#servicos" class="nav-link">SERVIÇOS</a></li>
+                <li><a href="#planos" class="nav-link">PLANOS</a></li>
+                <li><a href="#projetos" class="nav-link">PROJETOS</a></li>
+                <li><a href="#contato" class="nav-link">CONTATO</a></li>
+            </ul>
+        </nav>
+        <div class="header-status">
+            <span class="status-dot"></span> ONLINE
+        </div>
+        <div class="hamburger" id="hamburger" aria-label="Menu" role="button" tabindex="0">
+            <span></span><span></span><span></span>
+        </div>
+    </div>
+</header>
 
-        <!-- ===== HERO ===== -->
-        <section id="hero" class="hero">
-            <canvas id="particlesCanvas" class="particles-canvas"></canvas>
-            <div class="container hero-grid">
-                <div class="hero-content">
-                    <div class="hero-badge">
-                        <span class="badge-dot"></span> DISPONÍVEL PARA NOVOS PROJETOS
-                    </div>
-                    <h1 class="hero-title">
-                        SEU NEGÓCIO MERECE UMA<br>
-                        <span class="hero-highlight">PRESENÇA DIGITAL</span> À ALTURA.
-                    </h1>
-                    <p class="hero-desc">
-                        Você imagina. A Dev Ruby transforma em solução. Do seu primeiro site ao sistema completo do seu
-                        negócio.
-                    </p>
-                    <div class="hero-buttons">
-                        <a href="#planos" class="btn btn-primary">
-                            VER PLANOS <i class="fas fa-arrow-right"></i>
-                        </a>
-                        <a href="#projetos" class="btn btn-secondary">
-                            VER PROJETOS
-                        </a>
-                    </div>
-                    <div class="hero-meta">
-                        <span><i class="fas fa-check-circle" style="color:#4ade80;"></i> Projeto personalizado</span>
-                        <span><i class="fas fa-check-circle" style="color:#4ade80;"></i> Design profissional</span>
-                        <span><i class="fas fa-check-circle" style="color:#4ade80;"></i> Responsivo</span>
-                        <span><i class="fas fa-check-circle" style="color:#4ade80;"></i> Atendimento direto</span>
-                    </div>
-                </div>
-                <div class="hero-visual">
-                    <div class="orbital-system" id="orbitalSystem">
-                        <div class="orbital-core">
-                            <span class="core-text">DEV<br>RUBY</span>
-                            <div class="core-glow"></div>
-                        </div>
-                    </div>
-                </div>
+<!-- ===== HERO ===== -->
+<section id="hero" class="hero">
+    <canvas id="particlesCanvas" class="particles-canvas"></canvas>
+
+    <div class="hero-bg-elements" aria-hidden="true">
+        <div class="hero-grid-lines"></div>
+        <div class="hero-glow"></div>
+        <div class="hero-rings">
+            <div class="hero-ring ring-1"></div>
+            <div class="hero-ring ring-2"></div>
+            <div class="hero-ring ring-3"></div>
+        </div>
+        <div class="hero-horizontal-lines"></div>
+    </div>
+
+    <div class="hero-container">
+
+        <div class="hero-signature">
+            <span class="sig-dev">DEV</span>
+            <span class="sig-ruby">RUBY</span>
+            <span class="sig-lab">/ DIGITAL LAB</span>
+        </div>
+
+        <div class="hero-badge">
+            <span class="badge-dot"></span> DISPONÍVEL PARA NOVOS PROJETOS
+        </div>
+
+        <h1 class="hero-title">
+            <span class="line">SEU NEGÓCIO MERECE</span>
+            <span class="line">UMA PRESENÇA</span>
+            <span class="line"><span class="hero-highlight">DIGITAL</span> À ALTURA.</span>
+        </h1>
+
+        <p class="hero-desc">
+            Você imagina. A Dev Ruby transforma em solução.
+            Do seu primeiro site ao sistema completo do seu negócio.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="#planos" class="btn btn-primary">
+                VER PLANOS <i class="fas fa-arrow-right"></i>
+            </a>
+            <a href="#projetos" class="btn btn-secondary">
+                VER PROJETOS
+            </a>
+        </div>
+
+        <div class="hero-meta">
+            <span><i class="fas fa-check-circle"></i> Projeto personalizado</span>
+            <span><i class="fas fa-check-circle"></i> Design profissional</span>
+            <span><i class="fas fa-check-circle"></i> Responsivo</span>
+            <span><i class="fas fa-check-circle"></i> Atendimento direto</span>
+        </div>
+    </div>
+
+    <div class="hero-stats">
+        <div class="stats-inner">
+            <div class="stat-item">
+                <span class="stat-number" data-count="57">0</span>
+                <span class="stat-label">PROJETOS<br><small>JÁ CRIADOS</small></span>
             </div>
-            <div class="hero-stats container">
-                <div class="stat-item">
-                    <span class="stat-number" data-count="57">0</span>
-                    <span class="stat-label">PROJETOS JÁ CRIADOS</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number" data-count="17">0</span>
-                    <span class="stat-label">SISTEMAS DESENVOLVIDOS</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number" data-count="28">0</span>
-                    <span class="stat-label">WEBSITES PERSONALIZADOS</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number" data-count="100">0</span>
-                    <span class="stat-label">DEDICAÇÃO</span>
-                </div>
+            <div class="stat-item">
+                <span class="stat-number" data-count="17">0</span>
+                <span class="stat-label">SISTEMAS<br><small>DESENVOLVIDOS</small></span>
             </div>
-            <div class="hero-tech-label">// SYSTEM_ONLINE // BUILD_2026</div>
-        </section>
+            <div class="stat-item">
+                <span class="stat-number" data-count="28">0</span>
+                <span class="stat-label">WEBSITES<br><small>PERSONALIZADOS</small></span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" data-count="100">0</span>
+                <span class="stat-label">DEDICAÇÃO</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Orbital antigo mantido oculto para compatibilidade com animations.js -->
+    <div class="orbital-system" id="orbitalSystem" aria-hidden="true">
+        <div class="orbital-core">
+            <span class="core-text">DEV<br>RUBY</span>
+            <div class="core-glow"></div>
+        </div>
+    </div>
+
+    <div class="hero-tech-label">// SYSTEM_ONLINE // BUILD_2026</div>
+</section>
 
         <!-- ===== DESAFIOS ===== -->
         <section id="desafios" class="desafios section">
@@ -412,167 +438,176 @@
         </section>
 
         <!-- ===== PLANOS ===== -->
-<section id="planos" class="planos section">
-    <div class="container">
-        <div class="section-label">// PLANOS & SOLUÇÕES</div>
-        <h2 class="section-title">DO PRIMEIRO SITE AO<br>SISTEMA COMPLETO DO SEU NEGÓCIO.</h2>
-        <p class="section-sub">Escolha o nível de solução que melhor combina com o momento do seu negócio — e evolua conforme crescer.</p>
+        <section id="planos" class="planos section">
+            <div class="container">
+                <div class="section-label">// PLANOS & SOLUÇÕES</div>
+                <h2 class="section-title">DO PRIMEIRO SITE AO<br>SISTEMA COMPLETO DO SEU NEGÓCIO.</h2>
+                <p class="section-sub">Escolha o nível de solução que combina com o momento do seu negócio — e evolua
+                    conforme crescer. Todos os planos já incluem <strong>hospedagem + domínio .com.br</strong>.</p>
 
-        <div class="pt-grid" id="ptGrid">
+                <div class="pt-grid" id="ptGrid">
 
-            <!-- ========== START ========== -->
-            <article class="pt-plan" data-plano="start">
-                <header class="pt-head">
-                    <div class="pt-name">START</div>
-                    <div class="pt-price"><span class="pt-cur">R$</span><span class="pt-val">197</span></div>
-                    <div class="pt-tag">Para começar</div>
-                </header>
+                    <!-- ========== START — R$500 ========== -->
+                    <article class="pt-plan" data-plano="start">
+                        <header class="pt-head">
+                            <div class="pt-name">START</div>
+                            <div class="pt-price">
+                                <span class="pt-cur">R$</span><span class="pt-val">500</span><span
+                                    class="pt-cents">,00</span>
+                            </div>
+                            <div class="pt-tag">Presença digital em 7 dias</div>
+                            <div class="pt-includes">
+                                <i class="fas fa-globe"></i> Hospedagem + Domínio <strong>.com.br</strong>
+                            </div>
+                        </header>
 
-                <div class="pt-benefits-wrap">
-                    <div class="pt-benefits">
-                        <ul>
-                            <li><i class="fas fa-check"></i> Landing Pages</li>
-                            <li><i class="fas fa-check"></i> Sites profissionais</li>
-                            <li><i class="fas fa-check"></i> Portfólios</li>
-                            <li><i class="fas fa-check"></i> Páginas de serviços</li>
-                            <li><i class="fas fa-check"></i> Divulgação de negócio</li>
-                            <li><i class="fas fa-check"></i> Design personalizado</li>
-                            <li><i class="fas fa-check"></i> Responsividade</li>
-                            <li><i class="fas fa-check"></i> WhatsApp</li>
-                            <li><i class="fas fa-check"></i> Formulários básicos</li>
-                            <li><i class="fas fa-check"></i> SEO básico</li>
-                            <li><i class="fas fa-check"></i> Interações em JavaScript</li>
-                            <li><i class="fas fa-check"></i> Código-fonte entregue</li>
-                            <li><i class="fas fa-check"></i> Projeto pertence a você</li>
-                        </ul>
-                    </div>
+                        <div class="pt-benefits-wrap">
+                            <div class="pt-benefits">
+                                <div class="pt-benefits-title">O ESSENCIAL PARA COMEÇAR</div>
+                                <ul>
+                                    <li><i class="fas fa-check"></i> Landing Page ou site de 1 página</li>
+                                    <li><i class="fas fa-check"></i> Design personalizado</li>
+                                    <li><i class="fas fa-check"></i> 100% responsivo</li>
+                                    <li><i class="fas fa-check"></i> Botão de WhatsApp</li>
+                                    <li><i class="fas fa-check"></i> Formulário de contato</li>
+                                    <li><i class="fas fa-check"></i> SEO básico (Google)</li>
+                                    <li><i class="fas fa-check"></i> Interações em JavaScript</li>
+                                    <li><i class="fas fa-check"></i> Código-fonte entregue</li>
+                                    <li><i class="fas fa-check"></i> Projeto pertence a você</li>
+                                </ul>
+                            </div>
+                            <div class="pt-deadline"><i class="fas fa-clock"></i> Prazo médio: <strong>7 dias</strong>
+                            </div>
+                        </div>
+
+                        <footer class="pt-cta">
+                            <a href="formularios/plano1/plano-start.html" class="btn plano-cta pt-btn"
+                                data-plano="START">COMEÇAR MEU PROJETO</a>
+                        </footer>
+                    </article>
+
+                    <!-- ========== BUSINESS — R$890 ========== -->
+                    <article class="pt-plan pt-destaque" data-plano="business">
+                        <header class="pt-head">
+                            <div class="pt-badge">⭐ MAIS ESCOLHIDO</div>
+                            <div class="pt-name">BUSINESS</div>
+                            <div class="pt-price">
+                                <span class="pt-cur">R$</span><span class="pt-val">890</span><span
+                                    class="pt-cents">,00</span>
+                            </div>
+                            <div class="pt-tag">Ferramenta de negócio em 15 dias</div>
+                            <div class="pt-includes">
+                                <i class="fas fa-globe"></i> Hospedagem + Domínio <strong>.com.br</strong>
+                            </div>
+                        </header>
+
+                        <div class="pt-benefits-wrap">
+                            <div class="pt-benefits">
+                                <div class="pt-benefits-title">TUDO DO START +</div>
+                                <ul>
+                                    <li><i class="fas fa-check"></i> Site com múltiplas páginas</li>
+                                    <li><i class="fas fa-check"></i> Catálogo digital de produtos/serviços</li>
+                                    <li><i class="fas fa-check"></i> Sistema de pedidos simples</li>
+                                    <li><i class="fas fa-check"></i> Formulários avançados</li>
+                                    <li><i class="fas fa-check"></i> Dashboard básico</li>
+                                    <li><i class="fas fa-check"></i> Automações simples</li>
+                                    <li><i class="fas fa-check"></i> SEO otimizado</li>
+                                    <li><i class="fas fa-check"></i> Painel administrativo básico</li>
+                                    <li class="pt-li-bonus"><i class="fas fa-gift"></i> 2 meses de manutenção bônus</li>
+                                    <li class="pt-li-bonus"><i class="fas fa-gift"></i> 3 rodadas de ajustes</li>
+                                </ul>
+                            </div>
+                            <div class="pt-deadline"><i class="fas fa-clock"></i> Prazo médio: <strong>15 dias</strong>
+                            </div>
+                        </div>
+
+                        <footer class="pt-cta">
+                            <a href="formularios/Plano Biusiness 1/planobiusines1.html"
+                                class="btn btn-primary plano-cta pt-btn" data-plano="BUSINESS">QUERO O BUSINESS</a>
+                        </footer>
+                    </article>
+
+                    <!-- ========== PROFISSIONAL — R$1.400 ========== -->
+                    <article class="pt-plan" data-plano="profissional">
+                        <header class="pt-head">
+                            <div class="pt-name">PROFISSIONAL</div>
+                            <div class="pt-price">
+                                <span class="pt-cur">R$</span><span class="pt-val">1.400</span><span
+                                    class="pt-cents">,00</span>
+                            </div>
+                            <div class="pt-tag">Solução completa em até 30 dias</div>
+                            <div class="pt-includes">
+                                <i class="fas fa-globe"></i> Hospedagem + Domínio <strong>.com.br</strong>
+                            </div>
+                        </header>
+
+                        <div class="pt-benefits-wrap">
+                            <div class="pt-benefits">
+                                <div class="pt-benefits-title">TUDO DO BUSINESS +</div>
+                                <ul>
+                                    <li><i class="fas fa-check"></i> Sistema web completo</li>
+                                    <li><i class="fas fa-check"></i> Área administrativa completa</li>
+                                    <li><i class="fas fa-check"></i> Área do cliente (login)</li>
+                                    <li><i class="fas fa-check"></i> Banco de dados</li>
+                                    <li><i class="fas fa-check"></i> Dashboard com gráficos</li>
+                                    <li><i class="fas fa-check"></i> Relatórios e exportações</li>
+                                    <li><i class="fas fa-check"></i> CRM básico de clientes</li>
+                                    <li><i class="fas fa-check"></i> Sistema de agendamento</li>
+                                    <li><i class="fas fa-check"></i> Automações avançadas</li>
+                                    <li><i class="fas fa-check"></i> SEO avançado</li>
+                                    <li class="pt-li-bonus"><i class="fas fa-gift"></i> 3 meses de manutenção bônus</li>
+                                    <li class="pt-li-bonus"><i class="fas fa-gift"></i> 4 rodadas de ajustes</li>
+                                    <li class="pt-li-bonus"><i class="fas fa-gift"></i> 4 reuniões de alinhamento</li>
+                                </ul>
+                            </div>
+                            <div class="pt-deadline"><i class="fas fa-clock"></i> Prazo médio: <strong>até 30
+                                    dias</strong></div>
+                        </div>
+
+                        <footer class="pt-cta">
+                            <a href="formularios/plano profissional/plano-profissional.html" class="btn plano-cta pt-btn" data-plano="PROFISSIONAL">QUERO UMA SOLUÇÃO
+                                COMPLETA</a>
+                        </footer>
+                    </article>
+
+                    <!-- ========== SOB MEDIDA ========== -->
+                    <article class="pt-plan pt-custom" data-plano="sobmedida">
+                        <header class="pt-head">
+                            <div class="pt-name">SOB MEDIDA</div>
+                            <div class="pt-price pt-price-custom">ENTRE EM CONTATO</div>
+                            <div class="pt-tag">Projeto exclusivo</div>
+                        </header>
+
+                        <div class="pt-benefits-wrap">
+                            <div class="pt-benefits">
+                                <div class="pt-benefits-title">TUDO DO PROFISSIONAL +</div>
+                                <ul>
+                                    <li><i class="fas fa-check"></i> Sistemas complexos</li>
+                                    <li><i class="fas fa-check"></i> Plataformas sob medida</li>
+                                    <li><i class="fas fa-check"></i> Dashboards exclusivos</li>
+                                    <li><i class="fas fa-check"></i> CRM personalizado</li>
+                                    <li><i class="fas fa-check"></i> Controle de estoque</li>
+                                    <li><i class="fas fa-check"></i> Sistema financeiro</li>
+                                    <li><i class="fas fa-check"></i> Integrações avançadas</li>
+                                    <li><i class="fas fa-check"></i> Automações exclusivas</li>
+                                    <li><i class="fas fa-check"></i> Banco de dados completo</li>
+                                    <li><i class="fas fa-check"></i> Inteligência Artificial</li>
+                                    <li><i class="fas fa-check"></i> Funcionalidades exclusivas</li>
+                                    <li><i class="fas fa-check"></i> Interface totalmente personalizada</li>
+                                    <li><i class="fas fa-check"></i> Reuniões e ajustes sob medida</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <footer class="pt-cta">
+                            <a href="#contato" class="btn plano-cta pt-btn" data-plano="SOB MEDIDA">FALAR SOBRE MEU
+                                PROJETO</a>
+                        </footer>
+                    </article>
+
                 </div>
-
-                <footer class="pt-cta">
-                    <a href="formularios/plano-start.html" class="btn plano-cta pt-btn" data-plano="START">COMEÇAR MEU PROJETO</a>
-                </footer>
-            </article>
-
-            <!-- ========== BUSINESS ========== -->
-            <article class="pt-plan pt-destaque" data-plano="business">
-                <header class="pt-head">
-                    <div class="pt-badge">⭐ MAIS ESCOLHIDO</div>
-                    <div class="pt-name">BUSINESS</div>
-                    <div class="pt-price"><span class="pt-cur">R$</span><span class="pt-val">397</span></div>
-                    <div class="pt-tag">Ferramenta de negócio</div>
-                </header>
-
-                <div class="pt-benefits-wrap">
-                    <div class="pt-benefits">
-                        <ul>
-                            <li><i class="fas fa-check"></i> Tudo do START</li>
-                            <li><i class="fas fa-check"></i> Sites comerciais</li>
-                            <li><i class="fas fa-check"></i> Catálogos digitais</li>
-                            <li><i class="fas fa-check"></i> Sistemas simples</li>
-                            <li><i class="fas fa-check"></i> Sistema de pedidos</li>
-                            <li><i class="fas fa-check"></i> Formulários avançados</li>
-                            <li><i class="fas fa-check"></i> Dashboards básicos</li>
-                            <li><i class="fas fa-check"></i> APIs e integrações</li>
-                            <li><i class="fas fa-check"></i> Automações</li>
-                            <li><i class="fas fa-check"></i> Banco de dados compatível</li>
-                            <li><i class="fas fa-check"></i> Área administrativa básica</li>
-                            <li><i class="fas fa-check"></i> CRUD</li>
-                            <li><i class="fas fa-check"></i> Calculadoras e simuladores</li>
-                            <li><i class="fas fa-check"></i> SEO</li>
-                            <li><i class="fas fa-check"></i> Código-fonte entregue</li>
-                            <li><i class="fas fa-check"></i> Projeto pertence a você</li>
-                            <li class="pt-li-bonus"><i class="fas fa-gift"></i> 3 reuniões de alinhamento</li>
-                            <li class="pt-li-bonus"><i class="fas fa-gift"></i> 3 rodadas de ajustes</li>
-                            <li class="pt-li-bonus"><i class="fas fa-gift"></i> 2 meses de manutenção bônus</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <footer class="pt-cta">
-                    <a href="#contato" class="btn btn-primary plano-cta pt-btn" data-plano="BUSINESS">QUERO O BUSINESS</a>
-                </footer>
-            </article>
-
-            <!-- ========== PROFISSIONAL ========== -->
-            <article class="pt-plan" data-plano="profissional">
-                <header class="pt-head">
-                    <div class="pt-name">PROFISSIONAL</div>
-                    <div class="pt-price"><span class="pt-cur">R$</span><span class="pt-val">597</span></div>
-                    <div class="pt-tag">Solução completa</div>
-                </header>
-
-                <div class="pt-benefits-wrap">
-                    <div class="pt-benefits">
-                        <ul>
-                            <li><i class="fas fa-check"></i> Tudo do BUSINESS</li>
-                            <li><i class="fas fa-check"></i> Sistemas web</li>
-                            <li><i class="fas fa-check"></i> Plataformas</li>
-                            <li><i class="fas fa-check"></i> Controle de estoque</li>
-                            <li><i class="fas fa-check"></i> Sistema financeiro</li>
-                            <li><i class="fas fa-check"></i> CRM</li>
-                            <li><i class="fas fa-check"></i> Agendamento</li>
-                            <li><i class="fas fa-check"></i> Dashboards completos</li>
-                            <li><i class="fas fa-check"></i> Área administrativa</li>
-                            <li><i class="fas fa-check"></i> Área do cliente</li>
-                            <li><i class="fas fa-check"></i> Login e cadastro</li>
-                            <li><i class="fas fa-check"></i> Banco de dados</li>
-                            <li><i class="fas fa-check"></i> Relatórios</li>
-                            <li><i class="fas fa-check"></i> CRUD completo</li>
-                            <li><i class="fas fa-check"></i> Automações</li>
-                            <li><i class="fas fa-check"></i> Funções personalizadas</li>
-                            <li><i class="fas fa-check"></i> Interface personalizada</li>
-                            <li><i class="fas fa-check"></i> SEO avançado</li>
-                            <li class="pt-li-bonus"><i class="fas fa-gift"></i> 4 reuniões de alinhamento</li>
-                            <li class="pt-li-bonus"><i class="fas fa-gift"></i> 4 rodadas de ajustes</li>
-                            <li class="pt-li-bonus"><i class="fas fa-gift"></i> 3 meses de manutenção bônus</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <footer class="pt-cta">
-                    <a href="#contato" class="btn plano-cta pt-btn" data-plano="PROFISSIONAL">QUERO UMA SOLUÇÃO COMPLETA</a>
-                </footer>
-            </article>
-
-            <!-- ========== SOB MEDIDA ========== -->
-            <article class="pt-plan pt-custom" data-plano="sobmedida">
-                <header class="pt-head">
-                    <div class="pt-name">SOB MEDIDA</div>
-                    <div class="pt-price pt-price-custom">ENTRE EM CONTATO</div>
-                    <div class="pt-tag">Projeto exclusivo</div>
-                </header>
-
-                <div class="pt-benefits-wrap">
-                    <div class="pt-benefits">
-                        <ul>
-                            <li><i class="fas fa-check"></i> Tudo do PROFISSIONAL</li>
-                            <li><i class="fas fa-check"></i> Sistemas complexos</li>
-                            <li><i class="fas fa-check"></i> Plataformas sob medida</li>
-                            <li><i class="fas fa-check"></i> Dashboards exclusivos</li>
-                            <li><i class="fas fa-check"></i> Sistemas de pedidos</li>
-                            <li><i class="fas fa-check"></i> CRM personalizado</li>
-                            <li><i class="fas fa-check"></i> Controle de estoque</li>
-                            <li><i class="fas fa-check"></i> Sistema financeiro</li>
-                            <li><i class="fas fa-check"></i> Integrações avançadas</li>
-                            <li><i class="fas fa-check"></i> Automações exclusivas</li>
-                            <li><i class="fas fa-check"></i> Banco de dados completo</li>
-                            <li><i class="fas fa-check"></i> Área administrativa</li>
-                            <li><i class="fas fa-check"></i> Área do cliente</li>
-                            <li><i class="fas fa-check"></i> Funcionalidades exclusivas</li>
-                            <li><i class="fas fa-check"></i> Interface totalmente personalizada</li>
-                            <li><i class="fas fa-check"></i> Reuniões e ajustes sob medida</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <footer class="pt-cta">
-                    <a href="#contato" class="btn plano-cta pt-btn" data-plano="SOB MEDIDA">FALAR SOBRE MEU PROJETO</a>
-                </footer>
-            </article>
-
-        </div>
-    </div>
-</section>
+            </div>
+        </section>
 
         <!-- ===== MANUTENÇÃO ===== -->
         <section id="manutencao" class="manutencao section">
@@ -1287,10 +1322,7 @@
                         <a href="#projetos">PROJETOS</a>
                         <a href="#contato">CONTATO</a>
                     </div>
-                    <div class="footer-social">
-                        <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
+                   
                 </div>
                 <div class="footer-bottom">
                     <span>© 2026 DEV RUBY. Todos os direitos reservados.</span>

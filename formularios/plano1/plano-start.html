@@ -3,16 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#07070a">
-<meta name="description" content="Briefing do Projeto START (R$297) da Dev Ruby. Conte o que você precisa e nós transformamos sua ideia em uma presença digital profissional.">
-<title>Projeto START — R$297 | Dev Ruby</title>
+<meta name="theme-color" content="#08080a">
+<meta name="description" content="Briefing do Projeto START (R$500,00) da Dev Ruby. Hospedagem e domínio .com.br inclusos.">
+<title>Projeto START — R$500,00 | Dev Ruby</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
 <link rel="stylesheet" href="plano-start.css">
 </head>
 <body>
 
-<!-- ============================================================
-     FUNDO DECORATIVO
-     ============================================================ -->
 <div class="bg" aria-hidden="true">
   <div class="bg-glow"></div>
   <div class="bg-grid"></div>
@@ -22,9 +24,6 @@
 
 <div class="page">
 
-  <!-- ============================================================
-       TOPBAR
-       ============================================================ -->
   <header class="topbar">
     <a class="brand" href="../../index.html" aria-label="Dev Ruby — voltar para a página inicial">
       <span class="brand-mark" aria-hidden="true">DR</span>
@@ -32,7 +31,7 @@
     </a>
 
     <a class="back-link" href="../../index.html">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
         <path d="M19 12H5"></path><path d="m12 19-7-7 7-7"></path>
       </svg>
       Voltar ao site
@@ -41,42 +40,48 @@
 
   <main class="shell" id="briefing">
 
-    <!-- ============================================================
-         CABEÇALHO DO PLANO
-         ============================================================ -->
-    <section class="plan-head">
-      <p class="plan-eyebrow">Briefing de projeto</p>
-      <h1 class="plan-title">PROJETO START</h1>
-      <p class="plan-price">R$297</p>
-      <p class="plan-lead">
-        Vamos entender o que você precisa para criar uma presença digital profissional
-        para o seu negócio.
-      </p>
-      <p class="plan-note">
-        Você não precisa saber explicar tecnicamente o projeto. Conte o que precisa e
-        nós ajudaremos a transformar sua ideia em uma solução.
-      </p>
-    </section>
+    <!-- ==========================================================
+         RAIL — identidade + progresso
+         ========================================================== -->
+    <aside class="rail">
 
-    <!-- ============================================================
-         CARD PRINCIPAL
-         ============================================================ -->
-    <section class="card" id="card">
-
-      <!-- PROGRESSO -->
-      <div class="progress" id="progress">
-        <div class="progress-top">
-          <span class="progress-label" id="progress-label" aria-live="polite">Etapa 01 de 09</span>
-          <span class="progress-percent" id="progress-percent">11%</span>
-        </div>
-        <div class="progress-track" role="presentation">
-          <div class="progress-fill" id="progress-fill"></div>
-        </div>
+      <div class="rail-head">
+        <p class="rail-lab">Digital Lab</p>
+        <h1 class="rail-plan">Projeto <br class="br-lg">Start<span class="dot">.</span></h1>
       </div>
 
-      <!-- ============================================================
-           FORMULÁRIO — NETLIFY FORMS
-           ============================================================ -->
+      <div class="rail-meta">
+        <p class="rail-price">R$500<span>,00</span></p>
+        <p class="rail-includes">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M20 6 9 17l-5-5"></path>
+          </svg>
+          Hospedagem + domínio <strong>.com.br</strong> inclusos
+        </p>
+      </div>
+
+      <p class="rail-note">
+        Você não precisa explicar tecnicamente. Conte o que precisa — nós ajudamos
+        a transformar sua ideia em solução.
+      </p>
+
+      <div class="rail-progress">
+        <div class="rail-counter" aria-live="polite">
+          <span id="progress-current">01</span><span class="rail-slash">/</span><span id="progress-total">10</span>
+        </div>
+        <div class="rail-track" role="presentation">
+          <div class="rail-fill" id="progress-fill"></div>
+        </div>
+        <p class="rail-stage" id="progress-stage">Conhecendo você</p>
+      </div>
+
+    </aside>
+
+    <!-- ==========================================================
+         STAGE — formulário
+         ========================================================== -->
+    <section class="stage">
+
       <form
         id="form-plano-start"
         name="plano-start"
@@ -86,46 +91,45 @@
         netlify-honeypot="bot-field"
         novalidate
       >
-        <!-- Identificação obrigatória do formulário para o Netlify -->
         <input type="hidden" name="form-name" value="plano-start">
 
-        <!-- Honeypot anti-spam (não remover) -->
         <p class="hidden-honeypot" aria-hidden="true">
           <label for="bot-field">Não preencha este campo</label>
           <input type="text" id="bot-field" name="bot-field" tabindex="-1" autocomplete="off">
         </p>
 
-        <!-- Identificação do plano -->
         <input type="hidden" name="plano" value="START">
-        <input type="hidden" name="investimento" value="R$297">
+        <input type="hidden" name="investimento" value="R$500,00">
+        <input type="hidden" name="inclusos" value="Hospedagem + Domínio .com.br">
 
         <!-- ==========================================================
              ETAPA 01
              ========================================================== -->
         <div class="step is-active" data-step="1">
           <p class="step-kicker">Etapa 01</p>
-          <h2 class="step-title">Vamos começar por você</h2>
-          <p class="step-sub">Só precisamos de alguns dados para conseguirmos falar com você.</p>
+          <h2 class="step-title">Vamos começar por você.</h2>
+          <p class="step-sub">Só precisamos do essencial para conseguirmos falar com você.</p>
 
           <div class="field" data-field="nome">
-            <label for="nome">Nome completo <span class="req" aria-hidden="true">*</span></label>
+            <label class="field-label" for="nome">Nome <span class="req" aria-hidden="true">*</span></label>
             <input type="text" id="nome" name="nome" autocomplete="name"
-                   placeholder="Ex: João da Silva" required>
+                   placeholder="Seu nome completo" required>
             <p class="field-error" data-error role="alert"></p>
           </div>
 
           <div class="field" data-field="whatsapp">
-            <label for="whatsapp">WhatsApp <span class="req" aria-hidden="true">*</span></label>
+            <label class="field-label" for="whatsapp">WhatsApp <span class="req" aria-hidden="true">*</span></label>
             <input type="tel" id="whatsapp" name="whatsapp" autocomplete="tel"
                    inputmode="numeric" maxlength="16"
                    placeholder="(11) 99999-9999" required>
+            <p class="field-hint">Usaremos apenas para falar sobre o projeto.</p>
             <p class="field-error" data-error role="alert"></p>
           </div>
 
           <div class="field" data-field="email">
-            <label for="email">E-mail <span class="req" aria-hidden="true">*</span></label>
+            <label class="field-label" for="email">E-mail <span class="opt">(opcional)</span></label>
             <input type="email" id="email" name="email" autocomplete="email"
-                   inputmode="email" placeholder="voce@email.com" required>
+                   inputmode="email" placeholder="voce@email.com">
             <p class="field-error" data-error role="alert"></p>
           </div>
         </div>
@@ -135,36 +139,36 @@
              ========================================================== -->
         <div class="step" data-step="2">
           <p class="step-kicker">Etapa 02</p>
-          <h2 class="step-title">Agora vamos conhecer seu negócio</h2>
-          <p class="step-sub">Quanto mais entendermos o seu contexto, melhor será o resultado.</p>
+          <h2 class="step-title">Agora, o seu negócio.</h2>
+          <p class="step-sub">Quanto mais entendermos o contexto, melhor será o resultado. Campos opcionais.</p>
 
           <div class="field" data-field="empresa">
-            <label for="empresa">Nome da empresa ou negócio <span class="req" aria-hidden="true">*</span></label>
+            <label class="field-label" for="empresa">Nome da empresa <span class="opt">(opcional)</span></label>
             <input type="text" id="empresa" name="empresa" autocomplete="organization"
-                   placeholder="Ex: Barbearia X" required>
+                   placeholder="Ex: Barbearia X">
             <p class="field-error" data-error role="alert"></p>
           </div>
 
           <div class="field" data-field="segmento">
-            <label for="segmento">Segmento do negócio <span class="req" aria-hidden="true">*</span></label>
+            <label class="field-label" for="segmento">Segmento <span class="opt">(opcional)</span></label>
             <input type="text" id="segmento" name="segmento"
-                   placeholder="Ex: Barbearia, clínica, loja de roupas, restaurante..." required>
+                   placeholder="Ex: barbearia, clínica, restaurante...">
             <p class="field-error" data-error role="alert"></p>
           </div>
 
           <div class="field" data-field="rede_social">
-            <label for="rede_social">Instagram ou rede social</label>
+            <label class="field-label" for="rede_social">Instagram ou rede social <span class="opt">(opcional)</span></label>
             <input type="text" id="rede_social" name="rede_social"
                    placeholder="@seunegocio ou link do perfil">
             <p class="field-error" data-error role="alert"></p>
           </div>
 
           <div class="field" data-field="possui_site">
-            <span class="label" id="label-possui-site">Você já possui um site? <span class="req" aria-hidden="true">*</span></span>
-            <div class="options options-inline" data-group="possui_site" data-required-group="true"
+            <span class="field-question" id="label-possui-site">Você já possui um site? <span class="opt">(opcional)</span></span>
+            <div class="options options-inline" data-group="possui_site"
                  role="radiogroup" aria-labelledby="label-possui-site">
               <label class="option">
-                <input type="radio" name="possui_site" value="Sim" required>
+                <input type="radio" name="possui_site" value="Sim">
                 <span class="option-mark" aria-hidden="true"></span>
                 <span class="option-text">Sim</span>
               </label>
@@ -178,7 +182,7 @@
           </div>
 
           <div class="field is-hidden" data-field="site_url">
-            <label for="site_url">Endereço do site</label>
+            <label class="field-label" for="site_url">Endereço do site <span class="opt">(opcional)</span></label>
             <input type="url" id="site_url" name="site_url" inputmode="url"
                    placeholder="https://seusite.com.br">
             <p class="field-error" data-error role="alert"></p>
@@ -191,14 +195,14 @@
         <div class="step" data-step="3">
           <p class="step-kicker">Etapa 03</p>
           <h2 class="step-title">O que você deseja criar?</h2>
-          <p class="step-sub">Escolha a opção que mais se aproxima do que você imagina.</p>
+          <p class="step-sub">Escolha a opção que mais se aproxima. Se não souber, sem problema.</p>
 
           <div class="field" data-field="solucao">
-            <span class="label" id="label-solucao">Qual solução você procura? <span class="req" aria-hidden="true">*</span></span>
-            <div class="options options-grid-2" data-group="solucao" data-required-group="true"
+            <span class="field-question" id="label-solucao">Qual solução você procura? <span class="opt">(opcional)</span></span>
+            <div class="options options-grid-2" data-group="solucao"
                  role="radiogroup" aria-labelledby="label-solucao">
               <label class="option">
-                <input type="radio" name="solucao" value="Landing Page" required>
+                <input type="radio" name="solucao" value="Landing Page">
                 <span class="option-mark" aria-hidden="true"></span>
                 <span class="option-text">Landing Page</span>
               </label>
@@ -247,16 +251,16 @@
              ========================================================== -->
         <div class="step" data-step="4">
           <p class="step-kicker">Etapa 04</p>
-          <h2 class="step-title">O que você quer melhorar?</h2>
-          <p class="step-sub">Você pode selecionar mais de uma opção.</p>
+          <h2 class="step-title">O que precisa melhorar?</h2>
+          <p class="step-sub">Selecione quantas quiser. Campo opcional.</p>
 
           <div class="field" data-field="objetivos">
-            <span class="label" id="label-objetivos">
+            <span class="field-question" id="label-objetivos">
               O que você gostaria que seu novo projeto ajudasse seu negócio a fazer?
-              <span class="req" aria-hidden="true">*</span>
+              <span class="opt">(opcional)</span>
             </span>
             <div class="options options-grid-2" data-group="objetivos" data-type="checkbox"
-                 data-required-group="true" role="group" aria-labelledby="label-objetivos">
+                 role="group" aria-labelledby="label-objetivos">
               <label class="option">
                 <input type="checkbox" name="objetivos" value="Apresentar melhor minha empresa">
                 <span class="option-mark" aria-hidden="true"></span>
@@ -312,15 +316,15 @@
              ========================================================== -->
         <div class="step" data-step="5">
           <p class="step-kicker">Etapa 05</p>
-          <h2 class="step-title">Você já possui os materiais?</h2>
-          <p class="step-sub">Não se preocupe se ainda não tiver tudo — nós ajudamos nessa parte.</p>
+          <h2 class="step-title">Você já tem os materiais?</h2>
+          <p class="step-sub">Não se preocupe se ainda não tiver. Campos opcionais.</p>
 
           <div class="field" data-field="materiais">
-            <span class="label" id="label-materiais">Você já possui os materiais para o projeto? <span class="req" aria-hidden="true">*</span></span>
-            <div class="options" data-group="materiais" data-required-group="true"
+            <span class="field-question" id="label-materiais">Você já possui os materiais para o projeto? <span class="opt">(opcional)</span></span>
+            <div class="options" data-group="materiais"
                  role="radiogroup" aria-labelledby="label-materiais">
               <label class="option">
-                <input type="radio" name="materiais" value="Já tenho logo, imagens e textos" required>
+                <input type="radio" name="materiais" value="Já tenho logo, imagens e textos">
                 <span class="option-mark" aria-hidden="true"></span>
                 <span class="option-text">Já tenho logo, imagens e textos</span>
               </label>
@@ -344,11 +348,11 @@
           </div>
 
           <div class="field" data-field="identidade_visual">
-            <span class="label" id="label-identidade">Você já possui uma identidade visual? <span class="req" aria-hidden="true">*</span></span>
-            <div class="options options-inline" data-group="identidade_visual" data-required-group="true"
+            <span class="field-question" id="label-identidade">Você já possui uma identidade visual? <span class="opt">(opcional)</span></span>
+            <div class="options options-inline" data-group="identidade_visual"
                  role="radiogroup" aria-labelledby="label-identidade">
               <label class="option">
-                <input type="radio" name="identidade_visual" value="Sim" required>
+                <input type="radio" name="identidade_visual" value="Sim">
                 <span class="option-mark" aria-hidden="true"></span>
                 <span class="option-text">Sim</span>
               </label>
@@ -373,13 +377,13 @@
         <div class="step" data-step="6">
           <p class="step-kicker">Etapa 06</p>
           <h2 class="step-title">Como você imagina o projeto?</h2>
-          <p class="step-sub">Essa é a parte mais importante do briefing. Conte com suas palavras.</p>
+          <p class="step-sub">Essa é a parte mais importante. Conte com suas palavras.</p>
 
           <div class="field" data-field="descricao">
-            <label for="descricao">Conte um pouco sobre o que você gostaria que fosse criado. <span class="req" aria-hidden="true">*</span></label>
-            <textarea id="descricao" name="descricao" rows="7" required
-                      placeholder="Exemplo: Quero uma página para apresentar minha empresa, mostrar meus serviços e receber clientes pelo WhatsApp..."></textarea>
-            <p class="field-hint">Não precisa usar termos técnicos. Explique com suas próprias palavras.</p>
+            <label class="field-question" for="descricao">Conte um pouco sobre o que você gostaria que fosse criado. <span class="req" aria-hidden="true">*</span></label>
+            <textarea id="descricao" name="descricao" rows="6" required
+                      placeholder="Ex: quero uma página para apresentar minha empresa, mostrar meus serviços e receber clientes pelo WhatsApp..."></textarea>
+            <p class="field-hint">Sem termos técnicos. Explique com suas próprias palavras.</p>
             <p class="field-error" data-error role="alert"></p>
           </div>
         </div>
@@ -389,15 +393,15 @@
              ========================================================== -->
         <div class="step" data-step="7">
           <p class="step-kicker">Etapa 07</p>
-          <h2 class="step-title">Quando você gostaria de colocar o projeto no ar?</h2>
-          <p class="step-sub">Isso nos ajuda a organizar a agenda do projeto.</p>
+          <h2 class="step-title">Quando você quer colocar no ar?</h2>
+          <p class="step-sub">Isso nos ajuda a organizar a agenda. Campo opcional.</p>
 
           <div class="field" data-field="prazo">
-            <span class="label" id="label-prazo">Prazo desejado <span class="req" aria-hidden="true">*</span></span>
-            <div class="options options-grid-2" data-group="prazo" data-required-group="true"
+            <span class="field-label" id="label-prazo">Prazo desejado <span class="opt">(opcional)</span></span>
+            <div class="options options-grid-2" data-group="prazo"
                  role="radiogroup" aria-labelledby="label-prazo">
               <label class="option">
-                <input type="radio" name="prazo" value="O quanto antes" required>
+                <input type="radio" name="prazo" value="O quanto antes">
                 <span class="option-mark" aria-hidden="true"></span>
                 <span class="option-text">O quanto antes</span>
               </label>
@@ -435,7 +439,7 @@
           <p class="step-sub">Opcional, mas ajuda muito a entender o que você gosta.</p>
 
           <div class="field" data-field="referencia">
-            <label for="referencia">Existe algum site ou projeto que você gosta e gostaria de usar como referência?</label>
+            <label class="field-question" for="referencia">Existe algum site ou projeto que você gosta e gostaria de usar como referência? <span class="opt">(opcional)</span></label>
             <input type="url" id="referencia" name="referencia" inputmode="url"
                    placeholder="Cole aqui o link, se tiver.">
             <p class="field-error" data-error role="alert"></p>
@@ -447,12 +451,12 @@
              ========================================================== -->
         <div class="step" data-step="9">
           <p class="step-kicker">Etapa 09</p>
-          <h2 class="step-title">Últimos detalhes</h2>
-          <p class="step-sub">Campo opcional. Use se sentir que algo importante ficou de fora.</p>
+          <h2 class="step-title">Últimos detalhes.</h2>
+          <p class="step-sub">Use se sentir que algo importante ficou de fora. Campo opcional.</p>
 
           <div class="field" data-field="observacoes">
-            <label for="observacoes">Existe alguma informação importante que ainda não perguntamos?</label>
-            <textarea id="observacoes" name="observacoes" rows="5"
+            <label class="field-question" for="observacoes">Existe alguma informação importante que ainda não perguntamos? <span class="opt">(opcional)</span></label>
+            <textarea id="observacoes" name="observacoes" rows="4"
                       placeholder="Escreva aqui, se quiser."></textarea>
             <p class="field-error" data-error role="alert"></p>
           </div>
@@ -463,13 +467,13 @@
              ========================================================== -->
         <div class="step" data-step="10">
           <p class="step-kicker">Revisão final</p>
-          <h2 class="step-title">Confira suas informações</h2>
-          <p class="step-sub">Revise os dados abaixo. Você pode editar qualquer item antes de enviar.</p>
+          <h2 class="step-title">Confira antes de enviar.</h2>
+          <p class="step-sub">Revise os dados abaixo. Você pode voltar e editar qualquer item.</p>
 
           <div class="summary">
             <div class="summary-top">
               <p class="summary-top-label">Seu projeto</p>
-              <p class="summary-top-plan">START <span>— R$297</span></p>
+              <p class="summary-top-plan">START <span>— R$500,00</span></p>
             </div>
             <div class="summary-list" id="summary-list"></div>
           </div>
@@ -479,9 +483,20 @@
              NAVEGAÇÃO
              ========================================================== -->
         <div class="nav">
-          <button type="button" class="btn btn-ghost" id="btn-prev" hidden>Voltar</button>
-          <button type="button" class="btn btn-primary" id="btn-next">Continuar</button>
-          <button type="submit" class="btn btn-primary" id="btn-submit" hidden>Enviar projeto</button>
+          <button type="button" class="btn btn-ghost" id="btn-prev" hidden>
+            <span class="btn-arrow" aria-hidden="true">←</span>
+            <span class="btn-label">Voltar</span>
+          </button>
+
+          <button type="button" class="btn btn-primary" id="btn-next">
+            <span class="btn-label">Continuar</span>
+            <span class="btn-arrow" aria-hidden="true">→</span>
+          </button>
+
+          <button type="submit" class="btn btn-primary" id="btn-submit" hidden>
+            <span class="btn-label">Enviar projeto</span>
+            <span class="btn-arrow" aria-hidden="true">→</span>
+          </button>
         </div>
 
         <p class="privacy">
@@ -492,38 +507,41 @@
         <div class="form-alert" id="form-alert" role="alert"></div>
       </form>
 
-      <!-- ============================================================
+      <!-- ==========================================================
            SUCESSO
-           ============================================================ -->
+           ========================================================== -->
       <section class="success" id="success" hidden>
-        <div class="success-icon" aria-hidden="true">
-          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-               stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M20 6 9 17l-5-5"></path>
-          </svg>
-        </div>
-
-        <h2>Projeto enviado com sucesso!</h2>
-        <p>
-          Recebemos suas informações. Agora você pode continuar a conversa com a Dev Ruby
-          pelo WhatsApp.
+        <p class="success-status">
+          <span class="dot" aria-hidden="true"></span>
+          Projeto recebido
         </p>
+
+        <h2 class="success-title">Obrigado por compartilhar sua ideia.</h2>
+
+        <p>Agora temos uma visão muito melhor do que você precisa.</p>
+        <p>A Dev Ruby vai analisar as informações e entrar em contato para conversarmos
+           sobre os próximos passos.</p>
 
         <div class="success-actions">
           <a class="btn btn-whatsapp" id="btn-whatsapp" href="#" target="_blank" rel="noopener">
-            Continuar no WhatsApp
+            <span class="btn-label">Falar pelo WhatsApp</span>
+            <span class="btn-arrow" aria-hidden="true">→</span>
           </a>
-          <a class="btn btn-ghost" href="../../index.html">Voltar para o site</a>
+          <a class="btn btn-ghost" href="../../index.html">
+            <span class="btn-arrow" aria-hidden="true">←</span>
+            <span class="btn-label">Voltar ao site</span>
+          </a>
         </div>
       </section>
 
     </section>
 
-    <footer class="footer">
-      <p>Dev Ruby · Soluções digitais</p>
-    </footer>
-
   </main>
+
+  <footer class="footer">
+    <p>Dev Ruby · Digital Lab</p>
+  </footer>
+
 </div>
 
 <script src="plano-start.js"></script>
